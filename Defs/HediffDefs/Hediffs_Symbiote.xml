@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Symbiote prim'ta logé dans un Jaffa : renforce son immunité et mûrit
+       avec le temps (severity 0 -> 1 via HediffCompProperties_SeverityPerDay).
+       À maturité (severity 1.0), il peut être extrait en tant que symbiote adulte. -->
+  <HediffDef>
+    <defName>SG_Primta</defName>
+    <label>symbiote prim'ta</label>
+    <description>Un symbiote Goa'uld immature logé dans la poche abdominale du porteur. Il renforce considérablement son système immunitaire et mûrit lentement jusqu'à atteindre l'âge adulte.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.8, 0.7, 0.2)</defaultLabelColor>
+    <maxSeverity>1.0</maxSeverity>
+    <initialSeverity>0.01</initialSeverity>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>0.1</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>immature</label>
+        <statOffsets>
+          <ImmunityGainSpeed>0.25</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>1.0</minSeverity>
+        <label>mature</label>
+        <statOffsets>
+          <ImmunityGainSpeed>0.5</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

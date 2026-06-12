@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Larve Goa'uld immature : produite par une Reine, fragile hors d'un hôte.
+       Doit être implantée dans un Jaffa avant de périr (comp CompGoauldLarva).
+       Texture = placeholder vanilla (embryon). -->
+  <ThingDef>
+    <defName>SG_GoauldLarva</defName>
+    <label>larve goa'uld</label>
+    <description>Une larve de symbiote Goa'uld, encore immature et très fragile hors d'un hôte. Elle doit être implantée dans la poche abdominale d'un Jaffa, où elle mûrira en sécurité, sans quoi elle finira par mourir.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <tickerType>Rare</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Special/Embryo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>40</MaxHitPoints>
+      <MarketValue>250</MarketValue>
+      <Mass>0.4</Mass>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <stackLimit>1</stackLimit>
+    <category>Item</category>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <rotatable>false</rotatable>
+    <pathCost>14</pathCost>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="Stargate.CompProperties_GoauldLarva">
+        <lifespanDays>5</lifespanDays>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- Symbiote Goa'uld adulte : extrait d'un Jaffa après maturation.
+       Prêt à être implanté dans un hôte humain (le transforme en Goa'uld). -->
+  <ThingDef>
+    <defName>SG_GoauldSymbiote</defName>
+    <label>symbiote goa'uld adulte</label>
+    <description>Un symbiote Goa'uld arrivé à maturité, extrait de son Jaffa porteur. Doté de la mémoire génétique de sa lignée, il est prêt à prendre le contrôle d'un hôte humain par implantation.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <graphicData>
+      <texPath>Things/Item/Special/Ovum</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>1200</MarketValue>
+      <Mass>0.6</Mass>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <stackLimit>1</stackLimit>
+    <category>Item</category>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <rotatable>false</rotatable>
+    <pathCost>14</pathCost>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+  </ThingDef>
+
+</Defs>
