@@ -152,8 +152,8 @@ Mécanique signature qui **lie Jaffa et Goa'uld**. Dirigée par le joueur (chiru
 - [x] **Wraith** : xénotype `SG_Wraith` re-skinnant **Hemogenic → « essence vitale »** + **Bloodfeeder → « drain de vie »** (gènes `SG_VitalEssence`, `SG_LifeDrain`). Charge sans erreur. *(reste : tester le comportement du drain en partie + art dédié.)*
 - [~] **Jaffa** (`SG_Jaffa`) : xénotype guerrier de base FAIT (force, immunité, régén — gènes vanilla). *Reste : hediff « prim'ta » comme besoin vital, lié au cycle §4.6.*
 - [~] **Goa'uld** (`SG_Goauld`) : xénotype de base FAIT — gène custom `SG_SarcophagusRegen` (re-skin `Gene_Deathrest` sans prereq Hemogenic) + `Deathless` + `Ageless` + mémoire génétique ; **sarcophage** `SG_Sarcophagus` (re-skin caisson deathrest) construit. *Reste : valider la mécanique deathrest en jeu, re-skin UI « deathrest » (Harmony), conversion via cycle §4.6.*
-- [ ] Autres xénotypes : Tau'ri, Asgard, Unas, Tok'ra.
-- [ ] **Cycle du symbiote Goa'uld + Reine (§4.6)** — système custom committed : larve périssable, 3 chirurgies, `CompGoauldBrooder`, `Recipe_ImplantGoauldSymbiote`.
+- [x] Autres xénotypes : **Tau'ri, Asgard, Unas, Tok'ra** FAITS (gènes vanilla confirmés).
+- [x] **Cycle du symbiote Goa'uld + Reine (§4.6)** IMPLÉMENTÉ (compile OK, à tester en jeu) : larve périssable `SG_GoauldLarva` (comp `CompGoauldLarva`), symbiote adulte `SG_GoauldSymbiote`, hediff `SG_Primta` (maturation), 3 chirurgies (`Recipe_SG_ImplantPrimta` / `ExtractSymbiote` / `ImplantGoauld` → `GoauldUtility.MakeGoauld` via `SetXenotypeDirect`), Reine `SG_GoauldQueen` + gène `SG_QueenBrooder` (`Gene_GoauldBrooder`).
 > **Ordre de construction (tranches verticales, chaque pièce est définitive — pas de placeholder) :**
 > 1. **Wraith** (valide le pipeline xénotype + re-skin Hemogenic, le plus autonome).
 > 2. **Jaffa + Goa'uld** xénotypes qui se chargent et se jouent.
