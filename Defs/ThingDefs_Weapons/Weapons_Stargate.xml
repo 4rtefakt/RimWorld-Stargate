@@ -11,6 +11,21 @@
     <defName>SG_StaffWeapon</defName>
     <label>bâton jaffa</label>
     <smeltable>false</smeltable>
+    <recipeMaker>
+      <researchPrerequisite>SG_StargateArsenal</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>7</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <displayPriority>500</displayPriority>
+    </recipeMaker>
+    <costList>
+      <Plasteel>60</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Gold>10</Gold>
+    </costList>
     <description>L'arme emblématique des Jaffa : un long bâton qui projette des décharges de plasma surchauffé, capables de transpercer une armure et de tuer d'un coup. Imprécis à distance, mais dévastateur, et redoutable au corps à corps.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
@@ -26,6 +41,7 @@
       <AccuracyLong>0.30</AccuracyLong>
       <RangedWeapon_Cooldown>2.6</RangedWeapon_Cooldown>
       <MarketValue>1100</MarketValue>
+      <WorkToMake>38000</WorkToMake>
     </statBases>
     <weaponTags>
       <li>SG_JaffaWeapon</li>
@@ -84,6 +100,20 @@
     <defName>SG_Zat</defName>
     <label>zat'nik'tel</label>
     <smeltable>false</smeltable>
+    <recipeMaker>
+      <researchPrerequisite>SG_StargateArsenal</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <displayPriority>510</displayPriority>
+    </recipeMaker>
+    <costList>
+      <Plasteel>30</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
     <description>Arme de poing goa'uld en forme de serpent. Elle projette une décharge d'énergie électrique à courte portée. Rapide et discrète, elle est l'arme de prédilection pour neutraliser une cible.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
@@ -99,6 +129,7 @@
       <AccuracyLong>0.30</AccuracyLong>
       <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
       <MarketValue>700</MarketValue>
+      <WorkToMake>22000</WorkToMake>
     </statBases>
     <weaponTags>
       <li>SG_GoauldWeapon</li>

@@ -41,6 +41,9 @@
     </building>
     <designationCategory>Furniture</designationCategory>
     <uiOrder>2100</uiOrder>
+    <researchPrerequisites>
+      <li>SG_GoauldTech</li>
+    </researchPrerequisites>
     <statBases>
       <MaxHitPoints>250</MaxHitPoints>
       <WorkToBuild>3500</WorkToBuild>

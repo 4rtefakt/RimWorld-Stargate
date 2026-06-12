@@ -10,6 +10,21 @@
     <defName>SG_JaffaArmor</defName>
     <label>armure de garde jaffa</label>
     <smeltable>false</smeltable>
+    <recipeMaker>
+      <researchPrerequisite>SG_StargateArsenal</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <displayPriority>520</displayPriority>
+    </recipeMaker>
+    <costList>
+      <Steel>80</Steel>
+      <Plasteel>40</Plasteel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
     <description>Lourde armure cérémonielle des gardes serpent au service des Goa'uld. Conçue pour le combat rapproché et l'intimidation, elle offre une excellente protection au prix de la mobilité.</description>
     <techLevel>Spacer</techLevel>
     <thingCategories>
@@ -28,6 +43,7 @@
       <Insulation_Cold>14</Insulation_Cold>
       <EquipDelay>5</EquipDelay>
       <MarketValue>900</MarketValue>
+      <WorkToMake>30000</WorkToMake>
     </statBases>
     <equippedStatOffsets>
       <MoveSpeed>-0.18</MoveSpeed>
@@ -57,6 +73,21 @@
     <defName>SG_JaffaHelmet</defName>
     <label>casque serpent jaffa</label>
     <smeltable>false</smeltable>
+    <recipeMaker>
+      <researchPrerequisite>SG_StargateArsenal</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <displayPriority>530</displayPriority>
+    </recipeMaker>
+    <costList>
+      <Steel>40</Steel>
+      <Plasteel>20</Plasteel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
     <description>Casque cérémoniel en forme de tête de serpent porté par les gardes d'élite des Goa'uld. Rétractable au combat, il protège intégralement la tête.</description>
     <techLevel>Spacer</techLevel>
     <thingCategories>
@@ -75,6 +106,7 @@
       <Insulation_Cold>3</Insulation_Cold>
       <EquipDelay>2</EquipDelay>
       <MarketValue>450</MarketValue>
+      <WorkToMake>18000</WorkToMake>
     </statBases>
     <apparel>
       <bodyPartGroups>

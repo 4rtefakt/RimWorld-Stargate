@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Arbre de recherche Stargate (tab principal, tech Spacer). -->
+
+  <ResearchProjectDef>
+    <defName>SG_StargateTech</defName>
+    <label>technologie stargate</label>
+    <description>Les bases de l'étude de la technologie extraterrestre récupérée : naquadah, énergie plasma et principes des artefacts goa'uld. Débloque les recherches Stargate avancées.</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <researchViewX>9.0</researchViewX>
+    <researchViewY>5.0</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>SG_StargateArsenal</defName>
+    <label>arsenal stargate</label>
+    <description>Permet de fabriquer les armes et armures de l'univers Stargate : bâton jaffa, zat'nik'tel, armure et casque de garde serpent.</description>
+    <baseCost>4000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>SG_StargateTech</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <researchViewX>10.5</researchViewX>
+    <researchViewY>4.2</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>SG_GoauldTech</defName>
+    <label>technologie goa'uld</label>
+    <description>Maîtrise des dispositifs goa'uld avancés, dont le sarcophage régénérateur.</description>
+    <baseCost>5000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>SG_StargateTech</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <researchViewX>10.5</researchViewX>
+    <researchViewY>5.8</researchViewY>
+  </ResearchProjectDef>
+
+</Defs>
