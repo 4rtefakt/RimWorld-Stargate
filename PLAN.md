@@ -159,13 +159,14 @@ Mécanique signature qui **lie Jaffa et Goa'uld**. Dirigée par le joueur (chiru
 > 2. **Jaffa + Goa'uld** xénotypes qui se chargent et se jouent.
 > 3. **Cycle du symbiote + Reine** branché par-dessus des races déjà fonctionnelles.
 
-### Étape 2 — Équipement, armes, factions, idéologie
-- [ ] Ressource naquadah (minerai, raffinage, recherche).
-- [ ] Armes : bâton, zat, kara kesh (comportements C# pour zat/kara kesh).
-- [ ] Armures & apparel.
-- [ ] Bâtiments : sarcophage, générateur naquadah.
-- [ ] FactionDefs (System Lords, Tau'ri, Tok'ra…) + PawnKindDefs.
-- [ ] Memes/precepts Ideology (culte Goa'uld, prim'ta).
+### Étape 2 — Équipement, armes, factions, idéologie *(en cours)*
+- [~] Ressource naquadah : item `SG_Naquadah` existe. *Reste : minerai à miner, raffinage, recherche.*
+- [~] Armes : **bâton `SG_StaffWeapon`** + **zat `SG_Zat`** FAITS (pur XML). *Reste : kara kesh ; zat « stun→kill » fidèle (C#).*
+- [x] Armures & apparel : **armure + casque jaffa, robe goa'uld, uniforme SGC**.
+- [~] Bâtiments : **sarcophage** FAIT. *Reste : générateur à naquadah, bouclier, anneaux.*
+- [~] FactionDefs + PawnKindDefs : **Grands Maîtres Goa'uld `SG_SystemLords`** (ennemi permanent) + pawnkinds **guerrier jaffa** & **seigneur goa'uld** FAITS. *Reste : Tau'ri/SGC, Tok'ra, Asgard, Jaffa libres.*
+- [ ] Memes/precepts Ideology (culte Goa'uld, prim'ta) — **prochain gros morceau, à faire après le test**.
+- [ ] Recettes de craft + arbre de recherche Stargate (pour rendre armes/armures/sarcophage fabricables par le joueur).
 
 ### Étape 3 — Vaisseaux (gravships) par race
 - [ ] Construits sur la mécanique **gravship vanilla d'Odyssey** (pas sur VGE non sorti).
