@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Races complémentaires de l'univers Stargate. Gènes 100% vanilla confirmés.
+       Icônes = placeholders vanilla. -->
+
+  <!-- Tau'ri : les humains de la Terre (SGC). Résilients et débrouillards,
+       mais sans modification génétique notable (proches des baseliners). -->
+  <XenotypeDef>
+    <defName>SG_Tauri</defName>
+    <label>tau'ri</label>
+    <description>Les humains de la Terre, le « premier monde ». Sans modification génétique notable, ils compensent par leur ingéniosité, leur résilience et leur capacité d'adaptation. C'est le peuple du SGC et des équipes SG.</description>
+    <iconPath>UI/Icons/Xenotypes/Baseliner</iconPath>
+    <inheritable>true</inheritable>
+    <genes>
+      <li>Mood_Sanguine</li>
+      <li>Immunity_Strong</li>
+    </genes>
+  </XenotypeDef>
+
+  <!-- Asgard : petits extraterrestres gris, frêles mais hyper-intelligents,
+       imberbes, se reproduisant par clonage (stérilité = lore, pas de gène). -->
+  <XenotypeDef>
+    <defName>SG_Asgard</defName>
+    <label>asgard</label>
+    <description>Race extraterrestre extrêmement avancée : de petits êtres gris au corps frêle mais à l'intellect prodigieux. N'ayant plus de descendance naturelle, ils se perpétuent par clonage, ce qui dégrade lentement leur patrimoine génétique. Maîtres d'une technologie inégalée, ils sont physiquement vulnérables.</description>
+    <iconPath>UI/Icons/Xenotypes/Genie</iconPath>
+    <combatPowerFactor>0.7</combatPowerFactor>
+    <genes>
+      <li>Body_Thin</li>
+      <li>Skin_SlateGray</li>
+      <li>Eyes_Gray</li>
+      <li>Hair_BaldOnly</li>
+      <li>Beard_NoBeardOnly</li>
+      <li>AptitudeRemarkable_Intellectual</li>
+      <li>AptitudeRemarkable_Crafting</li>
+      <li>AptitudeTerrible_Social</li>
+      <li>Delicate</li>
+      <li>Pain_Extra</li>
+      <li>Immunity_Weak</li>
+      <li>MoveSpeed_Slow</li>
+    </genes>
+  </XenotypeDef>
+
+  <!-- Unas : créatures reptiliennes primitives et puissantes, premiers hôtes
+       des Goa'uld. Force brute, mais lents d'esprit. -->
+  <XenotypeDef>
+    <defName>SG_Unas</defName>
+    <label>unas</label>
+    <description>Créatures reptiliennes primitives et massives, les Unas furent les tout premiers hôtes des Goa'uld. D'une force et d'une endurance redoutables, résistants à la douleur, mais lents d'esprit et peu portés sur les tâches subtiles.</description>
+    <iconPath>UI/Icons/Xenotypes/Neanderthal</iconPath>
+    <inheritable>true</inheritable>
+    <combatPowerFactor>1.5</combatPowerFactor>
+    <genes>
+      <li>Body_Hulk</li>
+      <li>Brow_Heavy</li>
+      <li>Jaw_Heavy</li>
+      <li>MeleeDamage_Strong</li>
+      <li>Robust</li>
+      <li>Immunity_Strong</li>
+      <li>Pain_Reduced</li>
+      <li>AptitudePoor_Intellectual</li>
+      <li>AptitudeTerrible_Artistic</li>
+      <li>Learning_Slow</li>
+      <li>MoveSpeed_Slow</li>
+      <li>Aggression_Aggressive</li>
+    </genes>
+  </XenotypeDef>
+
+  <!-- Tok'ra : même espèce que les Goa'uld, mais symbiose bienveillante avec un
+       hôte consentant. Mortels (pas de sarcophage), sages et coopératifs. -->
+  <XenotypeDef>
+    <defName>SG_Tokra</defName>
+    <label>tok'ra</label>
+    <description>Issus de la même espèce que les Goa'uld mais opposés à leur tyrannie, les Tok'ra partagent le contrôle de leur hôte dans une véritable symbiose, avec son plein consentement. Dotés de la mémoire de leur lignée et profondément sages, ils renoncent au sarcophage et vieillissent naturellement.</description>
+    <iconPath>UI/Icons/Xenotypes/Highmate</iconPath>
+    <genes>
+      <li>Eyes_Red</li>
+      <li>AptitudeStrong_Intellectual</li>
+      <li>AptitudeStrong_Social</li>
+      <li>Beauty_Pretty</li>
+      <li>Immunity_Strong</li>
+      <li>LowSleep</li>
+      <li>KindInstinct</li>
+    </genes>
+  </XenotypeDef>
+
+</Defs>
