@@ -1,5 +1,7 @@
 # Stargate — Mod RimWorld 1.6
 
+![Stargate](About/Preview.png)
+
 Un mod qui apporte l'univers de **Stargate** dans RimWorld : races, équipement, factions, idéologie, et (à venir) vaisseaux et quêtes.
 
 > **DLC requis :** Biotech, Ideology, Odyssey · **RimWorld 1.6**
