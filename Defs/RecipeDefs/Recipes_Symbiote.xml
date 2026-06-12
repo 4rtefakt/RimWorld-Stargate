@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Cycle du symbiote Goa'uld — chirurgies (héritent de SurgeryFlesh vanilla
+       pour tout le boilerplate médical : vitesse, skill, outcome de chirurgie). -->
+
+  <!-- 1) Implanter une larve dans un porteur (Jaffa) -> hediff prim'ta immature. -->
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>SG_ImplantPrimta</defName>
+    <label>implanter une larve goa'uld</label>
+    <description>Implante une larve goa'uld immature dans la poche abdominale du sujet. La larve y mûrira en sécurité tout en renforçant l'immunité du porteur.</description>
+    <workerClass>Stargate.Recipe_SG_ImplantPrimta</workerClass>
+    <jobString>Implantation d'une larve goa'uld.</jobString>
+    <workAmount>2500</workAmount>
+    <targetsBodyPart>false</targetsBodyPart>
+    <anesthetize>true</anesthetize>
+    <surgerySuccessChanceFactor>1</surgerySuccessChanceFactor>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SG_GoauldLarva</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>SG_GoauldLarva</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <recipeUsers>
+      <li>Human</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <!-- 2) Extraire le symbiote d'un porteur. Mûr -> symbiote adulte, sinon larve. -->
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>SG_ExtractSymbiote</defName>
+    <label>extraire le symbiote goa'uld</label>
+    <description>Extrait le symbiote logé dans le sujet. S'il est arrivé à maturité, on récupère un symbiote adulte prêt à prendre un hôte ; sinon une larve encore immature.</description>
+    <workerClass>Stargate.Recipe_SG_ExtractSymbiote</workerClass>
+    <jobString>Extraction du symbiote goa'uld.</jobString>
+    <workAmount>2000</workAmount>
+    <targetsBodyPart>false</targetsBodyPart>
+    <anesthetize>true</anesthetize>
+    <surgerySuccessChanceFactor>1</surgerySuccessChanceFactor>
+    <recipeUsers>
+      <li>Human</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <!-- 3) Implanter un symbiote adulte dans un hôte humain -> le transforme en Goa'uld. -->
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>SG_ImplantInHost</defName>
+    <label>implanter un symbiote goa'uld</label>
+    <description>Implante un symbiote goa'uld adulte dans le sujet. Le symbiote fusionne avec son système nerveux et en prend le contrôle total : le sujet devient un Goa'uld.</description>
+    <workerClass>Stargate.Recipe_SG_ImplantGoauld</workerClass>
+    <jobString>Implantation d'un symbiote goa'uld.</jobString>
+    <workAmount>3000</workAmount>
+    <targetsBodyPart>false</targetsBodyPart>
+    <anesthetize>true</anesthetize>
+    <isViolation>true</isViolation>
+    <surgerySuccessChanceFactor>1</surgerySuccessChanceFactor>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SG_GoauldSymbiote</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>SG_GoauldSymbiote</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <recipeUsers>
+      <li>Human</li>
+    </recipeUsers>
+  </RecipeDef>
+
+</Defs>
