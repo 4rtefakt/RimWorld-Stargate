@@ -10,6 +10,7 @@
   <ThingDef ParentName="BaseGunWithQuality">
     <defName>SG_StaffWeapon</defName>
     <label>bâton jaffa</label>
+    <smeltable>false</smeltable>
     <description>L'arme emblématique des Jaffa : un long bâton qui projette des décharges de plasma surchauffé, capables de transpercer une armure et de tuer d'un coup. Imprécis à distance, mais dévastateur, et redoutable au corps à corps.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
@@ -82,6 +83,7 @@
   <ThingDef ParentName="BaseGunWithQuality">
     <defName>SG_Zat</defName>
     <label>zat'nik'tel</label>
+    <smeltable>false</smeltable>
     <description>Arme de poing goa'uld en forme de serpent. Elle projette une décharge d'énergie électrique à courte portée. Rapide et discrète, elle est l'arme de prédilection pour neutraliser une cible.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>

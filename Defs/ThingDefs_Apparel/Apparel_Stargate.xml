@@ -9,6 +9,7 @@
   <ThingDef ParentName="ApparelBase">
     <defName>SG_JaffaArmor</defName>
     <label>armure de garde jaffa</label>
+    <smeltable>false</smeltable>
     <description>Lourde armure cérémonielle des gardes serpent au service des Goa'uld. Conçue pour le combat rapproché et l'intimidation, elle offre une excellente protection au prix de la mobilité.</description>
     <techLevel>Spacer</techLevel>
     <thingCategories>
@@ -55,6 +56,7 @@
   <ThingDef ParentName="ApparelBase">
     <defName>SG_JaffaHelmet</defName>
     <label>casque serpent jaffa</label>
+    <smeltable>false</smeltable>
     <description>Casque cérémoniel en forme de tête de serpent porté par les gardes d'élite des Goa'uld. Rétractable au combat, il protège intégralement la tête.</description>
     <techLevel>Spacer</techLevel>
     <thingCategories>
@@ -95,6 +97,7 @@
   <ThingDef ParentName="ApparelBase">
     <defName>SG_GoauldRobe</defName>
     <label>parure goa'uld</label>
+    <smeltable>false</smeltable>
     <description>Riche parure d'apparat portée par les Goa'uld qui se posent en dieux. Conçue pour impressionner plus que pour protéger, elle dégage une aura d'autorité.</description>
     <techLevel>Spacer</techLevel>
     <thingCategories>
@@ -138,6 +141,7 @@
   <ThingDef ParentName="ApparelBase">
     <defName>SG_SGCUniform</defName>
     <label>uniforme du SGC</label>
+    <smeltable>false</smeltable>
     <description>Treillis militaire standard des équipes SG du Stargate Command. Robuste et fonctionnel, il offre une protection modérée adaptée aux missions d'exploration.</description>
     <techLevel>Industrial</techLevel>
     <thingCategories>

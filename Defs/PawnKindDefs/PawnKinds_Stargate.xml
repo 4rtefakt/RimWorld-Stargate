@@ -5,17 +5,24 @@
     <race>Human</race>
     <defaultFactionDef>SG_SystemLords</defaultFactionDef>
     <invNutrition>2.55</invNutrition>
+    <initialResistanceRange>15~30</initialResistanceRange>
+    <initialWillRange>1~4</initialWillRange>
   </PawnKindDef>
 
-  <!-- Guerrier Jaffa : xénotype Jaffa, bâton, armure + casque serpent. -->
+  <!-- Guerrier Jaffa : xénotype Jaffa forcé, bâton, armure + casque serpent. -->
   <PawnKindDef ParentName="SG_PawnBase">
     <defName>SG_JaffaWarrior</defName>
     <label>guerrier jaffa</label>
     <combatPower>120</combatPower>
-    <xenotype>SG_Jaffa</xenotype>
+    <xenotypeSet>
+      <xenotypeChances>
+        <SG_Jaffa>999</SG_Jaffa>
+      </xenotypeChances>
+    </xenotypeSet>
+    <useFactionXenotypes>false</useFactionXenotypes>
     <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.5~1.2</gearHealthRange>
-    <weaponMoney>1000~1600</weaponMoney>
+    <weaponMoney>1200~2000</weaponMoney>
     <weaponTags>
       <li>SG_JaffaWeapon</li>
     </weaponTags>
@@ -30,15 +37,20 @@
     <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
   </PawnKindDef>
 
-  <!-- Seigneur Goa'uld : xénotype Goa'uld, zat, parure. Chef de la faction. -->
+  <!-- Seigneur Goa'uld : xénotype Goa'uld forcé, zat, parure. Chef de la faction. -->
   <PawnKindDef ParentName="SG_PawnBase">
     <defName>SG_GoauldLord</defName>
     <label>seigneur goa'uld</label>
     <combatPower>180</combatPower>
-    <xenotype>SG_Goauld</xenotype>
+    <xenotypeSet>
+      <xenotypeChances>
+        <SG_Goauld>999</SG_Goauld>
+      </xenotypeChances>
+    </xenotypeSet>
+    <useFactionXenotypes>false</useFactionXenotypes>
     <itemQuality>Excellent</itemQuality>
     <gearHealthRange>0.9~1.3</gearHealthRange>
-    <weaponMoney>700~1000</weaponMoney>
+    <weaponMoney>750~1100</weaponMoney>
     <weaponTags>
       <li>SG_GoauldWeapon</li>
     </weaponTags>
