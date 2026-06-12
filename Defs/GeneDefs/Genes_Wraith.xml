@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       WRAITH (Stargate Atlantis) — re-skin des mécaniques Biotech.
+       Réutilise les classes C# vanilla Gene_Hemogen / Gene_Bloodfeeder
+       (mécanique éprouvée) avec des labels/icônes/textes thématiques.
+       Icônes = placeholders vanilla pour l'instant (art dédié plus tard).
+       ============================================================ -->
+
+  <!-- Réserve de "force vitale" = re-skin de la ressource hémogène.
+       Le label de la jauge vient de <resourceLabel> (cosmétique),
+       la mécanique reste celle de Gene_Hemogen. -->
+  <GeneDef>
+    <defName>SG_VitalEssence</defName>
+    <label>essence vitale</label>
+    <description>Les Wraith stockent une réserve d'énergie vitale aspirée à leurs proies. Cette essence alimente leur force, leur régénération et leur longévité.\n\nLes porteurs perdent lentement de l'essence vitale au fil du temps et doivent se nourrir pour la reconstituer.</description>
+    <geneClass>Gene_Hemogen</geneClass>
+    <resourceGizmoType>GeneGizmo_ResourceHemogen</resourceGizmoType>
+    <resourceLabel>essence vitale</resourceLabel>
+    <resourceGizmoThresholds>
+      <li>0.25</li>
+      <li>0.5</li>
+      <li>0.75</li>
+    </resourceGizmoThresholds>
+    <showGizmoOnWorldView>true</showGizmoOnWorldView>
+    <showGizmoWhenDrafted>true</showGizmoWhenDrafted>
+    <resourceDescription>Une réserve d'énergie vitale qui peut être gagnée et dépensée de diverses façons.\n\nL'essence vitale se reconstitue en drainant la force vitale d'un humain.\n\nSi l'essence vitale tombe à zéro, {PAWN_nameDef} sera très affaibli.</resourceDescription>
+    <iconPath>UI/Icons/Genes/Gene_Hemogenic</iconPath>
+    <selectionWeight>0</selectionWeight>
+    <displayCategory>Hemogen</displayCategory>
+    <displayOrderInCategory>-2</displayOrderInCategory>
+    <minAgeActive>3</minAgeActive>
+    <resourceLossPerDay>0.02</resourceLossPerDay>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>1</biostatMet>
+  </GeneDef>
+
+  <!-- Drain de vie = re-skin de Bloodfeeder. Réutilise la capacité vanilla
+       Bloodfeed (qui remplit la ressource Gene_Hemogen, ici "essence vitale"). -->
+  <GeneDef>
+    <defName>SG_LifeDrain</defName>
+    <label>drain de vie</label>
+    <labelShortAdj>draineur</labelShortAdj>
+    <description>Les Wraith possèdent un organe dans la paume de la main qui leur permet d'aspirer la force vitale d'un être humain par simple contact, reconstituant leur propre essence vitale.</description>
+    <iconPath>UI/Icons/Genes/Gene_Bloodfeeder</iconPath>
+    <geneClass>Gene_Bloodfeeder</geneClass>
+    <prerequisite>SG_VitalEssence</prerequisite>
+    <displayCategory>Hemogen</displayCategory>
+    <displayOrderInCategory>-1</displayOrderInCategory>
+    <abilities>
+      <li>Bloodfeed</li>
+    </abilities>
+    <biostatMet>-1</biostatMet>
+    <minAgeActive>3</minAgeActive>
+  </GeneDef>
+
+</Defs>

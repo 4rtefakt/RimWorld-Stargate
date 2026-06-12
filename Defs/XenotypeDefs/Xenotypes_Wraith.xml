@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Xénotype Wraith : humanoïdes pâles, grands et puissants, qui se
+       nourrissent de la force vitale humaine, régénèrent leurs blessures
+       et vivent extrêmement longtemps.
+       Icône = placeholder vanilla (Sanguophage) en attendant l'art dédié. -->
+  <XenotypeDef>
+    <defName>SG_Wraith</defName>
+    <label>wraith</label>
+    <description>Race extraterrestre humanoïde d'une galaxie lointaine, les Wraith se nourrissent de la force vitale des êtres humains grâce à un organe situé dans la paume de la main. Grands, pâles et d'une force redoutable, ils régénèrent leurs blessures en se nourrissant et peuvent vivre des milliers d'années. Leur faim est insatiable.</description>
+    <iconPath>UI/Icons/Xenotypes/Sanguophage</iconPath>
+    <combatPowerFactor>2.0</combatPowerFactor>
+    <factionlessGenerationWeight>0</factionlessGenerationWeight>
+    <genes>
+      <!-- Signature re-skinnée -->
+      <li>SG_VitalEssence</li>
+      <li>SG_LifeDrain</li>
+      <!-- Apparence : grand, pâle, cheveux blancs -->
+      <li>Body_Hulk</li>
+      <li>Skin_SheerWhite</li>
+      <li>Hair_SnowWhite</li>
+      <!-- Physiologie : puissant, régénérant, robuste, longévité -->
+      <li>MeleeDamage_Strong</li>
+      <li>AptitudeStrong_Melee</li>
+      <li>WoundHealing_SuperFast</li>
+      <li>Robust</li>
+      <li>Immunity_Strong</li>
+      <li>Ageless</li>
+      <li>DarkVision</li>
+      <li>MoveSpeed_Quick</li>
+      <li>PsychicAbility_Enhanced</li>
+      <li>Aggression_Aggressive</li>
+    </genes>
+  </XenotypeDef>
+
+</Defs>
