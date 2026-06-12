@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Gène de la Reine Goa'uld : ponte périodique de larves (Gene_GoauldBrooder).
+       Icône = placeholder vanilla. -->
+  <GeneDef>
+    <defName>SG_QueenBrooder</defName>
+    <label>matriarche goa'uld</label>
+    <description>Cette lignée goa'uld est capable d'engendrer de nouvelles larves de symbiote. Une reine produit périodiquement une larve, à condition d'être en vie, valide et bien nourrie.</description>
+    <geneClass>Stargate.Gene_GoauldBrooder</geneClass>
+    <iconPath>UI/Icons/Genes/Gene_XenogermReimplanter</iconPath>
+    <displayCategory>Archite</displayCategory>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>-2</biostatMet>
+    <minAgeActive>3</minAgeActive>
+  </GeneDef>
+
+</Defs>

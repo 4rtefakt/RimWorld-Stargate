@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Reine Goa'uld : variante goa'uld capable d'engendrer des larves.
+       Source des larves du cycle du symbiote. Icône = placeholder vanilla. -->
+  <XenotypeDef>
+    <defName>SG_GoauldQueen</defName>
+    <label>reine goa'uld</label>
+    <description>Une reine goa'uld : matriarche d'une lignée, capable d'engendrer des larves de symbiote pour la perpétuer. Comme tout goa'uld, elle possède la mémoire génétique de ses ancêtres, est quasi immortelle et se régénère dans un sarcophage. Capturer une reine vivante, c'est s'assurer une source de symbiotes.</description>
+    <iconPath>UI/Icons/Xenotypes/Sanguophage</iconPath>
+    <combatPowerFactor>1.8</combatPowerFactor>
+    <factionlessGenerationWeight>0</factionlessGenerationWeight>
+    <genes>
+      <li>SG_QueenBrooder</li>
+      <li>SG_SarcophagusRegen</li>
+      <li>Deathless</li>
+      <li>Ageless</li>
+      <li>Eyes_Red</li>
+      <li>Beauty_Pretty</li>
+      <li>AptitudeStrong_Intellectual</li>
+      <li>AptitudeStrong_Social</li>
+      <li>Immunity_Strong</li>
+      <li>Aggression_Aggressive</li>
+    </genes>
+  </XenotypeDef>
+
+</Defs>
