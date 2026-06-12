@@ -181,4 +181,92 @@
     </projectile>
   </ThingDef>
 
+  <!-- ===================== KARA KESH (main goa'uld) ===================== -->
+  <ThingDef ParentName="BaseGunWithQuality">
+    <defName>SG_KaraKesh</defName>
+    <label>kara kesh</label>
+    <smeltable>false</smeltable>
+    <description>Le « ruban de mort » goa'uld : un dispositif porté sur la main qui projette une violente onde d'énergie à courte portée, capable de repousser et de brûler une cible. Symbole du pouvoir des seigneurs goa'uld.</description>
+    <techLevel>Spacer</techLevel>
+    <recipeMaker>
+      <researchPrerequisite>SG_StargateArsenal</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <displayPriority>540</displayPriority>
+    </recipeMaker>
+    <costList>
+      <Gold>30</Gold>
+      <Plasteel>20</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/ChargeRifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <statBases>
+      <Mass>0.8</Mass>
+      <AccuracyTouch>0.85</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.40</AccuracyMedium>
+      <AccuracyLong>0.20</AccuracyLong>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+      <MarketValue>900</MarketValue>
+      <WorkToMake>30000</WorkToMake>
+    </statBases>
+    <weaponTags>
+      <li>SG_GoauldWeapon</li>
+    </weaponTags>
+    <tradeTags>
+      <li>WeaponRanged</li>
+    </tradeTags>
+    <weaponClasses>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_SG_KaraKesh</defaultProjectile>
+        <warmupTime>0.9</warmupTime>
+        <range>9.9</range>
+        <soundCast>Shot_ChargeRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>8</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>poing</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_SG_KaraKesh</defName>
+    <label>onde de choc</label>
+    <graphicData>
+      <texPath>Things/Projectile/ChargeLanceShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>1.3</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>22</damageAmountBase>
+      <armorPenetrationBase>0.30</armorPenetrationBase>
+      <stoppingPower>3</stoppingPower>
+      <speed>50</speed>
+    </projectile>
+  </ThingDef>
+
 </Defs>

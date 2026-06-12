@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Rend le naquadah obtenable : raffinage à partir de chemfuel + composant.
+       Gâté par la recherche Technologie Stargate. -->
+  <RecipeDef>
+    <defName>SG_RefineNaquadah</defName>
+    <label>raffiner du naquadah</label>
+    <description>Raffine du naquadah brut à partir de chemfuel et de composants, en concentrant l'énergie dans un minerai dense.</description>
+    <jobString>Raffinage de naquadah.</jobString>
+    <workAmount>4000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <effectWorking>Smith</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chemfuel</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Chemfuel</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <SG_Naquadah>10</SG_Naquadah>
+    </products>
+    <researchPrerequisite>SG_StargateTech</researchPrerequisite>
+    <recipeUsers>
+      <li>TableMachining</li>
+    </recipeUsers>
+  </RecipeDef>
+
+</Defs>
