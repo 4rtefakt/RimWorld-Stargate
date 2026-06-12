@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Noms de faction goa'uld : "Empire d'Apophis", "Dominion de Ra", etc.
+       Auto-contenu (aucun rulesFiles externe). -->
+  <RulePackDef>
+    <defName>SG_NamerFactionGoauld</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->[union] de [lord]</li>
+        <li>r_name->[union] d'[lordVoyelle]</li>
+        <li>r_name->[adjectif] [union] de [lord]</li>
+        <li>r_name->[lord] et son [union]</li>
+
+        <li>lord->Ra</li>
+        <li>lord->Apophis</li>
+        <li>lord->Anubis</li>
+        <li>lord->Sokar</li>
+        <li>lord->Cronos</li>
+        <li>lord->Ba'al</li>
+        <li>lord->Maître Yu</li>
+        <li>lord->Hathor</li>
+        <li>lord->Nirrti</li>
+        <li>lord->Heru'ur</li>
+        <li>lord->Camulus</li>
+        <li>lord->Moloc</li>
+
+        <li>lordVoyelle->Apophis</li>
+        <li>lordVoyelle->Anubis</li>
+        <li>lordVoyelle->Osiris</li>
+        <li>lordVoyelle->Imhotep</li>
+
+        <li>union->Empire</li>
+        <li>union->Dominion</li>
+        <li>union->Domaine</li>
+        <li>union->Règne</li>
+        <li>union->Trône</li>
+
+        <li>adjectif->Divin</li>
+        <li>adjectif->Éternel</li>
+        <li>adjectif->Glorieux</li>
+        <li>adjectif->Grand</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Noms de colonie goa'uld : syllabes type "Chulak", "Dakara", "Netu". -->
+  <RulePackDef>
+    <defName>SG_NamerSettlementGoauld</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=2)->[syl][sylFin]</li>
+        <li>r_name->[syl][syl][sylFin]</li>
+        <li>r_name->[syl][sylFin] Prime</li>
+
+        <li>syl->Chu</li>
+        <li>syl->Da</li>
+        <li>syl->Ne</li>
+        <li>syl->Tar</li>
+        <li>syl->Aby</li>
+        <li>syl->Del</li>
+        <li>syl->Ju</li>
+        <li>syl->Ke</li>
+        <li>syl->Pra</li>
+        <li>syl->Vor</li>
+        <li>syl->Tol</li>
+        <li>syl->Cas</li>
+
+        <li>sylFin->lak</li>
+        <li>sylFin->kara</li>
+        <li>sylFin->tu</li>
+        <li>sylFin->dos</li>
+        <li>sylFin->mac</li>
+        <li>sylFin->nai</li>
+        <li>sylFin->vanc</li>
+        <li>sylFin->ash</li>
+        <li>sylFin->ren</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>
