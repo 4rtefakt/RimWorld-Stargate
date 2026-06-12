@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Équipement Stargate. ParentName ApparelBase (qualité, non craftable pour
+       l'instant). Textures portées = placeholders vanilla, catégorie ApparelMisc
+       (sûre). Armures avec stats absolues. Art + recettes dédiés plus tard. -->
+
+  <!-- ===================== GARDE JAFFA : ARMURE ===================== -->
+  <ThingDef ParentName="ApparelBase">
+    <defName>SG_JaffaArmor</defName>
+    <label>armure de garde jaffa</label>
+    <description>Lourde armure cérémonielle des gardes serpent au service des Goa'uld. Conçue pour le combat rapproché et l'intimidation, elle offre une excellente protection au prix de la mobilité.</description>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>220</MaxHitPoints>
+      <Mass>9</Mass>
+      <ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.42</ArmorRating_Heat>
+      <Insulation_Cold>14</Insulation_Cold>
+      <EquipDelay>5</EquipDelay>
+      <MarketValue>900</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.18</MoveSpeed>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags>
+        <li>SG_JaffaGear</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+  </ThingDef>
+
+  <!-- ===================== GARDE JAFFA : CASQUE SERPENT ===================== -->
+  <ThingDef ParentName="ApparelBase">
+    <defName>SG_JaffaHelmet</defName>
+    <label>casque serpent jaffa</label>
+    <description>Casque cérémoniel en forme de tête de serpent porté par les gardes d'élite des Goa'uld. Rétractable au combat, il protège intégralement la tête.</description>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/AdvancedHelmet/AdvancedHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Mass>2.5</Mass>
+      <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.38</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.40</ArmorRating_Heat>
+      <Insulation_Cold>3</Insulation_Cold>
+      <EquipDelay>2</EquipDelay>
+      <MarketValue>450</MarketValue>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/AdvancedHelmet/AdvancedHelmet</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>SG_JaffaGear</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+  </ThingDef>
+
+  <!-- ===================== ROBE GOA'ULD ===================== -->
+  <ThingDef ParentName="ApparelBase">
+    <defName>SG_GoauldRobe</defName>
+    <label>parure goa'uld</label>
+    <description>Riche parure d'apparat portée par les Goa'uld qui se posent en dieux. Conçue pour impressionner plus que pour protéger, elle dégage une aura d'autorité.</description>
+    <techLevel>Spacer</techLevel>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Robe/Robe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <Mass>2</Mass>
+      <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+      <Insulation_Cold>16</Insulation_Cold>
+      <Insulation_Heat>4</Insulation_Heat>
+      <EquipDelay>2</EquipDelay>
+      <MarketValue>700</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <SocialImpact>0.20</SocialImpact>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+        <li>Legs</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Robe/Robe</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags>
+        <li>SG_GoauldGear</li>
+      </tags>
+    </apparel>
+  </ThingDef>
+
+  <!-- ===================== UNIFORME SGC (TAU'RI) ===================== -->
+  <ThingDef ParentName="ApparelBase">
+    <defName>SG_SGCUniform</defName>
+    <label>uniforme du SGC</label>
+    <description>Treillis militaire standard des équipes SG du Stargate Command. Robuste et fonctionnel, il offre une protection modérée adaptée aux missions d'exploration.</description>
+    <techLevel>Industrial</techLevel>
+    <thingCategories>
+      <li>ApparelMisc</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/FlakJacket/FlakJacket</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>2.5</Mass>
+      <ArmorRating_Sharp>0.30</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+      <Insulation_Cold>10</Insulation_Cold>
+      <EquipDelay>2</EquipDelay>
+      <MarketValue>320</MarketValue>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Arms</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/FlakJacket/FlakJacket</wornGraphicPath>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags>
+        <li>SG_TauriGear</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+  </ThingDef>
+
+</Defs>
