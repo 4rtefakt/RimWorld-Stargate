@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Régénération en sarcophage = re-skin du gène Deathrest.
+       Réutilise geneClass Gene_Deathrest (mécanique éprouvée) MAIS sans le
+       prérequis Hemogenic du gène vanilla : les Goa'uld n'ont pas de ressource
+       sanguine, ils dépendent du sarcophage pour se régénérer périodiquement.
+       Active le besoin vanilla "Deathrest" (le besoin garde son libellé vanilla
+       pour l'instant ; re-skin complet de l'UI = tâche Harmony ultérieure). -->
+  <GeneDef>
+    <defName>SG_SarcophagusRegen</defName>
+    <label>régénération en sarcophage</label>
+    <description>Les Goa'uld doivent périodiquement régénérer leur corps dans un sarcophage, une longue stase réparatrice qui confère ensuite des bonus substantiels. Ceux qui repoussent trop longtemps cette régénération s'affaiblissent dangereusement.</description>
+    <geneClass>Gene_Deathrest</geneClass>
+    <iconPath>UI/Icons/Genes/Gene_Deathrest</iconPath>
+    <displayCategory>Archite</displayCategory>
+    <enablesNeeds>
+      <li>Deathrest</li>
+    </enablesNeeds>
+    <biostatMet>6</biostatMet>
+    <minAgeActive>3</minAgeActive>
+  </GeneDef>
+
+</Defs>

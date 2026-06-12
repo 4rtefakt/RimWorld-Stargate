@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Sarcophage Goa'uld = re-skin du caisson de deathrest vanilla.
+       Réutilise les comps Biotech (CompAssignableToPawn_DeathrestCasket,
+       CompProperties_DeathrestBindable) pour fournir la mécanique de
+       régénération. Utilisable par les porteurs de SG_SarcophagusRegen.
+       Texture = placeholder vanilla (caisson de deathrest) ; art doré dédié plus tard.
+       Coût en naquadah à ajouter quand le naquadah sera récoltable. -->
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>SG_Sarcophagus</defName>
+    <label>sarcophage</label>
+    <description>Un sarcophage Goa'uld : une chambre de stase capable de régénérer et même de ressusciter son occupant. Seuls les Goa'uld (porteurs du gène de régénération) peuvent l'utiliser pour effectuer leur régénération périodique.</description>
+    <thingClass>Building_Bed</thingClass>
+    <tickerType>Rare</tickerType>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>42</pathCost>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <canOverlapZones>false</canOverlapZones>
+    <passability>PassThroughOnly</passability>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <thingCategories Inherit="False">
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Building/Misc/DeathrestCasket/DeathrestCasket</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <building>
+      <bed_showSleeperBody>true</bed_showSleeperBody>
+      <ai_chillDestination>false</ai_chillDestination>
+      <bed_healPerDay>8</bed_healPerDay>
+      <bed_canBeMedical>false</bed_canBeMedical>
+      <bed_DisplayOwnerType>false</bed_DisplayOwnerType>
+      <bed_DisplayOwnersInInspectString>false</bed_DisplayOwnersInInspectString>
+      <bed_countsForBedroomOrBarracks>false</bed_countsForBedroomOrBarracks>
+      <buildingTags>
+        <li>Bed</li>
+      </buildingTags>
+    </building>
+    <designationCategory>Furniture</designationCategory>
+    <uiOrder>2100</uiOrder>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>3500</WorkToBuild>
+      <Mass>80</Mass>
+      <Flammability>0.3</Flammability>
+      <Beauty>10</Beauty>
+      <BedRestEffectiveness>1</BedRestEffectiveness>
+      <Comfort>0.8</Comfort>
+      <ImmunityGainSpeedFactor>1.1</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+    </statBases>
+    <size>(1,2)</size>
+    <costList>
+      <Steel>120</Steel>
+      <Gold>40</Gold>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_DeathrestCasket</compClass>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+        <idlePowerDraw>0</idlePowerDraw>
+        <alwaysDisplayAsUsingPower>true</alwaysDisplayAsUsingPower>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_DeathrestBindable">
+        <stackLimit>1</stackLimit>
+        <countsTowardsBuildingLimit>false</countsTowardsBuildingLimit>
+        <deathrestEffectivenessFactor>1.2</deathrestEffectivenessFactor>
+        <mustBeLayingInToBind>true</mustBeLayingInToBind>
+        <displayTimeActive>false</displayTimeActive>
+        <soundStart>DeathrestCasket_Enter</soundStart>
+        <soundEnd>DeathrestCasket_Exit</soundEnd>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_DrawLinesToDeathrestBuildings</li>
+    </placeWorkers>
+  </ThingDef>
+
+</Defs>

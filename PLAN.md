@@ -149,7 +149,7 @@ Mécanique signature qui **lie Jaffa et Goa'uld**. Dirigée par le joueur (chiru
 
 ### Étape 1 — Races & mécaniques *(xénotypes Biotech — voir §4.5 et §4.6)*
 - [ ] Gènes custom (force Jaffa, intellect Asgard, naquadah, etc.).
-- [ ] **Wraith** : xénotype re-skinnant **Hemogenic + Bloodfeeder** en « force vitale » — ~XML.
+- [x] **Wraith** : xénotype `SG_Wraith` re-skinnant **Hemogenic → « essence vitale »** + **Bloodfeeder → « drain de vie »** (gènes `SG_VitalEssence`, `SG_LifeDrain`). Charge sans erreur. *(reste : tester le comportement du drain en partie + art dédié.)*
 - [ ] **Jaffa** : xénotype + hediff « prim'ta » comme besoin vital (lié au cycle §4.6).
 - [ ] **Goa'uld** : xénotype re-skinnant **Deathrest** (→ sarcophage) **+ Deathless** ; part Harmony si UI 100 % thématique.
 - [ ] Autres xénotypes : Tau'ri, Asgard, Unas, Tok'ra.

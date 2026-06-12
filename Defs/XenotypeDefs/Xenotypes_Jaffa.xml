@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Jaffa : guerriers humains au service des Goa'uld, porteurs d'un
+       symbiote (prim'ta) qui leur donne force et immunité.
+       NOTE: la dépendance au symbiote (hediff prim'ta) sera ajoutée avec
+       le cycle de vie du symbiote (§4.6 du PLAN). Ici = xénotype guerrier de base.
+       Icône = placeholder vanilla (Hussar). -->
+  <XenotypeDef>
+    <defName>SG_Jaffa</defName>
+    <label>jaffa</label>
+    <description>Guerriers humains génétiquement adaptés au service des Goa'uld. Les Jaffa abritent un symbiote larvaire dans une poche abdominale, ce qui leur confère une force et une immunité hors du commun. Soldats disciplinés et redoutables, ils manient le bâton à plasma aussi bien au corps à corps qu'à distance.</description>
+    <iconPath>UI/Icons/Xenotypes/Hussar</iconPath>
+    <combatPowerFactor>1.4</combatPowerFactor>
+    <factionlessGenerationWeight>0</factionlessGenerationWeight>
+    <genes>
+      <li>Body_Standard</li>
+      <li>MeleeDamage_Strong</li>
+      <li>AptitudeRemarkable_Melee</li>
+      <li>AptitudeRemarkable_Shooting</li>
+      <li>Robust</li>
+      <li>Immunity_Strong</li>
+      <li>WoundHealing_Fast</li>
+      <li>Pain_Reduced</li>
+    </genes>
+  </XenotypeDef>
+
+</Defs>
