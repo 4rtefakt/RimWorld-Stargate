@@ -1,0 +1,15 @@
+# --- Build C# ---
+Source/**/bin/
+Source/**/obj/
+*.user
+*.suo
+
+# Le DLL est un artefact de build, reconstruit depuis Source/ vers Assemblies/.
+Assemblies/*.dll
+Assemblies/*.pdb
+Assemblies/*.deps.json
+
+# --- OS / éditeurs ---
+Thumbs.db
+.DS_Store
+.vs/

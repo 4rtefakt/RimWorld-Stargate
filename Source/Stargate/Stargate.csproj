@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>Stargate</AssemblyName>
+    <RootNamespace>Stargate</RootNamespace>
+    <Nullable>disable</Nullable>
+    <Deterministic>true</Deterministic>
+
+    <!-- Le DLL compilé va directement dans le dossier Assemblies/ du mod (lu par RimWorld). -->
+    <OutputPath>$(MSBuildProjectDirectory)\..\..\Assemblies\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutDir>$(OutputPath)</OutDir>
+
+    <!-- Garder Assemblies/ propre : pas de .pdb, .deps.json, ni copie des refs (fournies par le jeu). -->
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Assemblies de référence RimWorld 1.6 (Assembly-CSharp, Unity, etc.) — compile-time uniquement. -->
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*" />
+    <!-- Permet de compiler net472 avec juste le .NET SDK (sans installer le targeting pack). -->
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>
