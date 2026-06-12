@@ -159,14 +159,14 @@ Mécanique signature qui **lie Jaffa et Goa'uld**. Dirigée par le joueur (chiru
 > 2. **Jaffa + Goa'uld** xénotypes qui se chargent et se jouent.
 > 3. **Cycle du symbiote + Reine** branché par-dessus des races déjà fonctionnelles.
 
-### Étape 2 — Équipement, armes, factions, idéologie *(en cours)*
-- [~] Ressource naquadah : item `SG_Naquadah` existe. *Reste : minerai à miner, raffinage, recherche.*
-- [~] Armes : **bâton `SG_StaffWeapon`** + **zat `SG_Zat`** FAITS (pur XML). *Reste : kara kesh ; zat « stun→kill » fidèle (C#).*
-- [x] Armures & apparel : **armure + casque jaffa, robe goa'uld, uniforme SGC**.
-- [~] Bâtiments : **sarcophage** FAIT. *Reste : générateur à naquadah, bouclier, anneaux.*
-- [~] FactionDefs + PawnKindDefs : **Grands Maîtres Goa'uld `SG_SystemLords`** (ennemi permanent) + pawnkinds **guerrier jaffa** & **seigneur goa'uld** FAITS. *Reste : Tau'ri/SGC, Tok'ra, Asgard, Jaffa libres.*
-- [ ] Memes/precepts Ideology (culte Goa'uld, prim'ta) — **prochain gros morceau, à faire après le test**.
-- [ ] Recettes de craft + arbre de recherche Stargate (pour rendre armes/armures/sarcophage fabricables par le joueur).
+### Étape 2 — Équipement, armes, factions, idéologie *(quasi complète)*
+- [x] Ressource naquadah : `SG_Naquadah` + **recette de raffinage** `SG_RefineNaquadah` (chemfuel→naquadah, gâtée recherche). *Reste optionnel : minerai à miner.*
+- [x] Armes : **bâton `SG_StaffWeapon`**, **zat `SG_Zat`**, **kara kesh `SG_KaraKesh`** — toutes craftables. *Reste : zat « stun→kill » fidèle (C#).*
+- [x] Armures & apparel : **armure + casque jaffa** (craftables), **robe goa'uld, uniforme SGC**.
+- [~] Bâtiments : **sarcophage** `SG_Sarcophagus` (gâté `SG_GoauldTech`). *Reste : générateur à naquadah, bouclier, anneaux.*
+- [~] FactionDefs + PawnKindDefs : **Grands Maîtres Goa'uld `SG_SystemLords`** (ennemi permanent, noms goa'uld, chef OK) + pawnkinds **guerrier jaffa** & **seigneur goa'uld**. *Reste : Tau'ri/SGC, Tok'ra, Asgard, Jaffa libres.*
+- [x] **Arbre de recherche Stargate** : `SG_StargateTech` → `SG_StargateArsenal` / `SG_GoauldTech` + recettes de craft.
+- [~] Idéologie : **meme `SG_GoauldWorship`** (version minimale sûre). *Reste : precepts + rituel prim'ta (passe testée).*
 
 ### Étape 3 — Vaisseaux (gravships) par race
 - [ ] Construits sur la mécanique **gravship vanilla d'Odyssey** (pas sur VGE non sorti).
