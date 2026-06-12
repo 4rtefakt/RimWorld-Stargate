@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Meme « culte des Goa'uld » — version minimale et sûre (flavor + icône
+       placeholder vanilla, AUCUNE référence de precept externe pour ne pas
+       risquer la génération d'idéologie). Les rituels (prim'ta) et precepts
+       dédiés viendront dans une passe testée. -->
+  <MemeDef>
+    <defName>SG_GoauldWorship</defName>
+    <label>culte des goa'uld</label>
+    <description>Les Goa'uld sont de véritables dieux, et leur volonté fait loi. Les fidèles vénèrent leurs seigneurs god-kings, se soumettent à leur autorité divine et méprisent quiconque nie leur divinité.</description>
+    <iconPath>UI/Memes/Supremacist</iconPath>
+    <groupDef>Misc</groupDef>
+    <impact>3</impact>
+    <renderOrder>90</renderOrder>
+    <generalRules>
+      <rulesStrings>
+        <li>memeAdjective->divin</li>
+        <li>memeAdjective->serpentin</li>
+        <li>memeConcept->la divinité des Goa'uld</li>
+        <li>memeCreed->culte</li>
+        <li>memeLeaderNoun->grand maître</li>
+        <li>memeLeaderAdjective->divin</li>
+        <li>memeMoralist->prêtre</li>
+      </rulesStrings>
+    </generalRules>
+  </MemeDef>
+
+</Defs>
