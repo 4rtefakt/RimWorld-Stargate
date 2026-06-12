@@ -42,6 +42,7 @@
     <defName>SG_GoauldLord</defName>
     <label>seigneur goa'uld</label>
     <combatPower>180</combatPower>
+    <factionLeader>true</factionLeader>
     <xenotypeSet>
       <xenotypeChances>
         <SG_Goauld>999</SG_Goauld>

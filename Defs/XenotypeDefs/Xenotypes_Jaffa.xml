@@ -16,12 +16,11 @@
     <genes>
       <li>Body_Standard</li>
       <li>MeleeDamage_Strong</li>
-      <li>AptitudeRemarkable_Melee</li>
-      <li>AptitudeRemarkable_Shooting</li>
+      <li>AptitudeStrong_Melee</li>
+      <li>AptitudeStrong_Shooting</li>
       <li>Robust</li>
       <li>Immunity_Strong</li>
       <li>WoundHealing_Fast</li>
-      <li>Pain_Reduced</li>
     </genes>
   </XenotypeDef>
 
