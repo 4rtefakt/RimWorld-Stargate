@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <!-- Def de test Phase 0 : prouve que le XML du mod se charge en jeu.
-       Texture placeholder = réutilise celle du plasteel vanilla (art dédié plus tard). -->
+  <!-- Naquadah : ressource énergétique de base de la technologie Goa'uld.
+       Obtenable via la recette de raffinage (voir Recipes_Naquadah.xml).
+       Texture = placeholder vanilla (plasteel) ; art dédié plus tard. -->
   <ThingDef ParentName="ResourceBase">
     <defName>SG_Naquadah</defName>
     <label>naquadah</label>

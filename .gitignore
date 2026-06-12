@@ -4,8 +4,8 @@ Source/**/obj/
 *.user
 *.suo
 
-# Le DLL est un artefact de build, reconstruit depuis Source/ vers Assemblies/.
-Assemblies/*.dll
+# Le DLL compilé EST livré (le dépôt est directement jouable). On ignore juste
+# les fichiers de debug/déps annexes.
 Assemblies/*.pdb
 Assemblies/*.deps.json
 

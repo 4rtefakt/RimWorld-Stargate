@@ -1,34 +1,42 @@
 # Stargate — Mod RimWorld 1.6
 
-Mod sur l'univers Stargate. Voir [PLAN.md](PLAN.md) pour le plan complet (races, équipement, factions, vaisseaux, quêtes).
+Un mod qui apporte l'univers de **Stargate** dans RimWorld : races, équipement, factions, idéologie, et (à venir) vaisseaux et quêtes.
 
-**Le dossier du dépôt EST le mod** (il contient `About/`, `Defs/`, `Assemblies/`…). Le sous-dossier `Source/` (code C#) n'est pas lu par RimWorld.
+> **DLC requis :** Biotech, Ideology, Odyssey · **RimWorld 1.6**
 
-## Prérequis
-- RimWorld **1.6** + DLC **Biotech**, **Ideology**, **Odyssey** (installés ✓).
-- **.NET SDK** (8 ou +) pour compiler le C# — `dotnet build`.
-- **git** ✓.
+## Contenu
+
+- **8 races jouables** (xénotypes) : Tau'ri, Jaffa, Goa'uld, Reine Goa'uld, Tok'ra, Asgard, Unas, Wraith.
+- **Cycle de vie du symbiote Goa'uld** : larves fragiles, implantation dans les Jaffa, maturation, prise de contrôle d'un hôte, reine pondeuse.
+- **Armes** : bâton jaffa, zat'nik'tel, kara kesh.
+- **Équipement** : armure et casque de garde serpent, parure goa'uld, uniforme du SGC.
+- **Bâtiments & ressources** : sarcophage régénérateur, naquadah, arbre de recherche Stargate.
+- **Faction** hostile des Grands Maîtres Goa'uld et de leurs Jaffa.
+- **Idéologie** : culte des Goa'uld.
+
+### En développement
+Vaisseaux (gravships) par race, armes de vaisseau, système de quêtes vers une cité légendaire.
+
+> ℹ️ Les textures sont pour l'instant des **placeholders** réutilisant des assets vanilla ; l'art dédié viendra.
+
+## Installation
+
+1. Télécharger la dernière [release](../../releases) et extraire le dossier dans `RimWorld/Mods/`.
+2. Activer **Stargate** dans la liste des mods (après les DLC).
+
+## Compiler depuis les sources
+
+Le dépôt **est** le mod. Le code C# est dans `Source/` (non lu par RimWorld).
+
+```
+dotnet build Source/Stargate/Stargate.csproj -c Release
+```
+Le DLL est généré dans `Assemblies/Stargate.dll`.
 
 ## Structure
 ```
-About/          métadonnées du mod (About.xml)
-Defs/           contenu XML (items, gènes, xénotypes, factions…)
-Assemblies/     DLL compilée (générée depuis Source/, ignorée par git)
-Source/         code C# + .csproj (non livré au joueur)
-Textures/       PNG (placeholders pour l'instant)
+About/        métadonnées du mod
+Defs/         contenu XML (races, armes, factions, recherche…)
+Assemblies/   DLL compilée
+Source/       code C# + .csproj (non livré au jeu)
 ```
-
-## Compiler
-```powershell
-dotnet build Source/Stargate/Stargate.csproj -c Release
-```
-Le DLL `Stargate.dll` est écrit directement dans `Assemblies/`.
-
-## Tester en jeu
-Lier le dépôt dans le dossier `Mods` de RimWorld (jonction, ne demande pas les droits admin) :
-```powershell
-New-Item -ItemType Junction `
-  -Path "C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Stargate" `
-  -Target "C:\Users\kores\repos\rimworld-sg1"
-```
-Puis : lancer RimWorld → activer **Stargate** dans la liste des mods (après les DLC) → vérifier dans le log (`Ctrl+F12` ou le dossier Player.log) le message `[Stargate] Assembly chargée` et la présence de l'objet **naquadah** (dev mode → spawn).

@@ -6,11 +6,21 @@
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
-  <description>Mod sur l'univers de Stargate : races, équipement, factions, idéologie, vaisseaux (gravships) et quêtes.
+  <description>Un mod qui apporte l'univers de Stargate dans RimWorld.
 
-Requiert les DLC Biotech, Ideology et Odyssey.
+CONTENU
+- 8 races jouables (xénotypes) : Tau'ri, Jaffa, Goa'uld, Reine Goa'uld, Tok'ra, Asgard, Unas et Wraith.
+- Cycle de vie du symbiote Goa'uld : larves fragiles, implantation dans les Jaffa, maturation, prise de contrôle d'un hôte, et reine pondeuse.
+- Armes : bâton jaffa, zat'nik'tel, kara kesh.
+- Équipement : armure et casque de garde serpent, parure goa'uld, uniforme du SGC.
+- Sarcophage régénérateur, naquadah, et un arbre de recherche Stargate qui rend le contenu fabricable.
+- Faction hostile des Grands Maîtres Goa'uld et de leurs armées de Jaffa.
+- Idéologie : culte des Goa'uld.
 
-[Phase 0 — squelette en cours de développement]</description>
+EN DÉVELOPPEMENT
+- Vaisseaux (gravships) propres à chaque race, armes de vaisseau, et un système de quêtes vers une cité légendaire.
+
+Requiert les DLC Biotech, Ideology et Odyssey.</description>
   <modDependencies>
     <li>
       <packageId>Ludeon.RimWorld.Biotech</packageId>
