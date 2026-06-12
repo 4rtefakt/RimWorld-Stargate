@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Grands Maîtres Goa'uld : empire tyrannique, ennemi permanent.
+       Mire la faction pirate vanilla. Namers / loot / icônes = placeholders
+       vanilla (RulePacks dédiés plus tard). -->
+  <FactionDef ParentName="FactionBase">
+    <defName>SG_SystemLords</defName>
+    <label>grands maîtres goa'uld</label>
+    <description>Une coalition de Grands Maîtres Goa'uld et de leurs armées de Jaffa. Ces parasites se font passer pour des dieux et règnent par la terreur sur d'innombrables mondes. Technologiquement très avancés, ils asservissent les peuples qu'ils conquièrent et ne tolèrent aucune rébellion. Ils ne connaissent ni la pitié ni la paix avec ceux qui leur résistent.</description>
+    <pawnSingular>jaffa</pawnSingular>
+    <pawnsPlural>jaffas</pawnsPlural>
+    <listOrderPriority>15</listOrderPriority>
+    <settlementGenerationWeight>1</settlementGenerationWeight>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <canSiege>true</canSiege>
+    <canStageAttacks>true</canStageAttacks>
+    <leaderTitle>grand maître</leaderTitle>
+    <factionIconPath>World/WorldObjects/Expanding/PirateOutpost</factionIconPath>
+    <factionNameMaker>NamerFactionPirate</factionNameMaker>
+    <settlementNameMaker>NamerSettlementPirate</settlementNameMaker>
+    <colorSpectrum>
+      <li>(0.85, 0.7, 0.1)</li>
+      <li>(1, 0.9, 0.4)</li>
+    </colorSpectrum>
+    <permanentEnemy>true</permanentEnemy>
+    <techLevel>Spacer</techLevel>
+    <allowedCultures>
+      <li>Kriminul</li>
+    </allowedCultures>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Offworld</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
+    <raidLootMaker>PirateRaidLootMaker</raidLootMaker>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(70, 50)</li>
+        <li>(700, 100)</li>
+        <li>(1300, 150)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <SG_JaffaWarrior>10</SG_JaffaWarrior>
+          <SG_GoauldLord>2</SG_GoauldLord>
+        </options>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <SG_JaffaWarrior>10</SG_JaffaWarrior>
+          <SG_GoauldLord>3</SG_GoauldLord>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>70</configurationListOrderPriority>
+  </FactionDef>
+
+</Defs>
