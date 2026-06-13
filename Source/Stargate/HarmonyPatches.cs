@@ -52,4 +52,22 @@ namespace Stargate
             return null;
         }
     }
+
+    /// <summary>
+    /// Le sarcophage ne doit jamais servir de lit normal (sommeil/médical/prisonnier) :
+    /// sinon des pions vont s'y reposer et créent une double assignation qui plante
+    /// l'overlay des propriétaires. On l'exclut donc des lits utilisables. La régénération
+    /// (deathrest) passe par son propre chemin (CompDeathrestBindable) et n'est pas affectée.
+    /// </summary>
+    [HarmonyPatch(typeof(RestUtility), nameof(RestUtility.CanUseBedEver))]
+    public static class Patch_RestUtility_CanUseBedEver
+    {
+        public static void Postfix(ThingDef bedDef, ref bool __result)
+        {
+            if (__result && bedDef == SG_DefOf.SG_Sarcophagus)
+            {
+                __result = false;
+            }
+        }
+    }
 }

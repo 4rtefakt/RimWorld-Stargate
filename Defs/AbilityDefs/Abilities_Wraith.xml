@@ -8,7 +8,7 @@
     <defName>SG_LifeDrainAbility</defName>
     <label>drain de vie</label>
     <description>Aspire la force vitale d'un être humain par contact, reconstituant l'essence vitale du Wraith. La victime est durablement diminuée ; un second drain est fatal.</description>
-    <iconPath>UI/Abilities/Bloodfeed</iconPath>
+    <iconPath>UI/Icons/Genes/Gene_Bloodfeeder</iconPath>
     <cooldownTicksRange>2500</cooldownTicksRange>
     <hostile>true</hostile>
     <verbProperties>

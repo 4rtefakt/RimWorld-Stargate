@@ -26,6 +26,9 @@ namespace Stargate
         public static ThingDef SG_GoauldSymbiote;
         public static ThingDef SG_TokraSymbiote;
 
+        // Bâtiments
+        public static ThingDef SG_Sarcophagus;
+
         static SG_DefOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(SG_DefOf));
