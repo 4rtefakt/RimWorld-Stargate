@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       Backstories thématiques par race, câblées aux pawnkinds via
+       backstoryFiltersOverride. requiredWorkTags=Violent sur les races
+       guerrières => elles ne peuvent jamais être pacifistes.
+       (Les races sans pawnkind encore — Wraith, Asgard, Unas, Tau'ri —
+       auront leurs backstories quand leurs factions/pawnkinds existeront.)
+       ============================================================ -->
+
+  <!-- ===================== JAFFA ===================== -->
+  <BackstoryDef>
+    <defName>SG_Jaffa_Child_Garrison</defName>
+    <title>jeune jaffa</title>
+    <titleShort>jaffa</titleShort>
+    <description>Dès l'enfance, [PAWN_nameDef] fut élevé dans la garnison d'un Grand Maître, entraîné au maniement des armes et à la discipline guerrière. Porter un symbiote était pour [PAWN_objective] un honneur sacré.</description>
+    <slot>Childhood</slot>
+    <skillGains>
+      <Melee>3</Melee>
+      <Shooting>2</Shooting>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_JaffaChild</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_Jaffa_Adult_Guard</defName>
+    <title>garde serpent</title>
+    <titleShort>garde</titleShort>
+    <description>[PAWN_nameDef] servit comme garde serpent, l'élite guerrière au service d'un Goa'uld. Des années de combat ont fait de [PAWN_objective] un soldat redoutable, aussi à l'aise au bâton qu'au corps à corps.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Melee>5</Melee>
+      <Shooting>5</Shooting>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_JaffaAdult</li>
+    </spawnCategories>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_Jaffa_Adult_FirstPrime</defName>
+    <title>premier prime</title>
+    <titleShort>prime</titleShort>
+    <description>Premier Prime de son Grand Maître, [PAWN_nameDef] commandait les armées jaffa et portait la marque dorée du commandement. Stratège autant que combattant, [PAWN_pronoun] inspirait crainte et loyauté.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Melee>5</Melee>
+      <Shooting>4</Shooting>
+      <Social>3</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_JaffaAdult</li>
+    </spawnCategories>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_Jaffa_Adult_Trooper</defName>
+    <title>soldat jaffa</title>
+    <titleShort>soldat</titleShort>
+    <description>Simple soldat des rangs jaffa, [PAWN_nameDef] a passé sa vie en campagne, conquérant des mondes au nom d'un faux dieu. La survie lui a tout appris du combat et de la débrouille.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Shooting>5</Shooting>
+      <Melee>3</Melee>
+      <Construction>2</Construction>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_JaffaAdult</li>
+    </spawnCategories>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <!-- ===================== GOA'ULD ===================== -->
+  <BackstoryDef>
+    <defName>SG_Goauld_Child_Spawned</defName>
+    <title>né d'une reine</title>
+    <titleShort>goa'uld</titleShort>
+    <description>[PAWN_nameDef] vint au monde dans le bassin d'une reine goa'uld, héritant à la naissance de la mémoire génétique de toute sa lignée. [PAWN_pronoun] connaissait déjà mille mondes avant même d'avoir un hôte.</description>
+    <slot>Childhood</slot>
+    <skillGains>
+      <Intellectual>3</Intellectual>
+      <Social>2</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_GoauldChild</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_Goauld_Adult_SystemLord</defName>
+    <title>grand maître</title>
+    <titleShort>grand maître</titleShort>
+    <description>[PAWN_nameDef] régna comme Grand Maître, se faisant passer pour un dieu auprès de peuples asservis. Manipulateur né et fin tacticien, [PAWN_pronoun] ne reculait devant aucune cruauté pour étendre son empire.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Social>6</Social>
+      <Intellectual>5</Intellectual>
+      <Melee>3</Melee>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_GoauldAdult</li>
+    </spawnCategories>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_Goauld_Adult_Underlord</defName>
+    <title>seigneur goa'uld</title>
+    <titleShort>seigneur</titleShort>
+    <description>Au service d'un Grand Maître plus puissant, [PAWN_nameDef] administrait domaines et laboratoires, intriguant sans cesse pour gravir les échelons du panthéon goa'uld.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Intellectual>6</Intellectual>
+      <Social>4</Social>
+      <Medicine>3</Medicine>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_GoauldAdult</li>
+    </spawnCategories>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <!-- ===================== TOK'RA ===================== -->
+  <BackstoryDef>
+    <defName>SG_Tokra_Child_Tunnels</defName>
+    <title>né dans les tunnels</title>
+    <titleShort>tok'ra</titleShort>
+    <description>Issu de la lignée de la reine Egeria, [PAWN_nameDef] grandit dans les tunnels de cristal des Tok'ra, héritant de leur mémoire et de leur idéal : résister à la tyrannie des Goa'uld.</description>
+    <slot>Childhood</slot>
+    <skillGains>
+      <Intellectual>3</Intellectual>
+      <Medicine>2</Medicine>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_TokraChild</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_Tokra_Adult_Operative</defName>
+    <title>agent tok'ra</title>
+    <titleShort>agent</titleShort>
+    <description>Espion infiltré au cœur des cours goa'uld, [PAWN_nameDef] a risqué mille fois sa vie pour saboter les plans des Grands Maîtres. Discret, patient et cultivé, [PAWN_pronoun] sait frapper quand il le faut.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Intellectual>5</Intellectual>
+      <Social>4</Social>
+      <Shooting>3</Shooting>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_TokraAdult</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_Tokra_Adult_Sage</defName>
+    <title>sage tok'ra</title>
+    <titleShort>sage</titleShort>
+    <description>Détenteur du savoir de générations de Tok'ra, [PAWN_nameDef] a consacré sa longue existence à la science et à la médecine, cherchant à libérer la galaxie sans verser le sang inutilement.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Intellectual>7</Intellectual>
+      <Medicine>5</Medicine>
+      <Social>3</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_TokraAdult</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+</Defs>

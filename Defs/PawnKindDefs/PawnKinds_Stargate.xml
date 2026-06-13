@@ -20,6 +20,16 @@
       </xenotypeChances>
     </xenotypeSet>
     <useFactionXenotypes>false</useFactionXenotypes>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesChildhood>
+          <li>SG_JaffaChild</li>
+        </categoriesChildhood>
+        <categoriesAdulthood>
+          <li>SG_JaffaAdult</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
     <itemQuality>Normal</itemQuality>
     <gearHealthRange>0.5~1.2</gearHealthRange>
     <weaponMoney>1200~2000</weaponMoney>
@@ -49,6 +59,16 @@
       </xenotypeChances>
     </xenotypeSet>
     <useFactionXenotypes>false</useFactionXenotypes>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesChildhood>
+          <li>SG_GoauldChild</li>
+        </categoriesChildhood>
+        <categoriesAdulthood>
+          <li>SG_GoauldAdult</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
     <itemQuality>Excellent</itemQuality>
     <gearHealthRange>0.9~1.3</gearHealthRange>
     <weaponMoney>750~1100</weaponMoney>
@@ -74,6 +94,16 @@
       </xenotypeChances>
     </xenotypeSet>
     <useFactionXenotypes>false</useFactionXenotypes>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesChildhood>
+          <li>SG_GoauldChild</li>
+        </categoriesChildhood>
+        <categoriesAdulthood>
+          <li>SG_GoauldAdult</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
     <itemQuality>Excellent</itemQuality>
     <gearHealthRange>0.9~1.3</gearHealthRange>
     <weaponMoney>700~1000</weaponMoney>
@@ -103,6 +133,16 @@
       </xenotypeChances>
     </xenotypeSet>
     <useFactionXenotypes>false</useFactionXenotypes>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesChildhood>
+          <li>SG_TokraChild</li>
+        </categoriesChildhood>
+        <categoriesAdulthood>
+          <li>SG_TokraAdult</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
     <itemQuality>Good</itemQuality>
     <gearHealthRange>0.8~1.2</gearHealthRange>
     <apparelMoney>400~700</apparelMoney>
