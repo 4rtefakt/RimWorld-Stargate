@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- "Vie drainée" : séquelle permanente d'un drain de vie Wraith.
+       1er drain -> sévérité 0.5 : -30 % conscience, +20 % douleur.
+       2e drain  -> sévérité 1.0 : létal (lethalSeverity).
+       Pas de SeverityPerDay : l'état ne se résorbe pas tout seul. -->
+  <HediffDef>
+    <defName>SG_LifeDrained</defName>
+    <label>vie drainée</label>
+    <description>La force vitale de cette personne a été aspirée par un Wraith. Son organisme est durablement affaibli ; un nouveau drain l'achèverait.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.5, 0.2, 0.5)</defaultLabelColor>
+    <maxSeverity>1.0</maxSeverity>
+    <lethalSeverity>1.0</lethalSeverity>
+    <isBad>true</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <everCurableByItem>false</everCurableByItem>
+    <stages>
+      <li>
+        <minSeverity>0.5</minSeverity>
+        <label>partiellement drainée</label>
+        <painOffset>0.20</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.30</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>1.0</minSeverity>
+        <label>vidée</label>
+        <lifeThreatening>true</lifeThreatening>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

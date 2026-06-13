@@ -1,62 +1,81 @@
+using System.Collections.Generic;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace Stargate
 {
     /// <summary>
-    /// Gène de la Reine Goa'uld : produit périodiquement une larve de symbiote
-    /// si la reine est vivante, en forme et nourrie, et tant que le nombre de
-    /// larves déjà présentes sur la carte reste sous un plafond.
+    /// Gène de reine (goa'uld ou tok'ra) : pond périodiquement un symbiote tant
+    /// que la reine est vivante, valide et nourrie, et que le plafond sur la carte
+    /// n'est pas atteint. La cadence et le produit sont définis en XML via
+    /// <see cref="GeneExtension_Brooder"/> (donc trouvables sans dev mode).
     /// </summary>
     public class Gene_GoauldBrooder : Gene
     {
         private int ticksToNextLarva = -1;
 
-        private const int ProductionIntervalTicks = 480000; // ~8 jours
-        private const int MaxLarvaeOnMap = 6;
+        // Délai de re-tentative court quand la ponte est bloquée (faim, plafond…).
+        private const int RetryTicks = 2500;
+
+        private GeneExtension_Brooder Ext => def.GetModExtension<GeneExtension_Brooder>();
+
+        private int Interval => Ext?.productionIntervalTicks ?? 300000;
 
         public override void Tick()
         {
             base.Tick();
-            if (pawn == null || !pawn.Spawned)
-            {
-                return;
-            }
+            if (pawn == null || !pawn.Spawned) return;
+
             if (ticksToNextLarva < 0)
             {
-                ticksToNextLarva = ProductionIntervalTicks;
+                ticksToNextLarva = Interval;
             }
             ticksToNextLarva--;
             if (ticksToNextLarva <= 0)
             {
-                ticksToNextLarva = ProductionIntervalTicks;
-                TryProduceLarva();
+                // Réussite -> on repart pour un cycle complet ; échec -> re-tentative courte.
+                ticksToNextLarva = TryProduce() ? Interval : RetryTicks;
             }
         }
 
-        private void TryProduceLarva()
+        private bool TryProduce()
         {
-            if (pawn.Dead || pawn.Downed)
-            {
-                return;
-            }
-            if (pawn.needs?.food != null && pawn.needs.food.CurLevelPercentage < 0.3f)
-            {
-                return;
-            }
+            GeneExtension_Brooder ext = Ext;
+            if (ext?.product == null) return false;
+            if (pawn.Dead || pawn.Downed) return false;
+            if (pawn.needs?.food != null && pawn.needs.food.CurLevelPercentage < 0.3f) return false;
+
             Map map = pawn.MapHeld;
-            if (map == null)
+            if (map == null) return false;
+            if (map.listerThings.ThingsOfDef(ext.product).Count >= ext.maxOnMap) return false;
+
+            Thing produced = ThingMaker.MakeThing(ext.product);
+            GenPlace.TryPlaceThing(produced, pawn.PositionHeld, map, ThingPlaceMode.Near);
+            Messages.Message("SG_QueenProducedSymbiote".Translate(pawn.LabelShort, produced.LabelNoCount),
+                produced, MessageTypeDefOf.PositiveEvent, false);
+            return true;
+        }
+
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            foreach (Gizmo g in base.GetGizmos())
             {
-                return;
+                yield return g;
             }
-            if (map.listerThings.ThingsOfDef(SG_DefOf.SG_GoauldLarva).Count >= MaxLarvaeOnMap)
+
+            if (Prefs.DevMode)
             {
-                return;
+                int remaining = ticksToNextLarva < 0 ? Interval : ticksToNextLarva;
+                yield return new Command_Action
+                {
+                    defaultLabel = "DEV : pondre maintenant",
+                    defaultDesc = "Prochaine ponte dans " + Mathf.Max(0, remaining).ToStringTicksToPeriod()
+                                  + " (intervalle : " + Interval.ToStringTicksToPeriod() + ").",
+                    // Production immédiate (ne dépend pas du tick) pour pouvoir tester sur-le-champ.
+                    action = () => { TryProduce(); ticksToNextLarva = Interval; }
+                };
             }
-            Thing larva = ThingMaker.MakeThing(SG_DefOf.SG_GoauldLarva);
-            GenPlace.TryPlaceThing(larva, pawn.PositionHeld, map, ThingPlaceMode.Near);
-            Messages.Message("Une reine goa'uld a engendré une nouvelle larve de symbiote.",
-                larva, MessageTypeDefOf.PositiveEvent, false);
         }
 
         public override void ExposeData()

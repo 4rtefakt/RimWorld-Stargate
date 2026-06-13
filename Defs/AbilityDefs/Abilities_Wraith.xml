@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Capacité de drain de vie des Wraith. Cible un humain à courte portée :
+       rend 50 % de l'essence vitale au lanceur et inflige le hediff "vie drainée".
+       Icône/effets = placeholders vanilla (Bloodfeed). -->
+  <AbilityDef>
+    <defName>SG_LifeDrainAbility</defName>
+    <label>drain de vie</label>
+    <description>Aspire la force vitale d'un être humain par contact, reconstituant l'essence vitale du Wraith. La victime est durablement diminuée ; un second drain est fatal.</description>
+    <iconPath>UI/Abilities/Bloodfeed</iconPath>
+    <cooldownTicksRange>2500</cooldownTicksRange>
+    <hostile>true</hostile>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>1.9</range>
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetPawns>true</canTargetPawns>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Stargate.CompProperties_AbilityLifeDrain">
+        <essenceGainPct>0.5</essenceGainPct>
+        <firstDrainSeverity>0.5</firstDrainSeverity>
+        <secondDrainSeverity>1.0</secondDrainSeverity>
+      </li>
+    </comps>
+  </AbilityDef>
+
+</Defs>

@@ -24,6 +24,8 @@
   <ItemGroup>
     <!-- Assemblies de référence RimWorld 1.6 (Assembly-CSharp, Unity, etc.) — compile-time uniquement. -->
     <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*" />
+    <!-- Harmony : compile-time uniquement ; le runtime est fourni par le mod Harmony (brrainz.harmony). -->
+    <PackageReference Include="Lib.Harmony" Version="2.3.*" PrivateAssets="all" ExcludeAssets="runtime" />
     <!-- Permet de compiler net472 avec juste le .NET SDK (sans installer le targeting pack). -->
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
   </ItemGroup>

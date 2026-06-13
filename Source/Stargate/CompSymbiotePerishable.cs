@@ -4,27 +4,30 @@ using Verse;
 
 namespace Stargate
 {
-    public class CompProperties_GoauldLarva : CompProperties
+    public class CompProperties_SymbiotePerishable : CompProperties
     {
-        // Durée de vie d'une larve hors hôte avant qu'elle ne périsse.
+        // Durée de vie hors d'un hôte avant que le symbiote ne périsse.
         public float lifespanDays = 5f;
 
-        public CompProperties_GoauldLarva()
+        // Libellé affiché dans l'inspecteur (avant le temps restant).
+        public string survivalLabel = "Survie restante";
+
+        public CompProperties_SymbiotePerishable()
         {
-            compClass = typeof(CompGoauldLarva);
+            compClass = typeof(CompSymbiotePerishable);
         }
     }
 
     /// <summary>
-    /// Larve Goa'uld fragile : une fois hors d'un hôte, elle meurt si elle n'est
-    /// pas implantée dans un Jaffa avant la fin de sa durée de vie.
+    /// Symbiote fragile (larve ou adulte) : hors d'un hôte, il meurt s'il n'est
+    /// pas implanté avant la fin de sa durée de vie.
     /// (Nécessite tickerType="Rare" sur le ThingDef pour que CompTickRare tourne.)
     /// </summary>
-    public class CompGoauldLarva : ThingComp
+    public class CompSymbiotePerishable : ThingComp
     {
         private int ageTicks;
 
-        public CompProperties_GoauldLarva Props => (CompProperties_GoauldLarva)props;
+        public CompProperties_SymbiotePerishable Props => (CompProperties_SymbiotePerishable)props;
 
         private int LifespanTicks => Mathf.RoundToInt(Props.lifespanDays * GenDate.TicksPerDay);
 
@@ -43,12 +46,12 @@ namespace Stargate
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look(ref ageTicks, "SG_larvaAgeTicks", 0);
+            Scribe_Values.Look(ref ageTicks, "SG_symbioteAgeTicks", 0);
         }
 
         public override string CompInspectStringExtra()
         {
-            return "Survie restante : " + TicksRemaining.ToStringTicksToPeriod();
+            return Props.survivalLabel + " : " + TicksRemaining.ToStringTicksToPeriod();
         }
     }
 }

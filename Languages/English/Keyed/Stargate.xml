@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- {0} = queen name, {1} = produced symbiote name -->
+  <SG_QueenProducedSymbiote>{0} has spawned: {1}.</SG_QueenProducedSymbiote>
+
+  <SG_LifeDrainInvalidTarget>Life drain can only target a humanlike.</SG_LifeDrainInvalidTarget>
+
+</LanguageData>

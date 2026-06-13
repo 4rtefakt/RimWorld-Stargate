@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- {0} = nom de la reine, {1} = nom du symbiote produit -->
+  <SG_QueenProducedSymbiote>{0} a engendré : {1}.</SG_QueenProducedSymbiote>
+
+  <SG_LifeDrainInvalidTarget>Le drain de vie ne peut cibler qu'un être humanoïde.</SG_LifeDrainInvalidTarget>
+
+</LanguageData>

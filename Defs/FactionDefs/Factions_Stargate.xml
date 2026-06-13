@@ -60,6 +60,7 @@
         <options>
           <SG_JaffaWarrior>10</SG_JaffaWarrior>
           <SG_GoauldLord>3</SG_GoauldLord>
+          <SG_GoauldQueenKind>1</SG_GoauldQueenKind>
         </options>
       </li>
     </pawnGroupMakers>

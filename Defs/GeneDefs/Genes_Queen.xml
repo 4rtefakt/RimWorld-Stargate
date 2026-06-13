@@ -2,17 +2,47 @@
 <Defs>
 
   <!-- Gène de la Reine Goa'uld : ponte périodique de larves (Gene_GoauldBrooder).
+       Cadence + produit définis par le DefModExtension (GeneExtension_Brooder) :
+       ~5 jours, produit = larve goa'uld immature.
        Icône = placeholder vanilla. -->
   <GeneDef>
     <defName>SG_QueenBrooder</defName>
     <label>matriarche goa'uld</label>
-    <description>Cette lignée goa'uld est capable d'engendrer de nouvelles larves de symbiote. Une reine produit périodiquement une larve, à condition d'être en vie, valide et bien nourrie.</description>
+    <description>Cette lignée goa'uld est capable d'engendrer de nouvelles larves de symbiote. Une reine produit périodiquement (environ tous les 5 jours) une larve, à condition d'être en vie, valide et bien nourrie.</description>
     <geneClass>Stargate.Gene_GoauldBrooder</geneClass>
     <iconPath>UI/Icons/Genes/Gene_XenogermReimplanter</iconPath>
     <displayCategory>Archite</displayCategory>
     <biostatCpx>2</biostatCpx>
     <biostatMet>-2</biostatMet>
     <minAgeActive>3</minAgeActive>
+    <modExtensions>
+      <li Class="Stargate.GeneExtension_Brooder">
+        <productionIntervalTicks>300000</productionIntervalTicks> <!-- ~5 jours -->
+        <product>SG_GoauldLarva</product>
+        <maxOnMap>6</maxOnMap>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <!-- Gène de la Reine Tok'ra : ponte plus lente, mais le symbiote tok'ra naît
+       directement adulte (pas de stade larvaire). ~10 jours. -->
+  <GeneDef>
+    <defName>SG_TokraQueenBrooder</defName>
+    <label>matriarche tok'ra</label>
+    <description>Cette lignée tok'ra est capable d'engendrer de nouveaux symbiotes. La gestation est plus longue que chez les Goa'uld (environ tous les 10 jours), mais le symbiote tok'ra naît directement adulte, sans stade larvaire fragile.</description>
+    <geneClass>Stargate.Gene_GoauldBrooder</geneClass>
+    <iconPath>UI/Icons/Genes/Gene_XenogermReimplanter</iconPath>
+    <displayCategory>Archite</displayCategory>
+    <biostatCpx>2</biostatCpx>
+    <biostatMet>-2</biostatMet>
+    <minAgeActive>3</minAgeActive>
+    <modExtensions>
+      <li Class="Stargate.GeneExtension_Brooder">
+        <productionIntervalTicks>600000</productionIntervalTicks> <!-- ~10 jours -->
+        <product>SG_TokraSymbiote</product>
+        <maxOnMap>4</maxOnMap>
+      </li>
+    </modExtensions>
   </GeneDef>
 
 </Defs>

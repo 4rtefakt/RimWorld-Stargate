@@ -83,4 +83,35 @@
     </recipeUsers>
   </RecipeDef>
 
+  <!-- 4) Implanter un symbiote tok'ra adulte dans un hôte consentant -> Tok'ra. -->
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>SG_ImplantTokra</defName>
+    <label>implanter un symbiote tok'ra</label>
+    <description>Implante un symbiote tok'ra adulte dans le sujet. À la différence d'un Goa'uld, le symbiote tok'ra partage le contrôle du corps avec son hôte : le sujet devient un Tok'ra.</description>
+    <workerClass>Stargate.Recipe_SG_ImplantTokra</workerClass>
+    <jobString>Implantation d'un symbiote tok'ra.</jobString>
+    <workAmount>3000</workAmount>
+    <targetsBodyPart>false</targetsBodyPart>
+    <anesthetize>true</anesthetize>
+    <surgerySuccessChanceFactor>1</surgerySuccessChanceFactor>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SG_TokraSymbiote</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>SG_TokraSymbiote</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <recipeUsers>
+      <li>Human</li>
+    </recipeUsers>
+  </RecipeDef>
+
 </Defs>

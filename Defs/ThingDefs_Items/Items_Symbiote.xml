@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+  <!-- Base commune des symbiotes (items vivants, fragiles, périssables). -->
+  <ThingDef Name="SG_SymbioteBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <tickerType>Rare</tickerType>
+    <category>Item</category>
+    <stackLimit>1</stackLimit>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <rotatable>false</rotatable>
+    <pathCost>14</pathCost>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <statBases>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+  </ThingDef>
+
   <!-- Larve Goa'uld immature : produite par une Reine, fragile hors d'un hôte.
-       Doit être implantée dans un Jaffa avant de périr (comp CompGoauldLarva).
+       Doit être implantée dans un Jaffa avant de périr (comp périssable).
        Texture = placeholder vanilla (embryon). -->
-  <ThingDef>
+  <ThingDef ParentName="SG_SymbioteBase">
     <defName>SG_GoauldLarva</defName>
     <label>larve goa'uld</label>
     <description>Une larve de symbiote Goa'uld, encore immature et très fragile hors d'un hôte. Elle doit être implantée dans la poche abdominale d'un Jaffa, où elle mûrira en sécurité, sans quoi elle finira par mourir.</description>
-    <thingClass>ThingWithComps</thingClass>
-    <tickerType>Rare</tickerType>
     <graphicData>
       <texPath>Things/Item/Special/Embryo</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -18,34 +36,22 @@
       <MaxHitPoints>40</MaxHitPoints>
       <MarketValue>250</MarketValue>
       <Mass>0.4</Mass>
-      <DeteriorationRate>0</DeteriorationRate>
     </statBases>
-    <thingCategories>
-      <li>ItemsMisc</li>
-    </thingCategories>
-    <stackLimit>1</stackLimit>
-    <category>Item</category>
-    <alwaysHaulable>true</alwaysHaulable>
-    <drawGUIOverlay>true</drawGUIOverlay>
-    <useHitPoints>true</useHitPoints>
-    <selectable>true</selectable>
-    <rotatable>false</rotatable>
-    <pathCost>14</pathCost>
     <comps>
       <li Class="CompProperties_Forbiddable"/>
-      <li Class="Stargate.CompProperties_GoauldLarva">
+      <li Class="Stargate.CompProperties_SymbiotePerishable">
         <lifespanDays>5</lifespanDays>
       </li>
     </comps>
   </ThingDef>
 
   <!-- Symbiote Goa'uld adulte : extrait d'un Jaffa après maturation.
-       Prêt à être implanté dans un hôte humain (le transforme en Goa'uld). -->
-  <ThingDef>
+       Prêt à être implanté dans un hôte humain (le transforme en Goa'uld).
+       Périssable aussi : un symbiote hors d'un hôte ne survit pas indéfiniment. -->
+  <ThingDef ParentName="SG_SymbioteBase">
     <defName>SG_GoauldSymbiote</defName>
     <label>symbiote goa'uld adulte</label>
-    <description>Un symbiote Goa'uld arrivé à maturité, extrait de son Jaffa porteur. Doté de la mémoire génétique de sa lignée, il est prêt à prendre le contrôle d'un hôte humain par implantation.</description>
-    <thingClass>ThingWithComps</thingClass>
+    <description>Un symbiote Goa'uld arrivé à maturité, extrait de son Jaffa porteur. Doté de la mémoire génétique de sa lignée, il est prêt à prendre le contrôle d'un hôte humain par implantation. Hors d'un hôte, il finit toutefois par dépérir.</description>
     <graphicData>
       <texPath>Things/Item/Special/Ovum</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -54,21 +60,37 @@
       <MaxHitPoints>60</MaxHitPoints>
       <MarketValue>1200</MarketValue>
       <Mass>0.6</Mass>
-      <DeteriorationRate>0</DeteriorationRate>
     </statBases>
-    <thingCategories>
-      <li>ItemsMisc</li>
-    </thingCategories>
-    <stackLimit>1</stackLimit>
-    <category>Item</category>
-    <alwaysHaulable>true</alwaysHaulable>
-    <drawGUIOverlay>true</drawGUIOverlay>
-    <useHitPoints>true</useHitPoints>
-    <selectable>true</selectable>
-    <rotatable>false</rotatable>
-    <pathCost>14</pathCost>
     <comps>
       <li Class="CompProperties_Forbiddable"/>
+      <li Class="Stargate.CompProperties_SymbiotePerishable">
+        <lifespanDays>10</lifespanDays>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- Symbiote Tok'ra adulte : pondu directement mature par une Reine Tok'ra
+       (pas de stade larvaire). Implanté dans un hôte consentant, il en fait un Tok'ra.
+       Périssable hors d'un hôte. Texture = placeholder vanilla (ovule). -->
+  <ThingDef ParentName="SG_SymbioteBase">
+    <defName>SG_TokraSymbiote</defName>
+    <label>symbiote tok'ra</label>
+    <description>Un symbiote Tok'ra adulte, porteur de la mémoire de sa lignée et de l'idéal de résistance aux Goa'uld. Contrairement aux Goa'uld, il partage le contrôle avec un hôte consentant. Hors d'un hôte, il finit par dépérir.</description>
+    <graphicData>
+      <texPath>Things/Item/Special/Ovum</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(0.6, 0.85, 0.9)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>1400</MarketValue>
+      <Mass>0.6</Mass>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="Stargate.CompProperties_SymbiotePerishable">
+        <lifespanDays>10</lifespanDays>
+      </li>
     </comps>
   </ThingDef>
 

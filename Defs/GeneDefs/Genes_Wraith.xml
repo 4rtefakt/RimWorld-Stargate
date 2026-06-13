@@ -36,20 +36,21 @@
     <biostatMet>1</biostatMet>
   </GeneDef>
 
-  <!-- Drain de vie = re-skin de Bloodfeeder. Réutilise la capacité vanilla
-       Bloodfeed (qui remplit la ressource Gene_Hemogen, ici "essence vitale"). -->
+  <!-- Drain de vie = capacité custom SG_LifeDrainAbility (et non le Bloodfeed vanilla).
+       Rend 50 % de l'essence vitale au Wraith et inflige à la cible un hediff
+       "vie drainée" permanent et cumulatif (50 % puis 100 % = mort). -->
   <GeneDef>
     <defName>SG_LifeDrain</defName>
     <label>drain de vie</label>
     <labelShortAdj>draineur</labelShortAdj>
     <description>Les Wraith possèdent un organe dans la paume de la main qui leur permet d'aspirer la force vitale d'un être humain par simple contact, reconstituant leur propre essence vitale.</description>
     <iconPath>UI/Icons/Genes/Gene_Bloodfeeder</iconPath>
-    <geneClass>Gene_Bloodfeeder</geneClass>
+    <geneClass>Gene</geneClass>
     <prerequisite>SG_VitalEssence</prerequisite>
     <displayCategory>Hemogen</displayCategory>
     <displayOrderInCategory>-1</displayOrderInCategory>
     <abilities>
-      <li>Bloodfeed</li>
+      <li>SG_LifeDrainAbility</li>
     </abilities>
     <biostatMet>-1</biostatMet>
     <minAgeActive>3</minAgeActive>

@@ -5,54 +5,72 @@ using Verse;
 
 namespace Stargate
 {
-    [DefOf]
-    public static class SG_DefOf
-    {
-        public static XenotypeDef SG_Goauld;
-        public static HediffDef SG_Primta;
-        public static ThingDef SG_GoauldLarva;
-        public static ThingDef SG_GoauldSymbiote;
-
-        static SG_DefOf()
-        {
-            DefOfHelper.EnsureInitializedInCtor(typeof(SG_DefOf));
-        }
-    }
-
     public static class GoauldUtility
     {
-        /// <summary>Transforme un pion en hôte Goa'uld : remplace ses xénogènes
-        /// par ceux du xénotype Goa'uld et fixe son identité de xénotype.</summary>
-        public static void MakeGoauld(Pawn pawn)
+        /// <summary>
+        /// Convertit un pion en hôte d'un symbiote : retire TOUS ses gènes
+        /// (endogènes + xénogènes) puis applique le xénotype cible. Évite que
+        /// les gènes d'origine de l'hôte entrent en conflit avec ceux du symbiote.
+        /// </summary>
+        public static void ConvertXenotype(Pawn pawn, XenotypeDef xeno)
         {
-            if (pawn?.genes == null) return;
-            XenotypeDef xeno = SG_DefOf.SG_Goauld;
+            if (pawn?.genes == null || xeno == null) return;
 
-            foreach (Gene g in pawn.genes.Xenogenes.ToList())
+            foreach (Gene g in pawn.genes.GenesListForReading.ToList())
             {
                 pawn.genes.RemoveGene(g);
             }
             foreach (GeneDef gd in xeno.genes)
             {
-                pawn.genes.AddGene(gd, true);
+                // Xénotype non héritable -> gènes posés en xénogènes (comme Sanguophage).
+                pawn.genes.AddGene(gd, !xeno.inheritable);
             }
             pawn.genes.SetXenotypeDirect(xeno);
         }
+
+        /// <summary>Un pion porte-t-il déjà un symbiote (ou en est déjà un) ?
+        /// Goa'uld, Reine Goa'uld, Tok'ra, Reine Tok'ra et Sanguophage sont exclus
+        /// comme hôtes d'un nouvel implant.</summary>
+        public static bool AlreadyHosted(Pawn p)
+        {
+            XenotypeDef x = p?.genes?.Xenotype;
+            return x == SG_DefOf.SG_Goauld
+                || x == SG_DefOf.SG_GoauldQueen
+                || x == SG_DefOf.SG_Tokra
+                || x == SG_DefOf.SG_TokraQueen
+                || x == SG_DefOf.Sanguophage;
+        }
     }
 
-    /// <summary>Implante une larve goa'uld dans un porteur (Jaffa) : hediff prim'ta.</summary>
+    /// <summary>Implante une larve goa'uld dans un Jaffa : hediff prim'ta.
+    /// Recrute instantanément le sujet, même s'il est de loyauté inébranlable.</summary>
     public class Recipe_SG_ImplantPrimta : Recipe_Surgery
     {
         public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
-            if (pawn.health.hediffSet.HasHediff(SG_DefOf.SG_Primta)) return;
-            pawn.health.AddHediff(SG_DefOf.SG_Primta);
+            if (!pawn.health.hediffSet.HasHediff(SG_DefOf.SG_Primta))
+            {
+                pawn.health.AddHediff(SG_DefOf.SG_Primta);
+            }
+
+            // Le porteur d'une prim'ta est lié à vie au colon : recrutement immédiat,
+            // y compris pour un prisonnier de loyauté inébranlable.
+            if (pawn.Faction != Faction.OfPlayer)
+            {
+                if (pawn.guest != null)
+                {
+                    pawn.guest.Recruitable = true;
+                }
+                RecruitUtility.Recruit(pawn, Faction.OfPlayer, billDoer);
+            }
         }
 
         public override bool AvailableOnNow(Thing thing, BodyPartRecord part = null)
         {
             Pawn p = thing as Pawn;
-            return p != null && !p.health.hediffSet.HasHediff(SG_DefOf.SG_Primta);
+            return p != null
+                && p.genes?.Xenotype == SG_DefOf.SG_Jaffa
+                && !p.health.hediffSet.HasHediff(SG_DefOf.SG_Primta);
         }
     }
 
@@ -77,18 +95,33 @@ namespace Stargate
         }
     }
 
-    /// <summary>Implante un symbiote adulte dans un hôte humain : le transforme en Goa'uld.</summary>
+    /// <summary>Implante un symbiote goa'uld adulte dans un hôte : le transforme en Goa'uld.</summary>
     public class Recipe_SG_ImplantGoauld : Recipe_Surgery
     {
         public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
-            GoauldUtility.MakeGoauld(pawn);
+            GoauldUtility.ConvertXenotype(pawn, SG_DefOf.SG_Goauld);
         }
 
         public override bool AvailableOnNow(Thing thing, BodyPartRecord part = null)
         {
             Pawn p = thing as Pawn;
-            return p != null && p.genes != null && p.genes.Xenotype != SG_DefOf.SG_Goauld;
+            return p != null && p.genes != null && !GoauldUtility.AlreadyHosted(p);
+        }
+    }
+
+    /// <summary>Implante un symbiote tok'ra adulte dans un hôte consentant : le transforme en Tok'ra.</summary>
+    public class Recipe_SG_ImplantTokra : Recipe_Surgery
+    {
+        public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
+        {
+            GoauldUtility.ConvertXenotype(pawn, SG_DefOf.SG_Tokra);
+        }
+
+        public override bool AvailableOnNow(Thing thing, BodyPartRecord part = null)
+        {
+            Pawn p = thing as Pawn;
+            return p != null && p.genes != null && !GoauldUtility.AlreadyHosted(p);
         }
     }
 }

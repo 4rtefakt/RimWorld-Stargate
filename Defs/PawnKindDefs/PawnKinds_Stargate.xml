@@ -61,4 +61,54 @@
     </apparelRequired>
   </PawnKindDef>
 
+  <!-- Reine Goa'uld : pondeuse, xénotype SG_GoauldQueen forcé (genre femelle
+       forcé par Harmony). Rare, trouvée en défense des colonies Goa'uld :
+       à capturer vivante pour disposer d'une source de larves. Peu combative. -->
+  <PawnKindDef ParentName="SG_PawnBase">
+    <defName>SG_GoauldQueenKind</defName>
+    <label>reine goa'uld</label>
+    <combatPower>140</combatPower>
+    <xenotypeSet>
+      <xenotypeChances>
+        <SG_GoauldQueen>999</SG_GoauldQueen>
+      </xenotypeChances>
+    </xenotypeSet>
+    <useFactionXenotypes>false</useFactionXenotypes>
+    <itemQuality>Excellent</itemQuality>
+    <gearHealthRange>0.9~1.3</gearHealthRange>
+    <weaponMoney>700~1000</weaponMoney>
+    <weaponTags>
+      <li>SG_GoauldWeapon</li>
+    </weaponTags>
+    <apparelMoney>800~1100</apparelMoney>
+    <apparelRequired>
+      <li>SG_GoauldRobe</li>
+    </apparelRequired>
+  </PawnKindDef>
+
+  <!-- Reine Tok'ra : pondeuse de symbiotes tok'ra, xénotype SG_TokraQueen forcé
+       (genre femelle forcé par Harmony). Sans faction propre pour l'instant :
+       apparaît via dev mode / futures quêtes Tok'ra (pas dans les raids Goa'uld). -->
+  <PawnKindDef>
+    <defName>SG_TokraQueenKind</defName>
+    <label>reine tok'ra</label>
+    <race>Human</race>
+    <combatPower>120</combatPower>
+    <invNutrition>2.55</invNutrition>
+    <initialResistanceRange>8~16</initialResistanceRange>
+    <initialWillRange>1~3</initialWillRange>
+    <xenotypeSet>
+      <xenotypeChances>
+        <SG_TokraQueen>999</SG_TokraQueen>
+      </xenotypeChances>
+    </xenotypeSet>
+    <useFactionXenotypes>false</useFactionXenotypes>
+    <itemQuality>Good</itemQuality>
+    <gearHealthRange>0.8~1.2</gearHealthRange>
+    <apparelMoney>400~700</apparelMoney>
+    <apparelRequired>
+      <li>SG_GoauldRobe</li>
+    </apparelRequired>
+  </PawnKindDef>
+
 </Defs>
