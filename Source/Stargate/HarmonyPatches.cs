@@ -1,20 +1,30 @@
 using HarmonyLib;
+using System.Linq;
 using RimWorld;
 using Verse;
 
 namespace Stargate
 {
     /// <summary>
-    /// Force le genre de certains xénotypes Stargate, quel que soit le moyen de
-    /// génération (scénario, faction, conversion, dev mode) :
-    ///   - Reine goa'uld et reine tok'ra : toujours femelle.
-    ///   - Wraith : toujours mâle.
-    /// On patche le point d'entrée public et stable PawnGenerator.GeneratePawn,
-    /// puis on corrige genre + nom + graphismes après coup.
+    /// Force le genre de certains xénotypes Stargate (reines goa'uld/tok'ra = femelle,
+    /// Wraith = mâle), de façon ROBUSTE :
+    ///   - Prefix : si le genre forcé est déterminable depuis la requête (xénotype forcé,
+    ///     ou xénotype imposé par le pawnkind), on le fixe AVANT génération -> le pion naît
+    ///     cohérent (tête/corps/nom du bon genre), sans rafistolage. C'est le cas des reines.
+    ///   - Postfix : filet de sécurité quand le xénotype n'est résolu que pendant la
+    ///     génération. On corrige genre + type de tête + nom, sinon une tête genrée
+    ///     incompatible plante le rendu du portrait (ce qui cassait la barre de colons).
     /// </summary>
     [HarmonyPatch(typeof(PawnGenerator), nameof(PawnGenerator.GeneratePawn), new[] { typeof(PawnGenerationRequest) })]
     public static class Patch_PawnGenerator_GeneratePawn
     {
+        public static void Prefix(ref PawnGenerationRequest request)
+        {
+            if (request.FixedGender != null) return;
+            Gender? forced = ForcedGenderFor(request.ForcedXenotype) ?? ForcedGenderForKind(request.KindDef);
+            if (forced != null) request.FixedGender = forced.Value;
+        }
+
         public static void Postfix(Pawn __result)
         {
             if (__result?.genes == null) return;
@@ -24,14 +34,33 @@ namespace Stargate
 
             __result.gender = forced.Value;
 
-            // Le nom a pu être généré pour l'autre genre : on le régénère pour rester cohérent.
+            // Type de tête genré et incompatible -> re-tirage pour le bon genre, sinon le
+            // rendu du portrait peut planter et casser la barre de colons (bug du draft).
+            try
+            {
+                if (__result.story != null)
+                {
+                    HeadTypeDef head = __result.story.headType;
+                    if (head == null || (head.gender != Gender.None && head.gender != forced.Value))
+                    {
+                        var opts = DefDatabase<HeadTypeDef>.AllDefs
+                            .Where(h => h.randomChosen && (h.gender == Gender.None || h.gender == forced.Value))
+                            .ToList();
+                        if (opts.Count > 0) __result.story.headType = opts.RandomElement();
+                    }
+                }
+            }
+            catch
+            {
+            }
+
+            // Le nom a pu être généré pour l'autre genre : on le régénère.
             try
             {
                 __result.Name = PawnBioAndNameGenerator.GeneratePawnName(__result);
             }
             catch
             {
-                // Nom non régénérable (ex. pion sans bio) : on garde l'ancien, sans bloquer.
             }
 
             // Rafraîchit les graphismes (corps/tête dépendants du genre).
@@ -42,6 +71,17 @@ namespace Stargate
             catch
             {
             }
+        }
+
+        private static Gender? ForcedGenderForKind(PawnKindDef kind)
+        {
+            if (kind?.xenotypeSet == null) return null;
+            for (int i = 0; i < kind.xenotypeSet.Count; i++)
+            {
+                Gender? g = ForcedGenderFor(kind.xenotypeSet[i].xenotype);
+                if (g != null) return g;
+            }
+            return null;
         }
 
         private static Gender? ForcedGenderFor(XenotypeDef xeno)
