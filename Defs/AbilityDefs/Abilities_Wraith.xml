@@ -11,6 +11,9 @@
     <iconPath>UI/Icons/Genes/Gene_Bloodfeeder</iconPath>
     <cooldownTicksRange>2500</cooldownTicksRange>
     <hostile>true</hostile>
+    <!-- Comme le Bloodfeed vanilla : un Wraith peut drainer même s'il est
+         incapable de violence (sinon une backstory pacifiste bloque le drain). -->
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
       <drawAimPie>false</drawAimPie>
