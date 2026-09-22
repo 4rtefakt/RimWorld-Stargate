@@ -52,6 +52,7 @@ namespace DefValidator
             string core = null;
             var asmDirs = new List<string>();
             var depDirs = new List<string>();
+            var hintDirs = new List<string>();
             for (int i = 0; i < args.Length - 1; i++)
             {
                 switch (args[i])
@@ -59,6 +60,7 @@ namespace DefValidator
                     case "--mod": modDir = args[++i]; break;
                     case "--asm": asmDirs.Add(args[++i]); break;
                     case "--dep": depDirs.Add(args[++i]); break;
+                    case "--hint": hintDirs.Add(args[++i]); break;
                     case "--core": core = args[++i]; break;
                     case "--baseline":
                         foreach (string line in File.ReadAllLines(args[++i]))
@@ -84,6 +86,25 @@ namespace DefValidator
                 {
                     IndexDefs(doc, collectTokens: true);
                 }
+            }
+
+            // Mods « indices » (NON chargés en jeu) : seules leurs références vers des Defs
+            // extérieures comptent comme indices d'existence ; leurs propres Defs sont ignorées.
+            foreach (string hint in hintDirs)
+            {
+                var hintDocs = LoadDefFiles(hint, out _).ToList();
+                var own = new HashSet<string>();
+                foreach (XDocument doc in hintDocs)
+                {
+                    foreach (XElement def in doc.Root?.Elements() ?? Enumerable.Empty<XElement>())
+                    {
+                        string n = def.Element("defName")?.Value.Trim() ?? (string)def.Attribute("Name");
+                        if (n != null) own.Add(n);
+                    }
+                }
+                var before = new HashSet<string>(DependencyTokens);
+                foreach (XDocument doc in hintDocs) CollectTokens(doc);
+                DependencyTokens.RemoveWhere(t => !before.Contains(t) && (own.Contains(t) || (t.StartsWith("parent:") && own.Contains(t.Substring(t.LastIndexOf(':') + 1)))));
             }
 
             // Defs du mod.
@@ -357,14 +378,24 @@ namespace DefValidator
 
                 if (collectTokens)
                 {
-                    foreach (XElement e in def.DescendantsAndSelf())
-                    {
-                        DependencyTokens.Add(e.Name.LocalName);
-                        if (!e.HasElements && !string.IsNullOrWhiteSpace(e.Value)) DependencyTokens.Add(e.Value.Trim());
-                        string parent = (string)e.Attribute("ParentName");
-                        if (parent != null) DependencyTokens.Add("parent:" + e.Name.LocalName + ":" + parent);
-                    }
+                    CollectTokens(def);
                 }
+            }
+        }
+
+        private static void CollectTokens(XDocument doc)
+        {
+            foreach (XElement def in doc.Root?.Elements() ?? Enumerable.Empty<XElement>()) CollectTokens(def);
+        }
+
+        private static void CollectTokens(XElement def)
+        {
+            foreach (XElement e in def.DescendantsAndSelf())
+            {
+                DependencyTokens.Add(e.Name.LocalName);
+                if (!e.HasElements && !string.IsNullOrWhiteSpace(e.Value)) DependencyTokens.Add(e.Value.Trim());
+                string parent = (string)e.Attribute("ParentName");
+                if (parent != null) DependencyTokens.Add("parent:" + e.Name.LocalName + ":" + parent);
             }
         }
 

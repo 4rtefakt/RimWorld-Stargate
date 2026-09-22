@@ -17,6 +17,7 @@
       <color>(95, 150, 125)</color>
     </graphicData>
     <stackLimit>75</stackLimit>
+    <useHitPoints>false</useHitPoints>
     <healthAffectsPrice>false</healthAffectsPrice>
     <statBases>
       <MarketValue>8</MarketValue>
@@ -43,12 +44,14 @@
       <categories>
         <li>Metallic</li>
       </categories>
+      <appearance>Metal</appearance>
       <commonality>0.02</commonality>
       <color>(95, 150, 125)</color>
       <constructEffect>ConstructMetal</constructEffect>
       <soundImpactBullet>BulletImpact_Metal</soundImpactBullet>
       <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
       <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+      <soundImpactMelee>Pawn_Melee_Punch_HitBuilding_Metal</soundImpactMelee>
       <statFactors>
         <MaxHitPoints>2.6</MaxHitPoints>
         <Beauty>1.5</Beauty>
@@ -59,6 +62,8 @@
       </statFactors>
       <canSuggestUseDefaultStuff>false</canSuggestUseDefaultStuff>
     </stuffProps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <allowedArchonexusCount>80</allowedArchonexusCount>
     <soundInteract>Metal_Drop</soundInteract>
     <soundDrop>Metal_Drop</soundDrop>
   </ThingDef>

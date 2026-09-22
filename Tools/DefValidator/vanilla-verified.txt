@@ -65,6 +65,3 @@ Parent:ThingDef:FurnitureWithQualityBase
 Parent:RecipeDef:SurgeryFlesh
 # Defs vanilla de base notoirement présentes (onglets d'architecte, etc.), non couvertes par un [DefOf].
 DesignationCategoryDef:Power
-# À CONFIRMER en jeu (sons de mêlée des métaux vanilla, utilisés par l'acier) :
-SoundDef:MeleeHit_Metal_Sharp
-SoundDef:MeleeHit_Metal_Blunt

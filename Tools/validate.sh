@@ -4,6 +4,8 @@
 # Variables (toutes optionnelles, valeurs par défaut = environnement de dev Linux) :
 #   DEPS_DIR : dossier contenant les dépendances clonées
 #              (VanillaExpandedFramework, VanillaGravshipExpanded, VanillaGravshipExpanded2)
+#              + optionnellement DEPS_DIR/hints/<mod>/ : mods publics NON chargés en jeu,
+#              utilisés seulement comme indices d'existence des Defs vanilla qu'ils référencent
 #   NUGET    : cache NuGet (fournit Krafs.Rimworld.Ref, Lib.Harmony, ref. .NET 4.7.2)
 set -euo pipefail
 
@@ -28,4 +30,5 @@ exec dotnet "$OUT/DefValidator.dll" \
   --dep "$DEPS_DIR/VanillaExpandedFramework" \
   --dep "$DEPS_DIR/VanillaGravshipExpanded" \
   --dep "$DEPS_DIR/VanillaGravshipExpanded2" \
+  $(for h in "$DEPS_DIR"/hints/*/; do [ -d "$h" ] && printf -- '--hint %s ' "$h"; done) \
   --baseline "$ROOT/Tools/DefValidator/vanilla-verified.txt"
