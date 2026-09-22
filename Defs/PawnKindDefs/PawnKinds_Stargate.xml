@@ -117,12 +117,13 @@
   </PawnKindDef>
 
   <!-- Reine Tok'ra : pondeuse de symbiotes tok'ra, xénotype SG_TokraQueen forcé
-       (genre femelle forcé par Harmony). Sans faction propre pour l'instant :
-       apparaît via dev mode / futures quêtes Tok'ra (pas dans les raids Goa'uld). -->
+       (genre femelle forcé par Harmony). Vit, rare et protégée, dans les colonies
+       de la faction Tok'ra (Factions_Allies.xml). -->
   <PawnKindDef>
     <defName>SG_TokraQueenKind</defName>
     <label>reine tok'ra</label>
     <race>Human</race>
+    <defaultFactionDef>SG_Tokra</defaultFactionDef>
     <combatPower>120</combatPower>
     <invNutrition>2.55</invNutrition>
     <initialResistanceRange>8~16</initialResistanceRange>

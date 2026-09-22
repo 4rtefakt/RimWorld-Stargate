@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       Pawnkinds des factions alliées/neutres : Tau'ri (SGC), Tok'ra,
+       Jaffa libres, Asgard. Xénotype imposé par le pawnkind (comme les
+       Goa'uld), backstories thématiques (Backstories_Allies.xml).
+       Tags d'armes/vêtements vanilla : Gun, AssaultRifle, SimpleGun,
+       SpacerGun ; IndustrialBasic, IndustrialMilitaryBasic/Advanced.
+       ============================================================ -->
+
+  <PawnKindDef Name="SG_AllyPawnBase" Abstract="True">
+    <race>Human</race>
+    <invNutrition>2.55</invNutrition>
+    <useFactionXenotypes>false</useFactionXenotypes>
+    <itemQuality>Normal</itemQuality>
+    <gearHealthRange>0.8~1.2</gearHealthRange>
+    <initialResistanceRange>15~25</initialResistanceRange>
+    <initialWillRange>2~4</initialWillRange>
+  </PawnKindDef>
+
+  <!-- ===================== TAU'RI (SGC) ===================== -->
+  <PawnKindDef Name="SG_TauriPawnBase" ParentName="SG_AllyPawnBase" Abstract="True">
+    <defaultFactionDef>SG_TauriSGC</defaultFactionDef>
+    <xenotypeSet>
+      <xenotypeChances>
+        <SG_Tauri>999</SG_Tauri>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="SG_TauriPawnBase">
+    <defName>SG_SGCSoldier</defName>
+    <label>soldat du SGC</label>
+    <combatPower>75</combatPower>
+    <isFighter>true</isFighter>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesChildhood>
+          <li>SG_TauriChild</li>
+        </categoriesChildhood>
+        <categoriesAdulthood>
+          <li>SG_TauriSoldier</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <weaponMoney>350~800</weaponMoney>
+    <weaponTags>
+      <li>Gun</li>
+      <li>AssaultRifle</li>
+    </weaponTags>
+    <apparelMoney>400~800</apparelMoney>
+    <apparelRequired>
+      <li>SG_SGCUniform</li>
+    </apparelRequired>
+    <apparelTags>
+      <li>IndustrialMilitaryBasic</li>
+    </apparelTags>
+    <apparelAllowHeadgearChance>0.8</apparelAllowHeadgearChance>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="SG_TauriPawnBase">
+    <defName>SG_SGCOfficer</defName>
+    <label>officier du SGC</label>
+    <combatPower>110</combatPower>
+    <isFighter>true</isFighter>
+    <factionLeader>true</factionLeader>
+    <itemQuality>Good</itemQuality>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesChildhood>
+          <li>SG_TauriChild</li>
+        </categoriesChildhood>
+        <categoriesAdulthood>
+          <li>SG_TauriOfficer</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <weaponMoney>600~1200</weaponMoney>
+    <weaponTags>
+      <li>AssaultRifle</li>
+      <li>SG_GoauldWeapon</li>
+    </weaponTags>
+    <apparelMoney>800~1400</apparelMoney>
+    <apparelRequired>
+      <li>SG_SGCUniform</li>
+    </apparelRequired>
+    <apparelTags>
+      <li>IndustrialMilitaryAdvanced</li>
+    </apparelTags>
+    <apparelAllowHeadgearChance>0.6</apparelAllowHeadgearChance>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="SG_TauriPawnBase">
+    <defName>SG_SGCScientist</defName>
+    <label>scientifique du SGC</label>
+    <combatPower>40</combatPower>
+    <isFighter>false</isFighter>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesChildhood>
+          <li>SG_TauriChild</li>
+        </categoriesChildhood>
+        <categoriesAdulthood>
+          <li>SG_TauriScientist</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <weaponMoney>150~300</weaponMoney>
+    <weaponTags>
+      <li>SimpleGun</li>
+    </weaponTags>
+    <apparelMoney>300~600</apparelMoney>
+    <apparelRequired>
+      <li>SG_SGCUniform</li>
+    </apparelRequired>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="SG_TauriPawnBase">
+    <defName>SG_SGCQuartermaster</defName>
+    <label>intendant du SGC</label>
+    <combatPower>40</combatPower>
+    <isFighter>false</isFighter>
+    <trader>true</trader>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesChildhood>
+          <li>SG_TauriChild</li>
+        </categoriesChildhood>
+        <categoriesAdulthood>
+          <li>SG_TauriTrader</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <weaponMoney>150~300</weaponMoney>
+    <weaponTags>
+      <li>SimpleGun</li>
+    </weaponTags>
+    <apparelMoney>300~600</apparelMoney>
+    <apparelRequired>
+      <li>SG_SGCUniform</li>
+    </apparelRequired>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+  </PawnKindDef>
+
+  <!-- ===================== TOK'RA ===================== -->
+  <PawnKindDef Name="SG_TokraPawnBase" ParentName="SG_AllyPawnBase" Abstract="True">
+    <defaultFactionDef>SG_Tokra</defaultFactionDef>
+    <xenotypeSet>
+      <xenotypeChances>
+        <SG_Tokra>999</SG_Tokra>
+      </xenotypeChances>
+    </xenotypeSet>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesChildhood>
+          <li>SG_TokraChild</li>
+        </categoriesChildhood>
+        <categoriesAdulthood>
+          <li>SG_TokraAdult</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="SG_TokraPawnBase">
+    <defName>SG_TokraOperative</defName>
+    <label>agent tok'ra</label>
+    <combatPower>80</combatPower>
+    <isFighter>true</isFighter>
+    <weaponMoney>600~1000</weaponMoney>
+    <weaponTags>
+      <li>SG_GoauldWeapon</li>
+    </weaponTags>
+    <apparelMoney>300~600</apparelMoney>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="SG_TokraPawnBase">
+    <defName>SG_TokraElder</defName>
+    <label>sage du conseil tok'ra</label>
+    <combatPower>70</combatPower>
+    <isFighter>true</isFighter>
+    <factionLeader>true</factionLeader>
+    <itemQuality>Good</itemQuality>
+    <weaponMoney>600~1000</weaponMoney>
+    <weaponTags>
+      <li>SG_GoauldWeapon</li>
+    </weaponTags>
+    <apparelMoney>500~800</apparelMoney>
+    <apparelRequired>
+      <li>SG_GoauldRobe</li>
+    </apparelRequired>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="SG_TokraPawnBase">
+    <defName>SG_TokraEnvoy</defName>
+    <label>émissaire tok'ra</label>
+    <combatPower>50</combatPower>
+    <isFighter>false</isFighter>
+    <trader>true</trader>
+    <weaponMoney>600~800</weaponMoney>
+    <weaponTags>
+      <li>SG_GoauldWeapon</li>
+    </weaponTags>
+    <apparelMoney>300~600</apparelMoney>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+  </PawnKindDef>
+
+  <!-- ===================== JAFFA LIBRES ===================== -->
+  <PawnKindDef Name="SG_FreeJaffaPawnBase" ParentName="SG_AllyPawnBase" Abstract="True">
+    <defaultFactionDef>SG_FreeJaffa</defaultFactionDef>
+    <xenotypeSet>
+      <xenotypeChances>
+        <SG_Jaffa>999</SG_Jaffa>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="SG_FreeJaffaPawnBase">
+    <defName>SG_FreeJaffaWarrior</defName>
+    <label>guerrier jaffa libre</label>
+    <combatPower>110</combatPower>
+    <isFighter>true</isFighter>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesChildhood>
+          <li>SG_JaffaChild</li>
+        </categoriesChildhood>
+        <categoriesAdulthood>
+          <li>SG_FreeJaffaAdult</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <weaponMoney>1200~2000</weaponMoney>
+    <weaponTags>
+      <li>SG_JaffaWeapon</li>
+    </weaponTags>
+    <apparelMoney>250~450</apparelMoney>
+    <apparelRequired>
+      <li>SG_JaffaArmor</li>
+    </apparelRequired>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="SG_FreeJaffaPawnBase">
+    <defName>SG_FreeJaffaMaster</defName>
+    <label>maître jaffa</label>
+    <combatPower>150</combatPower>
+    <isFighter>true</isFighter>
+    <factionLeader>true</factionLeader>
+    <itemQuality>Good</itemQuality>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesChildhood>
+          <li>SG_JaffaChild</li>
+        </categoriesChildhood>
+        <categoriesAdulthood>
+          <li>SG_FreeJaffaMaster</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <weaponMoney>1500~2200</weaponMoney>
+    <weaponTags>
+      <li>SG_JaffaWeapon</li>
+    </weaponTags>
+    <apparelMoney>400~700</apparelMoney>
+    <apparelRequired>
+      <li>SG_JaffaArmor</li>
+    </apparelRequired>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="SG_FreeJaffaPawnBase">
+    <defName>SG_FreeJaffaTrader</defName>
+    <label>contrebandier jaffa</label>
+    <combatPower>70</combatPower>
+    <isFighter>false</isFighter>
+    <trader>true</trader>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesChildhood>
+          <li>SG_JaffaChild</li>
+        </categoriesChildhood>
+        <categoriesAdulthood>
+          <li>SG_FreeJaffaTrader</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <weaponMoney>300~700</weaponMoney>
+    <weaponTags>
+      <li>SG_GoauldWeapon</li>
+      <li>Gun</li>
+    </weaponTags>
+    <apparelMoney>250~450</apparelMoney>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+  </PawnKindDef>
+
+  <!-- ===================== ASGARD ===================== -->
+  <PawnKindDef Name="SG_AsgardPawnBase" ParentName="SG_AllyPawnBase" Abstract="True">
+    <defaultFactionDef>SG_Asgard</defaultFactionDef>
+    <xenotypeSet>
+      <xenotypeChances>
+        <SG_Asgard>999</SG_Asgard>
+      </xenotypeChances>
+    </xenotypeSet>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesChildhood>
+          <li>SG_AsgardChild</li>
+        </categoriesChildhood>
+        <categoriesAdulthood>
+          <li>SG_AsgardAdult</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <itemQuality>Excellent</itemQuality>
+    <apparelMoney>200~400</apparelMoney>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="SG_AsgardPawnBase">
+    <defName>SG_AsgardDefender</defName>
+    <label>défenseur asgard</label>
+    <combatPower>85</combatPower>
+    <isFighter>true</isFighter>
+    <weaponMoney>900~1400</weaponMoney>
+    <weaponTags>
+      <li>SpacerGun</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="SG_AsgardPawnBase">
+    <defName>SG_AsgardCommander</defName>
+    <label>commandant asgard</label>
+    <combatPower>100</combatPower>
+    <isFighter>true</isFighter>
+    <factionLeader>true</factionLeader>
+    <weaponMoney>1200~1800</weaponMoney>
+    <weaponTags>
+      <li>SpacerGun</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="SG_AsgardPawnBase">
+    <defName>SG_AsgardEmissary</defName>
+    <label>émissaire asgard</label>
+    <combatPower>50</combatPower>
+    <isFighter>false</isFighter>
+    <trader>true</trader>
+    <weaponMoney>700~1000</weaponMoney>
+    <weaponTags>
+      <li>SpacerGun</li>
+    </weaponTags>
+  </PawnKindDef>
+
+</Defs>

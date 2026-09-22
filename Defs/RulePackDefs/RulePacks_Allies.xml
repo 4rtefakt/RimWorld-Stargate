@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Noms des factions alliées/neutres et de leurs colonies. Auto-contenus. -->
+
+  <!-- ===================== TAU'RI (SGC) ===================== -->
+  <RulePackDef>
+    <defName>SG_NamerFactionTauri</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=3)->Commandement Stargate</li>
+        <li>r_name->Programme Porte des étoiles</li>
+        <li>r_name->Commandement Stargate, détachement [greek]</li>
+      </rulesStrings>
+    </rulePack>
+    <include>
+      <li>SG_GreekLetters</li>
+    </include>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>SG_NamerSettlementTauri</defName>
+    <include>
+      <li>SG_GreekLetters</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=2)->Site [greek]</li>
+        <li>r_name->Base [greek]</li>
+        <li>r_name->Avant-poste [greek]-[digit]</li>
+        <li>r_name->Camp [greek]</li>
+        <li>digit->1</li>
+        <li>digit->2</li>
+        <li>digit->3</li>
+        <li>digit->4</li>
+        <li>digit->7</li>
+        <li>digit->9</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>SG_GreekLetters</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>greek->Alpha</li>
+        <li>greek->Bêta</li>
+        <li>greek->Gamma</li>
+        <li>greek->Delta</li>
+        <li>greek->Epsilon</li>
+        <li>greek->Zêta</li>
+        <li>greek->Thêta</li>
+        <li>greek->Kappa</li>
+        <li>greek->Oméga</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- ===================== TOK'RA ===================== -->
+  <RulePackDef>
+    <defName>SG_NamerFactionTokra</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=2)->Résistance tok'ra</li>
+        <li>r_name->Haut Conseil tok'ra</li>
+        <li>r_name->Tok'ra de [place]</li>
+        <li>place->Vorash</li>
+        <li>place->Revanna</li>
+        <li>place->Cartago</li>
+        <li>place->Netu</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>SG_NamerSettlementTokra</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=2)->Tunnels de [syl][fin]</li>
+        <li>r_name->Refuge de [syl][fin]</li>
+        <li>r_name->[syl][fin]</li>
+        <li>syl->Vo</li>
+        <li>syl->Re</li>
+        <li>syl->Car</li>
+        <li>syl->Sa</li>
+        <li>syl->Ela</li>
+        <li>syl->Mar</li>
+        <li>syl->Tan</li>
+        <li>fin->rash</li>
+        <li>fin->vanna</li>
+        <li>fin->tago</li>
+        <li>fin->mek</li>
+        <li>fin->lis</li>
+        <li>fin->tor</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- ===================== JAFFA LIBRES ===================== -->
+  <RulePackDef>
+    <defName>SG_NamerFactionFreeJaffa</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=2)->Nation jaffa libre</li>
+        <li>r_name->Jaffa libres de [place]</li>
+        <li>r_name->Rébellion jaffa de [place]</li>
+        <li>place->Dakara</li>
+        <li>place->Chulak</li>
+        <li>place->Hak'tyl</li>
+        <li>place->Hasara</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>SG_NamerSettlementFreeJaffa</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=2)->Camp de [syl][fin]</li>
+        <li>r_name->[syl][fin]</li>
+        <li>r_name->Temple de [syl][fin]</li>
+        <li>syl->Da</li>
+        <li>syl->Chu</li>
+        <li>syl->Ha</li>
+        <li>syl->Ka</li>
+        <li>syl->Tel</li>
+        <li>syl->Bra</li>
+        <li>fin->kara</li>
+        <li>fin->lak</li>
+        <li>fin->sara</li>
+        <li>fin->tyl</li>
+        <li>fin->'tac</li>
+        <li>fin->nar</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- ===================== ASGARD ===================== -->
+  <RulePackDef>
+    <defName>SG_NamerFactionAsgard</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=2)->Haut Conseil asgard</li>
+        <li>r_name->Flotte asgard</li>
+        <li>r_name->Protectorat asgard</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>SG_NamerSettlementAsgard</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=2)->[world]</li>
+        <li>r_name->Station de [world]</li>
+        <li>r_name->Colonie de [world]</li>
+        <li>world->Othala</li>
+        <li>world->Orilla</li>
+        <li>world->Hala</li>
+        <li>world->Valhalla</li>
+        <li>world->Asgard</li>
+        <li>world->Yggdrasil</li>
+        <li>world->Vanaheim</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>
