@@ -5,6 +5,7 @@
 Un mod qui apporte l'univers de **Stargate** dans RimWorld : races, équipement, factions, idéologie, et (à venir) vaisseaux et quêtes.
 
 > **DLC requis :** Biotech, Ideology, Odyssey · **RimWorld 1.6**
+> **Mods requis :** [Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077), [Vanilla Expanded Framework](https://steamcommunity.com/sharedfiles/filedetails/?id=2023507013), [Vanilla Gravship Expanded – Chapter 1](https://steamcommunity.com/sharedfiles/filedetails/?id=3609835606), [Vanilla Gravship Expanded – Chapter 2](https://steamcommunity.com/sharedfiles/filedetails/?id=3799737423)
 
 ## Contenu
 
@@ -24,7 +25,7 @@ Vaisseaux (gravships) par race, armes de vaisseau, système de quêtes vers une 
 ## Installation
 
 1. Télécharger la dernière [release](../../releases) et extraire le dossier dans `RimWorld/Mods/`.
-2. Activer **Stargate** dans la liste des mods (après les DLC).
+2. Activer **Stargate** dans la liste des mods (après les DLC, Harmony, Vanilla Expanded Framework et Vanilla Gravship Expanded).
 
 ## Compiler depuis les sources
 

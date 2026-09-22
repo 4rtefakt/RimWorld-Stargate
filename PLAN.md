@@ -45,7 +45,7 @@ Le mod cible un joueur qui a **tous les DLC** (cas du commanditaire). Mais pour 
 - **Vanilla Gravship Expanded – Chapitre 2 « The Battle »** (`vanillaexpanded.gravship2`, Workshop id `3799737423`, sorti en septembre 2026) — **dépendance obligatoire** : combat orbital (duels d'artillerie vs gravships ennemis, plateformes/satellites, abordages en hellpods), armes de vaisseau, coques blindées, brouilleurs, détection de menace orbitale. Débloqué après *Advanced gravtech*.
 - ⚠️ **Chapitre 3 VGE : toujours inexistant** (ni sorti ni daté au 2026-09-22) → l'étape 5 reste autonome.
 - **Décision (2026-09-22) :** VGE Ch.1 + Ch.2 en **dépendance obligatoire** (pas de compat optionnelle) : on étend leurs systèmes (defs de coques/armes/rencontres) au lieu de recoder le combat vaisseau. Contrepartie assumée : VGE est **incompatible avec tout autre mod qui modifie les gravships**, notre mod hérite de cette restriction.
-- À faire côté `About.xml` au démarrage de l'étape 3 : ajouter VEF, `vanillaexpanded.gravship`, `vanillaexpanded.gravship2` en `modDependencies` + `loadAfter`, et les références C# (DLL VEF/VGE) au `.csproj` si on les patche.
+- ✅ VEF, `vanillaexpanded.gravship`, `vanillaexpanded.gravship2` déclarés dans `About.xml` (`modDependencies` + `loadAfter`). Reste : références C# (DLL VEF/VGE) au `.csproj` si on les patche.
 
 ---
 
@@ -175,7 +175,7 @@ Mécanique signature qui **lie Jaffa et Goa'uld**. Dirigée par le joueur (chiru
 - [~] Idéologie : **meme `SG_GoauldWorship`** (version minimale sûre). *Reste : precepts + rituel prim'ta (passe testée).*
 
 ### Étape 3 — Vaisseaux (gravships) par race *(sur VGE Ch.1 + Ch.2, dépendance obligatoire)*
-- [ ] Déclarer VEF + VGE Ch.1 + VGE Ch.2 dans `About.xml` et vérifier le chargement sans erreur.
+- [~] VEF + VGE Ch.1 + VGE Ch.2 déclarés dans `About.xml`. *Reste : vérifier le chargement sans erreur en jeu.*
 - [ ] Étudier les defs/extensions exposées par VGE (coques, composants, rencontres orbitales) — sources publiques : repos GitHub `Vanilla-Expanded/VanillaGravshipExpanded` et `VanillaGravshipExpanded2`.
 - [ ] Composants/coques thématiques par race (naquadah, coque Goa'uld, blindage Asgard…) via les systèmes VGE.
 - [ ] Layouts de gravships ennemis par faction (Ha'tak Goa'uld, vaisseau Asgard…) branchés sur les **rencontres de combat VGE Ch.2**.

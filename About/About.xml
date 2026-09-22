@@ -20,7 +20,7 @@ CONTENU
 EN DÉVELOPPEMENT
 - Vaisseaux (gravships) propres à chaque race, armes de vaisseau, et un système de quêtes vers une cité légendaire.
 
-Requiert les DLC Biotech, Ideology et Odyssey.</description>
+Requiert les DLC Biotech, Ideology et Odyssey, ainsi que Harmony, Vanilla Expanded Framework et Vanilla Gravship Expanded (Chapitres 1 et 2).</description>
   <modDependencies>
     <li>
       <packageId>brrainz.harmony</packageId>
@@ -40,6 +40,21 @@ Requiert les DLC Biotech, Ideology et Odyssey.</description>
       <packageId>Ludeon.RimWorld.Odyssey</packageId>
       <displayName>Odyssey</displayName>
     </li>
+    <li>
+      <packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+      <displayName>Vanilla Expanded Framework</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2023507013</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>vanillaexpanded.gravship</packageId>
+      <displayName>Vanilla Gravship Expanded - Chapter 1</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3609835606</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>vanillaexpanded.gravship2</packageId>
+      <displayName>Vanilla Gravship Expanded - Chapter 2</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3799737423</steamWorkshopUrl>
+    </li>
   </modDependencies>
   <loadAfter>
     <li>brrainz.harmony</li>
@@ -47,5 +62,8 @@ Requiert les DLC Biotech, Ideology et Odyssey.</description>
     <li>Ludeon.RimWorld.Ideology</li>
     <li>Ludeon.RimWorld.Biotech</li>
     <li>Ludeon.RimWorld.Odyssey</li>
+    <li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+    <li>vanillaexpanded.gravship</li>
+    <li>vanillaexpanded.gravship2</li>
   </loadAfter>
 </ModMetaData>
