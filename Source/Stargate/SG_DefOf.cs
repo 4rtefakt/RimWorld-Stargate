@@ -29,6 +29,12 @@ namespace Stargate
         // Bâtiments
         public static ThingDef SG_Sarcophagus;
 
+        // Factions
+        public static FactionDef SG_SystemLords;
+
+        // Générateurs de noms
+        public static RulePackDef SG_NamerHatak;
+
         static SG_DefOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(SG_DefOf));

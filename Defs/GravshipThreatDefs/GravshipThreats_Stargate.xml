@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       MENACE ORBITALE : HA'TAK GOA'ULD (Étape 3, sur VGE Ch.2)
+       S'ajoute au tirage des menaces orbitales de VGE (poids relatif) dès que
+       la visibilité du gravship attire l'attention. Même déroulé que le
+       gravship ennemi VGE (bombardement, abordage possible, moteur à détruire),
+       mais sous la bannière des Grands Maîtres : faction goa'uld, équipage
+       Jaffa + seigneurs (parfois une reine), noms de Ha'tak.
+       N'apparaît que si la faction goa'uld existe et est hostile.
+       Placeholders : {0} = nom du Ha'tak / durée / nom du gravship du joueur,
+       comme dans les textes VGE équivalents.
+       ============================================================ -->
+  <VanillaGravshipExpanded2.GravshipThreatDef>
+    <defName>SG_Hatak</defName>
+    <label>Ha'tak goa'uld</label>
+    <incomingLabel>Ha'tak en approche</incomingLabel>
+    <weight>3</weight>
+    <description>Un Ha'tak goa'uld a verrouillé la position de votre gravship et s'apprête à ouvrir le feu.\n\nArrivée dans : {0}\n\nÉloignez-vous avant son arrivée pour l'éviter, ou préparez-vous au combat.</description>
+    <workerClass>Stargate.GravshipThreatWorker_Hatak</workerClass>
+    <letterLabel>Ha'tak en approche</letterLabel>
+    <letterDesc>Un vaisseau-mère goa'uld, le {0}, a repéré la signature de votre gravship. Les Grands Maîtres ne tolèrent aucune puissance rivale dans leurs cieux : le Ha'tak manœuvre pour se placer en orbite haute et ouvrir le feu.\n\nSes canons à plasma bombarderont votre position jusqu'à ce que vous vous éloigniez ou que son moteur soit détruit. Des Jaffa et au moins un seigneur goa'uld sont à bord ; il arrive qu'une reine voyage avec eux.\n\nTourelles de défense rapprochée, blindage de gravship et générateurs de bouclier protègent contre le bombardement. L'artillerie de gravship permet de riposter à distance. Vous pouvez aussi envoyer une navette ou des capsules pour aborder le Ha'tak.</letterDesc>
+    <arrivalLetterLabel>Le Ha'tak attaque</arrivalLetterLabel>
+    <arrivalLetterDesc>Le Ha'tak goa'uld est en orbite et ouvre le feu sur votre gravship. Pour survivre, détruisez son moteur ainsi que toute son artillerie.\n\nRipostez avec l'artillerie de votre gravship, tenez bon derrière vos boucliers et vos défenses rapprochées, ou envoyez une navette ou des capsules pour aborder le vaisseau et le détruire de l'intérieur. Si vous ne pouvez pas tenir, fuyez hors de sa portée immédiatement.</arrivalLetterDesc>
+    <baseCountdownHours>60</baseCountdownHours>
+    <jammerExtensionHours>24</jammerExtensionHours>
+    <escapeMidBattleVisibilityLoss>400000</escapeMidBattleVisibilityLoss>
+    <earlyEscapeVisibilityLoss>100000</earlyEscapeVisibilityLoss>
+    <escapeDistance>25</escapeDistance>
+    <despawnHours>24</despawnHours>
+    <hoursBombardmentOnEngineDestroyed>12</hoursBombardmentOnEngineDestroyed>
+    <worldObjectDef>SG_ActiveHatak</worldObjectDef>
+    <tileSpawnDistanceRange>5~20</tileSpawnDistanceRange>
+    <mapSize>250</mapSize>
+    <defeatBuildings>
+      <li>VGE_EnemyGravEngine</li>
+    </defeatBuildings>
+    <escapedMessage>Vous avez échappé au Ha'tak goa'uld.</escapedMessage>
+    <earlyEscapeMessage>Vous avez semé le Ha'tak goa'uld.</earlyEscapeMessage>
+    <defeatLetter>Ha'tak vaincu</defeatLetter>
+    <defeatLetterDesc>Le Ha'tak goa'uld est hors de combat, mais son épave regorge encore de ressources précieuses. Récupérez ce que vous pouvez avant que la coque ne se disloque.\n\nLe Ha'tak se disloquera dans {0}.</defeatLetterDesc>
+    <disengagesLetter>Le Ha'tak se retire</disengagesLetter>
+    <disengagesLetterDesc>Le {0} a mis votre gravship hors d'état de nuire et se retire. Les Grands Maîtres n'oublient jamais une insulte.</disengagesLetterDesc>
+    <alertExplanation>Un Ha'tak goa'uld bombarde {0}. Il continuera tant que son moteur n'est pas détruit. Détruisez le moteur et l'artillerie du Ha'tak, ou fuyez.</alertExplanation>
+  </VanillaGravshipExpanded2.GravshipThreatDef>
+
+  <WorldObjectDef ParentName="SpaceBase">
+    <defName>SG_ActiveHatak</defName>
+    <label>Ha'tak goa'uld</label>
+    <description>Un Ha'tak, vaisseau-mère des Grands Maîtres goa'uld, qui bombarde actuellement votre gravship. Son équipage de Jaffa défend un moteur gravitationnel qu'il faut détruire pour mettre fin à l'attaque.\n\nAccessible par capsules de transport, navette ou gravship.</description>
+    <worldObjectClass>VanillaGravshipExpanded2.MapParent_WarPlatform</worldObjectClass>
+    <expandingIconTexture>UI/MapIcons/EnemyGravship</expandingIconTexture>
+    <mapGenerator>SG_ActiveHatak</mapGenerator>
+  </WorldObjectDef>
+
+  <MapGeneratorDef ParentName="SpaceMapGenerator">
+    <defName>SG_ActiveHatak</defName>
+    <label>Ha'tak goa'uld</label>
+    <genSteps>
+      <li>SG_Hatak</li>
+    </genSteps>
+  </MapGeneratorDef>
+
+  <!-- Structure = vaisseau ennemi VGE (VGE_EnemyGravshipSet) tant que des plans de
+       Ha'tak dédiés n'existent pas : il suffira de changer structureSetDef ici. -->
+  <GenStepDef>
+    <defName>SG_Hatak</defName>
+    <order>200</order>
+    <genStep Class="Stargate.GenStep_Hatak">
+      <structureSetDef>VGE_EnemyGravshipSet</structureSetDef>
+      <pawnCountRange>10~16</pawnCountRange>
+    </genStep>
+  </GenStepDef>
+
+</Defs>
