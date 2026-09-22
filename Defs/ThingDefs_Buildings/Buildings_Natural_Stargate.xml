@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Minerai de naquadah : veines rares dans la roche, qui rendent le naquadah
+       minable (en plus du raffinage et du forage profond).
+       Texture = veine rocheuse de VGE teintée (placeholder). -->
+  <ThingDef ParentName="RockBase">
+    <defName>SG_MineableNaquadah</defName>
+    <label>minerai de naquadah</label>
+    <description>Une veine de naquadah brut prise dans la roche : un minerai extraterrestre extraordinairement dense et riche en énergie. On le trouve rarement, en petits filons.</description>
+    <graphicData>
+      <texPath>Things/Natural/DeepRockWallFlecked_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <color>(105,100,95)</color>
+      <colorTwo>(80,165,140)</colorTwo>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>2500</MaxHitPoints>
+    </statBases>
+    <building>
+      <isResourceRock>true</isResourceRock>
+      <mineableThing>SG_Naquadah</mineableThing>
+      <mineableYield>20</mineableYield>
+      <mineableScatterCommonality>0.12</mineableScatterCommonality>
+      <mineableScatterLumpSizeRange>4~10</mineableScatterLumpSizeRange>
+      <veinMineable>true</veinMineable>
+    </building>
+  </ThingDef>
+
+</Defs>

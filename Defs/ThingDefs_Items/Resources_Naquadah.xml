@@ -2,7 +2,7 @@
 <Defs>
 
   <!-- Naquadah : ressource énergétique ET métal de la technologie goa'uld.
-       - Obtenable par raffinage (Recipes_Naquadah.xml).
+       - Obtenable par minage (SG_MineableNaquadah), forage profond et raffinage.
        - Carburant : canon à plasma goa'uld, générateur au naquadah.
        - Matériau métallique (stuff) : murs, meubles, armes de mêlée… et surtout
          le blindage de gravship VGE, qui accepte tout matériau métallique.
@@ -35,6 +35,10 @@
       <li>ResourcesRaw</li>
     </thingCategories>
     <burnableByRecipe>false</burnableByRecipe>
+    <!-- Forage profond : filons de naquadah détectables par le scanner de sol. -->
+    <deepCommonality>0.4</deepCommonality>
+    <deepCountPerPortion>10</deepCountPerPortion>
+    <deepLumpSizeRange>3~8</deepLumpSizeRange>
     <stuffProps>
       <categories>
         <li>Metallic</li>
