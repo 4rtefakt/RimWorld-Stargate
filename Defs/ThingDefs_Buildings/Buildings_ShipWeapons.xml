@@ -153,6 +153,92 @@
     </modExtensions>
   </ThingDef>
 
+  <!-- Version ENNEMIE (équipage goa'uld) du canon à plasma, montée sur les Ha'tak :
+       même base que les artilleries ennemies VGE (tir automatique sans terminal,
+       munitions illimitées, non revendicable, démontable pour ses matériaux). -->
+  <ThingDef ParentName="VGE_EnemyArtilleryBase">
+    <defName>SG_EnemyGoauldStaffCannon</defName>
+    <label>canon à plasma du ha'tak</label>
+    <description>Un canon à plasma monté sur un vaisseau-mère goa'uld. Il tire de lui-même sur les cibles désignées par l'équipage.\n\nCet appareil appartient à l'ennemi et ne peut être ni décrypté ni déverrouillé. Il peut toutefois être démonté pour récupérer de précieux matériaux, dont du naquadah.</description>
+    <graphicData>
+      <texPath>Things/Structures/Artillery/GravshipArtillery_Base_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <color>(0.95, 0.80, 0.45)</color>
+    </graphicData>
+    <uiIconPath>Things/Structures/Artillery/GaussGun_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>450</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+      <Beauty>-25</Beauty>
+      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+    </statBases>
+    <size>(3,3)</size>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <costList>
+      <Plasteel>40</Plasteel>
+      <SG_Naquadah>20</SG_Naquadah>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <building>
+      <turretGunDef>SG_Gun_EnemyGoauldStaffCannon</turretGunDef>
+      <turretBurstCooldownTime>18</turretBurstCooldownTime>
+      <turretTopDrawSize>4</turretTopDrawSize>
+      <turretTopOffset>(0, 0.25)</turretTopOffset>
+      <turretBurstWarmupTime>4</turretBurstWarmupTime>
+    </building>
+    <comps>
+      <li Class="VanillaGravshipExpanded.CompProperties_WorldArtillery">
+        <worldMapAttackRange>24</worldMapAttackRange>
+        <firingMode>GroundToSpace, GroundToGround, SpaceToSpace, SpaceToGround</firingMode>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="VanillaGravshipExpanded.TurretExtension_RotationSpeed">
+        <rotationSpeed>90</rotationSpeed>
+      </li>
+      <li Class="VanillaGravshipExpanded.TurretExtension_Barrels">
+        <barrels>
+          <li>(0, 0, 1.5)</li>
+        </barrels>
+      </li>
+    </modExtensions>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>SG_Gun_EnemyGoauldStaffCannon</defName>
+    <label>canon à plasma du ha'tak</label>
+    <description>Canon à plasma d'un Ha'tak.</description>
+    <graphicData>
+      <texPath>Things/Structures/Artillery/GaussGun_TurretTop</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(0.95, 0.80, 0.45)</color>
+    </graphicData>
+    <verbs>
+      <li>
+        <verbClass>VanillaGravshipExpanded.Verb_ShootWithWorldTargeting</verbClass>
+        <defaultProjectile>SG_Bullet_GoauldStaffCannon</defaultProjectile>
+        <range>99999</range>
+        <minRange>14.9</minRange>
+        <burstShotCount>3</burstShotCount>
+        <ticksBetweenBurstShots>14</ticksBetweenBurstShots>
+        <soundCast>ChargeLance_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+        <forcedMissRadius>12</forcedMissRadius>
+        <requireLineOfSight>false</requireLineOfSight>
+        <consumeFuelPerShot>0</consumeFuelPerShot>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+  </ThingDef>
+
   <!-- ===================== CANON À IONS ASGARD =====================
        Arme lourde à faisceau : longues rafales d'ions d'une précision
        redoutable qui traversent les boucliers. Très gourmande en énergie

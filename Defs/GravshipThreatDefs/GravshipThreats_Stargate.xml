@@ -62,13 +62,13 @@
     </genSteps>
   </MapGeneratorDef>
 
-  <!-- Structure = vaisseau ennemi VGE (VGE_EnemyGravshipSet) tant que des plans de
-       Ha'tak dédiés n'existent pas : il suffira de changer structureSetDef ici. -->
+  <!-- Structure = plans de Ha'tak dédiés (SG_HatakSet, Prefabs_Hatak.xml, générés par
+       Tools/hatak/gen_hatak.py). Tout nouveau plan nommé SG_Hatak_N est tiré au hasard. -->
   <GenStepDef>
     <defName>SG_Hatak</defName>
     <order>200</order>
     <genStep Class="Stargate.GenStep_Hatak">
-      <structureSetDef>VGE_EnemyGravshipSet</structureSetDef>
+      <structureSetDef>SG_HatakSet</structureSetDef>
       <pawnCountRange>10~16</pawnCountRange>
     </genStep>
   </GenStepDef>
