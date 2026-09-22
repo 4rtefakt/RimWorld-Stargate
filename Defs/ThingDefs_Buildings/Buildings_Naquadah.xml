@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       ÉNERGIE ET DÉFENSES AU NAQUADAH (Étape 3).
+       Textures = assets VGE teintés (placeholders), art dédié plus tard.
+       ============================================================ -->
+
+  <!-- ===================== GÉNÉRATEUR AU NAQUADAH =====================
+       Compact et très puissant, alimenté en naquadah. Utilisable dans la
+       colonie comme à bord d'un gravship. Instable : explose s'il est détruit. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>SG_NaquadahGenerator</defName>
+    <label>générateur au naquadah</label>
+    <description>Un réacteur compact qui libère l'énergie colossale contenue dans le naquadah. Il fournit une puissance considérable pour sa taille, que ce soit pour une colonie ou à bord d'un gravship, mais consomme régulièrement du naquadah. Le naquadah étant instable sous haute énergie, le générateur explose violemment s'il est détruit.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Structures/Power/GravcorePowerCoil</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <color>(0.55, 0.95, 0.75)</color>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>42</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <blockWind>true</blockWind>
+    <canOverlapZones>false</canOverlapZones>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <size>(2,2)</size>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>5000</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>-10</Beauty>
+      <Mass>40</Mass>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+      <Plasteel>40</Plasteel>
+      <SG_Naquadah>20</SG_Naquadah>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <designationCategory>Power</designationCategory>
+    <uiOrder>2150</uiOrder>
+    <researchPrerequisites>
+      <li>SG_NaquadahPower</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-2500</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Naquadah</fuelLabel>
+        <fuelGizmoLabel>Naquadah</fuelGizmoLabel>
+        <fuelConsumptionRate>2</fuelConsumptionRate>
+        <fuelCapacity>30</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>SG_Naquadah</li>
+          </thingDefs>
+        </fuelFilter>
+        <initialFuelPercent>0</initialFuelPercent>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(110, 255, 170, 0)</glowColor>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>4.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <explodeOnKilled>true</explodeOnKilled>
+        <startWickHitPointsPercent>0.2</startWickHitPointsPercent>
+        <wickTicks>180</wickTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ===================== BOUCLIER GOA'ULD DE GRAVSHIP =====================
+       Déclinaison goa'uld du grand bouclier de gravship VGE : alimenté par un
+       cœur de naquadah au lieu d'un gravcore, plus petit rayon, un seul par
+       gravship. Même mécanique (charge, chaleur structurelle, activation). -->
+  <ThingDef ParentName="GravshipComponentBase">
+    <defName>SG_GoauldShieldGenerator</defName>
+    <label>générateur de bouclier goa'uld</label>
+    <description>Le générateur de bouclier d'un Ha'tak, adapté aux gravships. Un cœur de naquadah alimente une bulle d'énergie dorée qui arrête les projectiles, y compris les obus d'artillerie ; ceux qui se trouvent à l'intérieur peuvent toujours tirer vers l'extérieur. Il doit être chargé avant usage. Un bouclier actif génère de la chaleur structurelle qui, faute de dissipateurs, se répand dans le gravship. Un gravship ne peut supporter qu'un seul bouclier goa'uld.</description>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Structures/Combat/LargeGravshipShieldGenerator</texPath>
+      <drawSize>(6, 6)</drawSize>
+      <color>(0.95, 0.80, 0.45)</color>
+    </graphicData>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawOffscreen>true</drawOffscreen>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <MaxHitPoints>700</MaxHitPoints>
+      <Flammability>0.2</Flammability>
+      <Mass>70</Mass>
+      <WorkToBuild>12000</WorkToBuild>
+      <VGE_MaintenanceSensitivity>2</VGE_MaintenanceSensitivity>
+    </statBases>
+    <size>(5, 5)</size>
+    <fillPercent>0.6</fillPercent>
+    <passability>PassThroughOnly</passability>
+    <pathCost>20</pathCost>
+    <canOverlapZones>false</canOverlapZones>
+    <costList>
+      <Plasteel>250</Plasteel>
+      <GravlitePanel>80</GravlitePanel>
+      <SG_Naquadah>150</SG_Naquadah>
+      <ComponentSpacer>6</ComponentSpacer>
+    </costList>
+    <terrainAffordanceNeeded>Substructure</terrainAffordanceNeeded>
+    <specialDisplayRadius>29.9</specialDisplayRadius>
+    <designationCategory>VGE_Combat</designationCategory>
+    <comps>
+      <li Class="CompProperties_GravshipFacility">
+        <requiresLOS>false</requiresLOS>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>500</maxDistance>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>600</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Interactable">
+        <compClass>CompInteractable_GravshipShieldGenerator</compClass>
+        <ticksToActivate>120</ticksToActivate>
+        <jobString>activer</jobString>
+        <activateTexPath>UI/Commands/ActivateGravshipShield</activateTexPath>
+        <soundActivate>GravshipShieldGenerator_Activate</soundActivate>
+        <requiresPower>false</requiresPower>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+      <li Class="VanillaGravshipExpanded2.CompProperties_GravshipShieldGeneratorWithHeat">
+        <radius>29.9</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <interceptAirProjectiles>true</interceptAirProjectiles>
+        <color>(0.9, 0.7, 0.3)</color>
+        <reactivateEffect>BulletShieldGenerator_Reactivate</reactivateEffect>
+        <activeSound>BulletShield_Ambience</activeSound>
+        <hitPoints>750</hitPoints>
+        <hitPointsRestoreInstantlyAfterCharge>false</hitPointsRestoreInstantlyAfterCharge>
+        <startWithMaxHitPoints>false</startWithMaxHitPoints>
+        <chargeDurationTicks>15000</chargeDurationTicks>
+        <minIdleAlpha>0.2</minIdleAlpha>
+        <drawWithNoSelection>True</drawWithNoSelection>
+        <disarmedByEmpForTicks>3000</disarmedByEmpForTicks>
+        <gizmoTipKey>GravshipShieldTip</gizmoTipKey>
+        <alwaysShowHitpointsGizmo>false</alwaysShowHitpointsGizmo>
+        <rechargeHitPointsIntervalTicks>75</rechargeHitPointsIntervalTicks>
+        <activated>true</activated>
+        <activeDuration>12000</activeDuration>
+        <maxHeat>250</maxHeat>
+        <passiveHeatGeneration>3</passiveHeatGeneration>
+        <heatPerDamage>0.1</heatPerDamage>
+        <heatDissipationPerHour>1</heatDissipationPerHour>
+        <explosionRadius>2.9</explosionRadius>
+        <explosionDamageDef>Flame</explosionDamageDef>
+        <explosionDamage>-1</explosionDamage>
+        <hazeSettings>
+          <scale>6</scale>
+          <offset>(0, 0.2)</offset>
+        </hazeSettings>
+      </li>
+      <li Class="VanillaGravshipExpanded.CompProperties_GravMaintainable" />
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <researchPrerequisites>
+      <li>SG_GoauldShipDefenses</li>
+    </researchPrerequisites>
+    <uiOrder>2660</uiOrder>
+    <modExtensions>
+      <li Class="VEF.Buildings.ProjectileInterceptorExtension">
+        <healthColorPoints>
+          <li>
+            <healthPercent>0.1</healthPercent>
+            <color>(1.0, 0.0, 0.0)</color>
+          </li>
+          <li>
+            <healthPercent>0.5</healthPercent>
+            <color>(1.0, 0.65, 0.0)</color>
+          </li>
+        </healthColorPoints>
+      </li>
+      <li Class="VanillaGravshipExpanded2.VisibilityGainExtension" />
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

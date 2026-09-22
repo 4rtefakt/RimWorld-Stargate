@@ -1,27 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <!-- Naquadah : ressource énergétique de base de la technologie Goa'uld.
-       Obtenable via la recette de raffinage (voir Recipes_Naquadah.xml).
-       Texture = placeholder vanilla (plasteel) ; art dédié plus tard. -->
+  <!-- Naquadah : ressource énergétique ET métal de la technologie goa'uld.
+       - Obtenable par raffinage (Recipes_Naquadah.xml).
+       - Carburant : canon à plasma goa'uld, générateur au naquadah.
+       - Matériau métallique (stuff) : murs, meubles, armes de mêlée… et surtout
+         le blindage de gravship VGE, qui accepte tout matériau métallique.
+       Texture = placeholder vanilla (plasteel teinté) ; art dédié plus tard. -->
   <ThingDef ParentName="ResourceBase">
     <defName>SG_Naquadah</defName>
     <label>naquadah</label>
-    <description>Minerai dense et riche en énergie, pierre angulaire de la technologie Goa'uld. Sert de carburant et de matériau pour l'équipement avancé.</description>
+    <description>Minerai extraterrestre dense et riche en énergie, pierre angulaire de la technologie goa'uld. Sert de carburant aux réacteurs et aux armes à plasma, et forme un métal d'une résistance exceptionnelle, particulièrement face à la chaleur et à l'énergie.</description>
     <graphicData>
       <texPath>Things/Item/Resource/Plasteel</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(95, 150, 125)</color>
     </graphicData>
     <stackLimit>75</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
     <statBases>
-      <MarketValue>5</MarketValue>
+      <MarketValue>8</MarketValue>
       <Mass>0.5</Mass>
       <Flammability>0</Flammability>
       <DeteriorationRate>0</DeteriorationRate>
+      <StuffPower_Armor_Sharp>1.0</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>0.5</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>0.9</StuffPower_Armor_Heat>
+      <StuffPower_Insulation_Cold>3</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>0</StuffPower_Insulation_Heat>
+      <SharpDamageMultiplier>1.0</SharpDamageMultiplier>
+      <BluntDamageMultiplier>1.1</BluntDamageMultiplier>
     </statBases>
     <thingCategories>
       <li>ResourcesRaw</li>
     </thingCategories>
+    <burnableByRecipe>false</burnableByRecipe>
+    <stuffProps>
+      <categories>
+        <li>Metallic</li>
+      </categories>
+      <commonality>0.02</commonality>
+      <color>(95, 150, 125)</color>
+      <constructEffect>ConstructMetal</constructEffect>
+      <soundImpactBullet>BulletImpact_Metal</soundImpactBullet>
+      <soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
+      <statFactors>
+        <MaxHitPoints>2.6</MaxHitPoints>
+        <Beauty>1.5</Beauty>
+        <Flammability>0</Flammability>
+        <WorkToMake>2.0</WorkToMake>
+        <WorkToBuild>2.0</WorkToBuild>
+        <MeleeWeapon_CooldownMultiplier>0.9</MeleeWeapon_CooldownMultiplier>
+      </statFactors>
+      <canSuggestUseDefaultStuff>false</canSuggestUseDefaultStuff>
+    </stuffProps>
     <soundInteract>Metal_Drop</soundInteract>
     <soundDrop>Metal_Drop</soundDrop>
   </ThingDef>

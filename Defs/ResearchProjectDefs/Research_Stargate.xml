@@ -110,4 +110,17 @@
     <researchViewY>1.50</researchViewY>
   </ResearchProjectDef>
 
+  <ResearchProjectDef ParentName="VGE_GravtechResearchBase">
+    <defName>SG_GoauldShipDefenses</defName>
+    <label>défenses des ha'tak</label>
+    <description>Adapte aux gravships le générateur de bouclier des vaisseaux-mères goa'uld, alimenté par un cœur de naquadah plutôt que par un gravcore.</description>
+    <baseCost>1200</baseCost>
+    <prerequisites>
+      <li>VGE_GravshipDefenses</li>
+      <li>SG_NaquadahPower</li>
+    </prerequisites>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>2.50</researchViewY>
+  </ResearchProjectDef>
+
 </Defs>
