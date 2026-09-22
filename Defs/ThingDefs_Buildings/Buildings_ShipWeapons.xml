@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       ARMES DE VAISSEAU (Étape 4) — construites sur Vanilla Gravship
+       Expanded (Ch.1 + Ch.2, dépendances obligatoires).
+       Elles héritent des bases d'artillerie VGE : même chaîne de ciblage
+       (terminal/console de ciblage VGE requis, tir orbital et sol-orbite),
+       mêmes contraintes (sous-structure de gravship, alimentation).
+       Textures = assets VGE teintés (placeholders), art dédié plus tard.
+       ============================================================ -->
+
+  <!-- ===================== CANON À PLASMA GOA'ULD =====================
+       Le canon « bâton » des Ha'tak : salves de décharges de plasma
+       explosives. Alimenté directement en naquadah (munition = naquadah). -->
+  <ThingDef ParentName="VGE_GravshipArtillerySmallBase">
+    <defName>SG_GoauldStaffCannon</defName>
+    <label>canon à plasma goa'uld</label>
+    <description>Le canon principal des vaisseaux-mères goa'uld : une version géante du bâton jaffa, qui projette en salves des décharges de plasma surchauffé alimentées par du naquadah. Chaque décharge explose à l'impact et ronge les coques. Efficace en bombardement comme contre les vaisseaux en orbite.\n\nNécessite un terminal ou une console de ciblage relié(e), avec un opérateur. Consomme du naquadah à chaque tir.</description>
+    <thingClass>VanillaGravshipExpanded.Building_GravshipTurretAutoAttack</thingClass>
+    <uiIconPath>Things/Structures/Artillery/GaussGun_MenuIcon</uiIconPath>
+    <graphicData>
+      <texPath>Things/Structures/Artillery/GravshipArtillery_Base_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <color>(0.95, 0.80, 0.45)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>450</MaxHitPoints>
+      <Flammability>0.3</Flammability>
+      <WorkToBuild>20000</WorkToBuild>
+      <Beauty>-20</Beauty>
+    </statBases>
+    <costList>
+      <Plasteel>150</Plasteel>
+      <GravlitePanel>40</GravlitePanel>
+      <SG_Naquadah>60</SG_Naquadah>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <researchPrerequisites Inherit="False">
+      <li>SG_GoauldShipWeaponry</li>
+    </researchPrerequisites>
+    <building>
+      <turretGunDef>SG_Gun_GoauldStaffCannon</turretGunDef>
+      <turretBurstCooldownTime>10</turretBurstCooldownTime>
+      <turretTopDrawSize>4</turretTopDrawSize>
+      <turretTopOffset>(0, 0.25)</turretTopOffset>
+      <turretBurstWarmupTime>4</turretBurstWarmupTime>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <relatedBuildCommands>
+        <li>VGE_TargetingTerminal</li>
+        <li>VGE_TargetingConsole</li>
+      </relatedBuildCommands>
+    </building>
+    <comps>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Naquadah</fuelLabel>
+        <fuelGizmoLabel>Naquadah</fuelGizmoLabel>
+        <outOfFuelMessage>Plus de naquadah</outOfFuelMessage>
+        <fuelFilter>
+          <thingDefs>
+            <li>SG_Naquadah</li>
+          </thingDefs>
+        </fuelFilter>
+        <fuelCapacity>60</fuelCapacity>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <showFuelGizmo>true</showFuelGizmo>
+        <initialFuelPercent>0</initialFuelPercent>
+        <factorByDifficulty>true</factorByDifficulty>
+      </li>
+      <li Class="VanillaGravshipExpanded.CompProperties_WorldArtillery">
+        <worldMapAttackRange>24</worldMapAttackRange>
+        <firingMode>GroundToSpace, GroundToGround, SpaceToSpace, SpaceToGround</firingMode>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="VanillaGravshipExpanded.TurretExtension_RotationSpeed">
+        <rotationSpeed>90</rotationSpeed>
+      </li>
+      <li Class="VanillaGravshipExpanded.TurretExtension_Barrels">
+        <barrels>
+          <li>(0, 0, 1.5)</li>
+        </barrels>
+      </li>
+      <li Class="VanillaGravshipExpanded2.VisibilityGainExtension">
+        <visibilityGainPerShot>40</visibilityGainPerShot>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>SG_Gun_GoauldStaffCannon</defName>
+    <label>canon à plasma goa'uld</label>
+    <description>Canon à plasma de vaisseau goa'uld.</description>
+    <graphicData>
+      <texPath>Things/Structures/Artillery/GaussGun_TurretTop</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(0.95, 0.80, 0.45)</color>
+    </graphicData>
+    <statBases>
+      <VGE_AccuracyGlobal>0.55</VGE_AccuracyGlobal>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>VanillaGravshipExpanded.Verb_ShootWithWorldTargeting</verbClass>
+        <defaultProjectile>SG_Bullet_GoauldStaffCannon</defaultProjectile>
+        <range>99999</range>
+        <minRange>14.9</minRange>
+        <burstShotCount>3</burstShotCount>
+        <ticksBetweenBurstShots>14</ticksBetweenBurstShots>
+        <soundCast>ChargeLance_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+        <forcedMissRadius>6</forcedMissRadius>
+        <requireLineOfSight>false</requireLineOfSight>
+        <consumeFuelPerShot>2</consumeFuelPerShot>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>SG_Bullet_GoauldStaffCannon</defName>
+    <label>décharge de plasma</label>
+    <thingClass>VanillaGravshipExpanded.Projectile_Artillery</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/ChargeLanceShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>3</drawSize>
+      <color>(1, 0.65, 0.25)</color>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>38</damageAmountBase>
+      <armorPenetrationBase>0.25</armorPenetrationBase>
+      <speed>90</speed>
+      <explosionRadius>3.4</explosionRadius>
+      <explosionChanceToStartFire>0.3</explosionChanceToStartFire>
+      <flyOverhead>true</flyOverhead>
+      <stoppingPower>2</stoppingPower>
+      <soundExplode>MortarBomb_Explode</soundExplode>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+    </projectile>
+    <modExtensions>
+      <li Class="VanillaGravshipExpanded.SubstructureDamageExtension">
+        <substructureDamageRadius>1.9</substructureDamageRadius>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- ===================== CANON À IONS ASGARD =====================
+       Arme lourde à faisceau : longues rafales d'ions d'une précision
+       redoutable qui traversent les boucliers. Très gourmande en énergie
+       pendant le tir (comme l'émetteur anti-vaisseau VGE). -->
+  <ThingDef ParentName="VGE_GravshipHeavyArtilleryBase">
+    <defName>SG_AsgardIonCannon</defName>
+    <label>canon à ions asgard</label>
+    <description>Arme de vaisseau asgard : un projecteur d'ions à haute énergie qui lâche de longues rafales d'une précision chirurgicale. Ses faisceaux traversent les boucliers d'énergie comme s'ils n'existaient pas et percent les blindages les plus épais.\n\nNécessite un terminal ou une console de ciblage relié(e), avec un opérateur. Consomme énormément d'énergie pendant le tir.</description>
+    <thingClass>VanillaGravshipExpanded.Building_AnticraftEmitter</thingClass>
+    <uiIconPath>Things/Structures/Combat/GravshipTurrets/AnticraftEmitter_MenuIcon</uiIconPath>
+    <graphicData>
+      <color>(0.75, 0.85, 1.0)</color>
+    </graphicData>
+    <costList>
+      <Plasteel>450</Plasteel>
+      <GravlitePanel>120</GravlitePanel>
+      <Gold>40</Gold>
+      <ComponentSpacer>8</ComponentSpacer>
+    </costList>
+    <researchPrerequisites Inherit="False">
+      <li>SG_AsgardShipWeaponry</li>
+    </researchPrerequisites>
+    <building>
+      <turretGunDef>SG_Gun_AsgardIonCannon</turretGunDef>
+      <turretBurstCooldownTime>18</turretBurstCooldownTime>
+      <turretTopDrawSize>6</turretTopDrawSize>
+      <turretTopOffset>(0, 0.25)</turretTopOffset>
+      <turretBurstWarmupTime>8</turretBurstWarmupTime>
+      <relatedBuildCommands>
+        <li>VGE_TargetingTerminal</li>
+        <li>VGE_TargetingConsole</li>
+      </relatedBuildCommands>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>180000</basePowerConsumption>
+        <idlePowerDraw>100</idlePowerDraw>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="VanillaGravshipExpanded.CompProperties_WorldArtillery">
+        <worldMapAttackRange>40</worldMapAttackRange>
+        <firingMode>GroundToSpace, SpaceToSpace, SpaceToGround</firingMode>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="VanillaGravshipExpanded2.VisibilityGainExtension">
+        <visibilityGainPerShot>12</visibilityGainPerShot>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>SG_Gun_AsgardIonCannon</defName>
+    <label>canon à ions asgard</label>
+    <description>Projecteur d'ions asgard.</description>
+    <graphicData>
+      <texPath>Things/Structures/Combat/GravshipTurrets/AnticraftEmitter_TurretTop</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(0.75, 0.85, 1.0)</color>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>0.95</AccuracyTouch>
+      <AccuracyShort>0.92</AccuracyShort>
+      <AccuracyMedium>0.88</AccuracyMedium>
+      <AccuracyLong>0.82</AccuracyLong>
+      <VGE_AccuracyGlobal>0.75</VGE_AccuracyGlobal>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>VanillaGravshipExpanded.Verb_ShootWithWorldTargeting</verbClass>
+        <defaultProjectile>SG_Bullet_AsgardIon</defaultProjectile>
+        <range>99999</range>
+        <minRange>20</minRange>
+        <forcedMissRadius>0</forcedMissRadius>
+        <canGoWild>true</canGoWild>
+        <burstShotCount>30</burstShotCount>
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <soundCast>Shot_BeamRepeater</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>26</muzzleFlashScale>
+        <aimingChargeMote>Mote_BeamRepeater_Charge</aimingChargeMote>
+        <aimingChargeMoteOffset>2.5</aimingChargeMoteOffset>
+        <requireLineOfSight>false</requireLineOfSight>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <beamChanceToStartFire>0.5</beamChanceToStartFire>
+        <beamChanceToAttachFire>0.5</beamChanceToAttachFire>
+        <beamFireSizeRange>0.15~0.3</beamFireSizeRange>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>SG_Bullet_AsgardIon</defName>
+    <label>faisceau d'ions</label>
+    <thingClass>VanillaGravshipExpanded.Projectile_ArtilleryBeam</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>BeamBypassShields</damageDef>
+      <damageAmountBase>20</damageAmountBase>
+      <armorPenetrationBase>1.0</armorPenetrationBase>
+      <flyOverhead>true</flyOverhead>
+      <beamMoteDef>SG_Mote_AsgardIonBeam</beamMoteDef>
+      <beamStartOffset>2.5</beamStartOffset>
+    </projectile>
+  </ThingDef>
+
+  <!-- Faisceau visuel : copie du faisceau VGE, teinté bleu pâle. -->
+  <ThingDef ParentName="MoteBase">
+    <defName>SG_Mote_AsgardIonBeam</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <fadeOutTime>0.15</fadeOutTime>
+      <solidTime>0.1</solidTime>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+    </mote>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <texPath>Things/Mote/GraserBeam</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MoteBeam</shaderType>
+      <drawSize>(2.5,1)</drawSize>
+      <color>(0.55, 0.80, 1.0)</color>
+      <shaderParameters>
+        <_ExtraTexA>/Things/Mote/BeamSecondaryNoise_A</_ExtraTexA>
+        <_ExtraTexB>/Things/Mote/BeamSecondaryNoise_B</_ExtraTexB>
+        <_ScrollSpeedA>0</_ScrollSpeedA>
+        <_ScrollSpeedB>0</_ScrollSpeedB>
+        <_Intensity>2</_Intensity>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+
+</Defs>
