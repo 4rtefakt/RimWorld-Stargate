@@ -66,6 +66,9 @@
         <li>Soldier</li>
       </defaultOutfitTags>
     </apparel>
+    <tradeTags>
+      <li>SG_StargateTech</li>
+    </tradeTags>
   </ThingDef>
 
   <!-- ===================== GARDE JAFFA : CASQUE SERPENT ===================== -->
@@ -123,6 +126,9 @@
         <li>Soldier</li>
       </defaultOutfitTags>
     </apparel>
+    <tradeTags>
+      <li>SG_StargateTech</li>
+    </tradeTags>
   </ThingDef>
 
   <!-- ===================== ROBE GOA'ULD ===================== -->
@@ -167,6 +173,9 @@
         <li>SG_GoauldGear</li>
       </tags>
     </apparel>
+    <tradeTags>
+      <li>SG_StargateTech</li>
+    </tradeTags>
   </ThingDef>
 
   <!-- ===================== UNIFORME SGC (TAU'RI) ===================== -->
@@ -209,6 +218,9 @@
         <li>Soldier</li>
       </defaultOutfitTags>
     </apparel>
+    <tradeTags>
+      <li>SG_StargateTech</li>
+    </tradeTags>
   </ThingDef>
 
 </Defs>

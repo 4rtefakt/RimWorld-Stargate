@@ -6,7 +6,8 @@
        - Commandement Stargate (Tau'ri), Tok'ra, Jaffa libres : ennemis jurés
          des Goa'uld (ils refusent le culte des Goa'uld), neutres envers le joueur.
        - Asgard : très avancés, peu nombreux, commerçants.
-       Marchands vanilla (outlanders) en attendant des stocks Stargate dédiés.
+       Marchands : stocks Stargate dédiés (TraderKinds_Stargate.xml) + un marchand
+       outlander vanilla pour la variété.
        Icônes = placeholders générés (Tools/art/gen_faction_icons.py).
        ============================================================ -->
 
@@ -25,16 +26,6 @@
     <disallowedMemes>
       <li>SG_GoauldWorship</li>
     </disallowedMemes>
-    <caravanTraderKinds>
-      <li>Caravan_Outlander_BulkGoods</li>
-      <li>Caravan_Outlander_CombatSupplier</li>
-    </caravanTraderKinds>
-    <visitorTraderKinds>
-      <li>Visitor_Outlander_Standard</li>
-    </visitorTraderKinds>
-    <baseTraderKinds>
-      <li>Base_Outlander_Standard</li>
-    </baseTraderKinds>
     <maxPawnCostPerTotalPointsCurve>
       <points>
         <li>(0,35)</li>
@@ -65,6 +56,17 @@
       <li>(0.35, 0.42, 0.25)</li>
       <li>(0.45, 0.52, 0.32)</li>
     </colorSpectrum>
+    <caravanTraderKinds>
+      <li>SG_Caravan_Tauri</li>
+      <li>Caravan_Outlander_BulkGoods</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds>
+      <li>SG_Visitor_Tauri</li>
+      <li>Visitor_Outlander_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>SG_Base_Tauri</li>
+    </baseTraderKinds>
     <pawnGroupMakers>
       <li>
         <kindDef>Combat</kindDef>
@@ -126,9 +128,17 @@
       <li>(0.27, 0.55, 0.67)</li>
       <li>(0.35, 0.65, 0.75)</li>
     </colorSpectrum>
-    <caravanTraderKinds Inherit="False">
+    <caravanTraderKinds>
+      <li>SG_Caravan_Tokra</li>
       <li>Caravan_Outlander_Exotic</li>
     </caravanTraderKinds>
+    <visitorTraderKinds>
+      <li>SG_Visitor_Tokra</li>
+      <li>Visitor_Outlander_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>SG_Base_Tokra</li>
+    </baseTraderKinds>
     <pawnGroupMakers>
       <li>
         <kindDef>Combat</kindDef>
@@ -186,6 +196,17 @@
       <li>(0.60, 0.28, 0.20)</li>
       <li>(0.70, 0.38, 0.25)</li>
     </colorSpectrum>
+    <caravanTraderKinds>
+      <li>SG_Caravan_FreeJaffa</li>
+      <li>Caravan_Outlander_CombatSupplier</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds>
+      <li>SG_Visitor_FreeJaffa</li>
+      <li>Visitor_Outlander_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>SG_Base_FreeJaffa</li>
+    </baseTraderKinds>
     <pawnGroupMakers>
       <li>
         <kindDef>Combat</kindDef>
@@ -244,9 +265,17 @@
       <li>(0.62, 0.66, 0.75)</li>
       <li>(0.72, 0.76, 0.85)</li>
     </colorSpectrum>
-    <caravanTraderKinds Inherit="False">
+    <caravanTraderKinds>
+      <li>SG_Caravan_Asgard</li>
       <li>Caravan_Outlander_Exotic</li>
     </caravanTraderKinds>
+    <visitorTraderKinds>
+      <li>SG_Visitor_Asgard</li>
+      <li>Visitor_Outlander_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>SG_Base_Asgard</li>
+    </baseTraderKinds>
     <pawnGroupMakers>
       <li>
         <kindDef>Combat</kindDef>

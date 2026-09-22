@@ -47,6 +47,7 @@
       <li>SG_JaffaWeapon</li>
     </weaponTags>
     <tradeTags>
+      <li>SG_StargateTech</li>
       <li>WeaponRanged</li>
     </tradeTags>
     <weaponClasses>
@@ -135,6 +136,7 @@
       <li>SG_GoauldWeapon</li>
     </weaponTags>
     <tradeTags>
+      <li>SG_StargateTech</li>
       <li>WeaponRanged</li>
     </tradeTags>
     <weaponClasses>
@@ -221,6 +223,7 @@
       <li>SG_GoauldWeapon</li>
     </weaponTags>
     <tradeTags>
+      <li>SG_StargateTech</li>
       <li>WeaponRanged</li>
     </tradeTags>
     <weaponClasses>
