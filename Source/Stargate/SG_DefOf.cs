@@ -20,6 +20,7 @@ namespace Stargate
         // Hediffs
         public static HediffDef SG_Primta;
         public static HediffDef SG_LifeDrained;
+        public static HediffDef SG_ZatShock;
 
         // Items (symbiotes)
         public static ThingDef SG_GoauldLarva;

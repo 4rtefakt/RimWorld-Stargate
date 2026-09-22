@@ -114,7 +114,7 @@
       <Plasteel>30</Plasteel>
       <ComponentSpacer>1</ComponentSpacer>
     </costList>
-    <description>Arme de poing goa'uld en forme de serpent. Elle projette une décharge d'énergie électrique à courte portée. Rapide et discrète, elle est l'arme de prédilection pour neutraliser une cible.</description>
+    <description>Arme de poing goa'uld en forme de serpent. Elle projette une décharge d'énergie qui ne blesse pas : un premier tir fait perdre connaissance, mais un second tir sur une victime encore sous le choc l'achève. Contre les mécanoïdes et les machines, la décharge agit comme une impulsion électromagnétique. L'arme idéale pour capturer… ou exécuter.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/ChargeRifle</texPath>
@@ -174,9 +174,8 @@
       <drawSize>1.0</drawSize>
     </graphicData>
     <projectile>
-      <damageDef>Bullet</damageDef>
-      <damageAmountBase>12</damageAmountBase>
-      <armorPenetrationBase>0.25</armorPenetrationBase>
+      <damageDef>SG_ZatBlast</damageDef>
+      <damageAmountBase>10</damageAmountBase>
       <speed>55</speed>
     </projectile>
   </ThingDef>

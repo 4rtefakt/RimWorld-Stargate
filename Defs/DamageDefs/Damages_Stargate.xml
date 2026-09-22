@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Décharge de zat'nik'tel (Stargate.DamageWorker_Zat) :
+       1er tir = inconscience (SG_ZatShock), tir sur une cible encore choquée = mort,
+       mécanoïdes / bâtiments = paralysie IEM. Ne blesse jamais (aucune blessure appliquée) : pas de sang,
+       pas de catégorie d'armure (l'énergie traverse les protections). -->
+  <DamageDef>
+    <defName>SG_ZatBlast</defName>
+    <label>décharge de zat</label>
+    <workerClass>Stargate.DamageWorker_Zat</workerClass>
+    <externalViolence>true</externalViolence>
+    <isRanged>true</isRanged>
+    <makesBlood>false</makesBlood>
+    <canInterruptJobs>true</canInterruptJobs>
+    <deathMessage>{0} a succombé à une seconde décharge de zat'nik'tel.</deathMessage>
+    <defaultDamage>10</defaultDamage>
+  </DamageDef>
+
+</Defs>

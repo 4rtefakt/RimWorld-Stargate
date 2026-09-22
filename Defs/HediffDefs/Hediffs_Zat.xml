@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Choc de zat : 1re décharge de zat'nik'tel. Sévérité 1 -> 0 en ~20 h.
+       - au-dessus de 0.9 (~2 h) : inconscient ;
+       - ensuite : choc résiduel, système nerveux fragilisé.
+       Tant que ce hediff est présent, une nouvelle décharge est mortelle. -->
+  <HediffDef>
+    <defName>SG_ZatShock</defName>
+    <label>choc de zat</label>
+    <description>Le système nerveux a été saturé par une décharge de zat'nik'tel. La victime perd connaissance, puis reste fragilisée pendant près d'une journée : une nouvelle décharge durant cette période provoquerait un arrêt cardiaque.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.55, 0.75, 1.0)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <isBad>true</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.2</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>choc résiduel</label>
+        <painOffset>0.1</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.1</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>inconscient</label>
+        <painOffset>0.4</painOffset>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>
