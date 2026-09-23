@@ -29,6 +29,9 @@
     <canOverlapZones>false</canOverlapZones>
     <rotatable>false</rotatable>
     <size>(5,1)</size>
+    <!-- On entre dans le vortex par l'avant (sud) : case d'interaction dégagée. -->
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <statBases>
       <MaxHitPoints>5000</MaxHitPoints>
       <WorkToBuild>60000</WorkToBuild>
@@ -83,6 +86,9 @@
     <blockWind>false</blockWind>
     <rotatable>false</rotatable>
     <size>(5,1)</size>
+    <!-- On entre dans le vortex par l'avant (sud) : case d'interaction dégagée. -->
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
     <destroyable>false</destroyable>
     <useHitPoints>false</useHitPoints>
     <statBases>

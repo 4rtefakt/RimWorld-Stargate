@@ -6,7 +6,7 @@
 
   <SG_LifeDrainInvalidTarget>Life drain can only target a humanlike.</SG_LifeDrainInvalidTarget>
 
-  <!-- {0} = nom du Jaffa -->
+  <!-- {0} = Jaffa name -->
   <SG_SymbioteWithdrawalStarted>{0} has neither a larva nor tretonin: without a new larva or a dose of tretonin, this Jaffa will die within days.</SG_SymbioteWithdrawalStarted>
 
   <!-- Transport rings -->
