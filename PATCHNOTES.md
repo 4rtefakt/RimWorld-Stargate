@@ -1,7 +1,10 @@
 # Notes de version
 
-## 0.2.0 — « Au-delà de la Porte » (23 septembre 2026)
+## 0.2.0-beta — « Au-delà de la Porte » (23 septembre 2026)
 
+> 🧪 **Version bêta** : tout compile et passe le validateur de defs, mais n'a pas encore été
+> testé en partie. Faites une sauvegarde avant de l'ajouter, et signalez les problèmes avec votre `Player.log`.
+>
 > ⚠️ **Nouvelles dépendances obligatoires** : Vanilla Expanded Framework, Vanilla Gravship Expanded
 > – Chapitre 1 et Chapitre 2. Ordre : Harmony → Core → DLC → VEF → VGE Ch.1 → VGE Ch.2 → Stargate.
 > VGE est incompatible avec les autres mods qui modifient les gravships ; Stargate l'est donc aussi.

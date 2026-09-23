@@ -3,6 +3,7 @@
   <packageId>4rtefakt.stargate</packageId>
   <name>Stargate</name>
   <author>4rtefakt</author>
+  <modVersion>0.2.0-beta</modVersion>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
@@ -20,7 +21,7 @@ CONTENU
 - Idéologie : culte des Goa'uld.
 
 EN DÉVELOPPEMENT
-- Quêtes à travers la Porte des étoiles jusqu'à la cité des Anciens ; art dédié.
+- Quêtes à travers la Porte des étoiles jusqu'à la cité des Anciens ; tenues portées dédiées.
 
 Requiert les DLC Biotech, Ideology et Odyssey, ainsi que Harmony, Vanilla Expanded Framework et Vanilla Gravship Expanded (Chapitres 1 et 2).</description>
   <modDependencies>
