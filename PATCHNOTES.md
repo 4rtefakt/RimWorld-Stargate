@@ -1,5 +1,16 @@
 # Notes de version
 
+## 0.2.1-beta — correctifs (23 septembre 2026)
+
+Merci à Hitomi pour les premiers retours.
+
+- **Bouclier goa'uld** : il affichait « Not connected to grav engine » et ne pouvait pas s'activer.
+  Il se relie maintenant au moteur de gravship (moteur vanilla et moteurs de VGE).
+- **Canons de vaisseau** : les tourelles du canon à plasma et du canon à ions visaient de côté
+  (le tir partait du flanc). Elles pointent maintenant vers la cible.
+- **Canon à plasma** : le nuage de poussière beige autour de la tourelle a été retiré.
+- **Bâton jaffa** : il est tenu dans l'axe du tir au lieu d'être penché de 45°.
+
 ## 0.2.0-beta — « Au-delà de la Porte » (23 septembre 2026)
 
 > 🧪 **Version bêta** : tout compile et passe le validateur de defs, mais n'a pas encore été

@@ -70,10 +70,10 @@ au plus risqué. Pour chaque point, noter ✅ / ❌ et joindre le `Player.log` e
       avec une équipe là-bas : l'équipe revient près de la porte, message « monde perdu ».
 
 ## 8. Gravship (VGE)
-- [ ] **Canon à plasma goa'uld** : se construit sur la sous-structure, se recharge en naquadah
+- [ ] **Canon à plasma goa'uld** (et canon à ions) : la tourelle pointe vers la cible, le tir part du bout du canon ; se construit sur la sous-structure, se recharge en naquadah
       (vide à la construction), se relie à un terminal de ciblage VGE, tire (projectiles orange).
 - [ ] **Canon à ions asgard** : faisceau bleu, gros appel de puissance au tir.
-- [ ] **Bouclier goa'uld** : un seul par gravship, bulle dorée, activation/charge comme le grand
+- [ ] **Bouclier goa'uld** : relié au moteur (pas de « Not connected to grav engine »), un seul par gravship, bulle dorée, activation/charge comme le grand
       bouclier VGE.
 - [ ] **Blindage de gravship** VGE : le naquadah est proposé comme matériau.
 
