@@ -64,8 +64,10 @@ au plus risqué. Pour chaque point, noter ✅ / ❌ et joindre le `Player.log` e
       à côté de la porte de retour ; quelques filons de naquadah.
 - [ ] Vérifier : lumière du jour / météo normales ? faune ? (point le plus incertain).
 - [ ] *Rentrer par la porte* ramène l'équipe.
-- [ ] *Composer une nouvelle adresse* (grisé tant qu'un colon est là-bas) → confirmation → la
-      traversée suivante génère un **nouveau** monde.
+- [ ] *Composer une nouvelle adresse* (grisé tant qu'un pion de la colonie est là-bas, même à terre)
+      → confirmation → la traversée suivante génère un **nouveau** monde.
+- [ ] Démonter la porte pendant qu'un monde est relié : refusé (message). Dev *Destroy* sur la porte
+      avec une équipe là-bas : l'équipe revient près de la porte, message « monde perdu ».
 
 ## 8. Gravship (VGE)
 - [ ] **Canon à plasma goa'uld** : se construit sur la sous-structure, se recharge en naquadah
@@ -86,4 +88,11 @@ au plus risqué. Pour chaque point, noter ✅ / ❌ et joindre le `Player.log` e
 ## 10. Non-régression (déjà testé avant cette nuit)
 - [ ] Reines goa'uld / tok'ra : ponte toujours fonctionnelle (le décompte passe désormais par
       `TickInterval` : vérifier qu'une larve apparaît après ~5 jours, ou via le bouton dev).
+      Nouveau : seules les reines **de la colonie** pondent (colon, prisonnière ou esclave) — plus
+      de ponte chez l'ennemi.
 - [ ] Wraith (drain), sarcophage, chirurgies du symbiote, raids goa'uld : inchangés.
+
+## Points connus, non modifiés cette nuit
+- Le patch de genre forcé (reines, Wraith) régénère le nom après génération : un nom de famille
+  imposé par un scénario peut être perdu (cas rare).
+- Les chirurgies du symbiote ne peuvent pas échouer (choix de conception à confirmer).
