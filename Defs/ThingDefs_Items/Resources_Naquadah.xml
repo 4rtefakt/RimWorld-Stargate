@@ -12,9 +12,8 @@
     <label>naquadah</label>
     <description>Minerai extraterrestre dense et riche en énergie, pierre angulaire de la technologie goa'uld. Sert de carburant aux réacteurs et aux armes à plasma, et forme un métal d'une résistance exceptionnelle, particulièrement face à la chaleur et à l'énergie.</description>
     <graphicData>
-      <texPath>Things/Item/Resource/Plasteel</texPath>
+      <texPath>Things/Item/Resource/SG_Naquadah</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
-      <color>(95, 150, 125)</color>
     </graphicData>
     <stackLimit>75</stackLimit>
     <useHitPoints>false</useHitPoints>

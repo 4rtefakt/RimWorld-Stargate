@@ -7,7 +7,7 @@
     <defName>SG_GoauldQueen</defName>
     <label>reine goa'uld</label>
     <description>Une reine goa'uld : matriarche d'une lignée, capable d'engendrer des larves de symbiote pour la perpétuer. Comme tout goa'uld, elle possède la mémoire génétique de ses ancêtres, est quasi immortelle et se régénère dans un sarcophage. Capturer une reine vivante, c'est s'assurer une source de symbiotes.</description>
-    <iconPath>UI/Icons/Xenotypes/Sanguophage</iconPath>
+    <iconPath>UI/Icons/Xenotypes/SG_GoauldQueen</iconPath>
     <combatPowerFactor>1.8</combatPowerFactor>
     <factionlessGenerationWeight>0</factionlessGenerationWeight>
     <genes>

@@ -26,7 +26,7 @@
     <showGizmoOnWorldView>true</showGizmoOnWorldView>
     <showGizmoWhenDrafted>true</showGizmoWhenDrafted>
     <resourceDescription>Une réserve d'énergie vitale qui peut être gagnée et dépensée de diverses façons.\n\nL'essence vitale se reconstitue en drainant la force vitale d'un humain.\n\nSi l'essence vitale tombe à zéro, {PAWN_nameDef} sera très affaibli.</resourceDescription>
-    <iconPath>UI/Icons/Genes/Gene_Hemogenic</iconPath>
+    <iconPath>UI/Icons/Genes/SG_VitalEssence</iconPath>
     <selectionWeight>0</selectionWeight>
     <displayCategory>Hemogen</displayCategory>
     <displayOrderInCategory>-2</displayOrderInCategory>
@@ -44,7 +44,7 @@
     <label>drain de vie</label>
     <labelShortAdj>draineur</labelShortAdj>
     <description>Les Wraith possèdent un organe dans la paume de la main qui leur permet d'aspirer la force vitale d'un être humain par simple contact, reconstituant leur propre essence vitale.</description>
-    <iconPath>UI/Icons/Genes/Gene_Bloodfeeder</iconPath>
+    <iconPath>UI/Icons/Genes/SG_LifeDrain</iconPath>
     <geneClass>Gene</geneClass>
     <prerequisite>SG_VitalEssence</prerequisite>
     <displayCategory>Hemogen</displayCategory>

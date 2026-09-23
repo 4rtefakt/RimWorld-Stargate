@@ -10,7 +10,7 @@
     <defName>SG_Tauri</defName>
     <label>tau'ri</label>
     <description>Les humains de la Terre, le « premier monde ». Sans modification génétique notable, ils compensent par leur ingéniosité, leur résilience et leur capacité d'adaptation. C'est le peuple du SGC et des équipes SG.</description>
-    <iconPath>UI/Icons/Xenotypes/Baseliner</iconPath>
+    <iconPath>UI/Icons/Xenotypes/SG_Tauri</iconPath>
     <inheritable>true</inheritable>
     <genes>
       <li>Mood_Sanguine</li>
@@ -24,7 +24,7 @@
     <defName>SG_Asgard</defName>
     <label>asgard</label>
     <description>Race extraterrestre extrêmement avancée : de petits êtres gris au corps frêle mais à l'intellect prodigieux. N'ayant plus de descendance naturelle, ils se perpétuent par clonage, ce qui dégrade lentement leur patrimoine génétique. Maîtres d'une technologie inégalée, ils sont physiquement vulnérables.</description>
-    <iconPath>UI/Icons/Xenotypes/Genie</iconPath>
+    <iconPath>UI/Icons/Xenotypes/SG_Asgard</iconPath>
     <combatPowerFactor>0.7</combatPowerFactor>
     <genes>
       <li>Body_Thin</li>
@@ -48,7 +48,7 @@
     <defName>SG_Unas</defName>
     <label>unas</label>
     <description>Créatures reptiliennes primitives et massives, les Unas furent les tout premiers hôtes des Goa'uld. D'une force et d'une endurance redoutables, résistants à la douleur, mais lents d'esprit et peu portés sur les tâches subtiles.</description>
-    <iconPath>UI/Icons/Xenotypes/Neanderthal</iconPath>
+    <iconPath>UI/Icons/Xenotypes/SG_Unas</iconPath>
     <inheritable>true</inheritable>
     <combatPowerFactor>1.5</combatPowerFactor>
     <genes>
@@ -73,7 +73,7 @@
     <defName>SG_Tokra</defName>
     <label>tok'ra</label>
     <description>Issus de la même espèce que les Goa'uld mais opposés à leur tyrannie, les Tok'ra partagent le contrôle de leur hôte dans une véritable symbiose, avec son plein consentement. Dotés de la mémoire de leur lignée et profondément sages, ils renoncent au sarcophage et vieillissent naturellement.</description>
-    <iconPath>UI/Icons/Xenotypes/Highmate</iconPath>
+    <iconPath>UI/Icons/Xenotypes/SG_Tokra</iconPath>
     <genes>
       <li>Eyes_Red</li>
       <li>AptitudeStrong_Intellectual</li>

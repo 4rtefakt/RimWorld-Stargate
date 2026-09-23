@@ -31,7 +31,7 @@
       <li>ApparelMisc</li>
     </thingCategories>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</texPath>
+      <texPath>Things/Apparel/SG_JaffaArmor/SG_JaffaArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -97,7 +97,7 @@
       <li>ApparelMisc</li>
     </thingCategories>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/AdvancedHelmet/AdvancedHelmet</texPath>
+      <texPath>Things/Apparel/SG_JaffaHelmet/SG_JaffaHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -142,7 +142,7 @@
       <li>ApparelMisc</li>
     </thingCategories>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/Robe/Robe</texPath>
+      <texPath>Things/Apparel/SG_GoauldRobe/SG_GoauldRobe</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -189,7 +189,7 @@
       <li>ApparelMisc</li>
     </thingCategories>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/FlakJacket/FlakJacket</texPath>
+      <texPath>Things/Apparel/SG_SGCUniform/SG_SGCUniform</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>

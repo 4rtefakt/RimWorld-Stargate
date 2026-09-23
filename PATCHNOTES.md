@@ -76,7 +76,12 @@
 ### Changements
 - Noms de faction goa'uld corrigés (« d'Apophis » au lieu de « de Apophis ») et nouveaux seigneurs.
 - Les reines ne pondent plus que pour la colonie (colon, prisonnière ou esclave).
-- Graphismes : placeholders générés (icônes de faction, porte, DHD, anneaux, tretonine) ; art final à venir.
+- **Graphismes** : nouvelles textures (générées avec Mistral, détourées) pour le naquadah (3 tailles de pile),
+  la larve, les symbiotes goa'uld et tok'ra, la tretonine, le bâton, le zat, le kara kesh, les icônes au sol
+  des armures jaffa, de la robe goa'uld et de l'uniforme du SGC, la porte, le DHD, les anneaux, le générateur
+  au naquadah, les canons (socle + tourelle), le bouclier goa'uld, les 5 icônes de faction, 5 icônes de gène
+  et les 8 icônes de xénotype. Restent en placeholder : le sarcophage, les textures portées des vêtements,
+  les icônes de commande (porte, anneaux) et le minerai de naquadah.
 
 ### Compatibilité des sauvegardes
 - Ajout **sans risque** en cours de partie.
@@ -125,6 +130,10 @@ Le tour de base (tout se charge, tout se construit) est dans `TESTS.md`. Ici, on
 - Porte construite **sur un gravship** puis décollage et atterrissage ailleurs : le monde reste-t-il
   relié ? Le retour fonctionne-t-il ?
 - Performances : plusieurs mondes ouverts à la fois (plusieurs portes) ?
+
+**Graphismes**
+- Tailles et lisibilité en jeu : porte (5×1), canons (socle/tourelle alignés, rotation de la tourelle),
+  bouclier goa'uld (6×6), piles de naquadah. Détourage : restes de fond blanc ?
 
 **Anneaux**
 - Téléporter des **ennemis** ou des prisonniers, sur une plateforme encombrée ou avec un mur posé dessus.

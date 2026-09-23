@@ -12,7 +12,7 @@
     <label>régénération en sarcophage</label>
     <description>Les Goa'uld doivent périodiquement régénérer leur corps dans un sarcophage, une longue stase réparatrice qui confère ensuite des bonus substantiels. Ceux qui repoussent trop longtemps cette régénération s'affaiblissent dangereusement.</description>
     <geneClass>Gene_Deathrest</geneClass>
-    <iconPath>UI/Icons/Genes/Gene_Deathrest</iconPath>
+    <iconPath>UI/Icons/Genes/SG_SarcophagusRegen</iconPath>
     <displayCategory>Archite</displayCategory>
     <enablesNeeds>
       <li>Deathrest</li>

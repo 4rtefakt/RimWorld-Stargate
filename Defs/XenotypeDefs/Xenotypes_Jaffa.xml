@@ -10,7 +10,7 @@
     <defName>SG_Jaffa</defName>
     <label>jaffa</label>
     <description>Guerriers humains génétiquement adaptés au service des Goa'uld. Les Jaffa abritent un symbiote larvaire dans une poche abdominale, ce qui leur confère une force et une immunité hors du commun. Soldats disciplinés et redoutables, ils manient le bâton à plasma aussi bien au corps à corps qu'à distance.</description>
-    <iconPath>UI/Icons/Xenotypes/Hussar</iconPath>
+    <iconPath>UI/Icons/Xenotypes/SG_Jaffa</iconPath>
     <combatPowerFactor>1.4</combatPowerFactor>
     <factionlessGenerationWeight>0</factionlessGenerationWeight>
     <genes>

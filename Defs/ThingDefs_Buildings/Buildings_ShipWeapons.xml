@@ -18,12 +18,10 @@
     <label>canon à plasma goa'uld</label>
     <description>Le canon principal des vaisseaux-mères goa'uld : une version géante du bâton jaffa, qui projette en salves des décharges de plasma surchauffé alimentées par du naquadah. Chaque décharge explose à l'impact et ronge les coques. Efficace en bombardement comme contre les vaisseaux en orbite.\n\nNécessite un terminal ou une console de ciblage relié(e), avec un opérateur. Consomme du naquadah à chaque tir.</description>
     <thingClass>VanillaGravshipExpanded.Building_GravshipTurretAutoAttack</thingClass>
-    <uiIconPath>Things/Structures/Artillery/GaussGun_MenuIcon</uiIconPath>
     <graphicData>
-      <texPath>Things/Structures/Artillery/GravshipArtillery_Base_Small</texPath>
+      <texPath>Things/Building/SG_StaffCannon_Base</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(3,3)</drawSize>
-      <color>(0.95, 0.80, 0.45)</color>
     </graphicData>
     <statBases>
       <MaxHitPoints>450</MaxHitPoints>
@@ -94,9 +92,8 @@
     <label>canon à plasma goa'uld</label>
     <description>Canon à plasma de vaisseau goa'uld.</description>
     <graphicData>
-      <texPath>Things/Structures/Artillery/GaussGun_TurretTop</texPath>
+      <texPath>Things/Building/SG_StaffCannon_Top</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(0.95, 0.80, 0.45)</color>
     </graphicData>
     <statBases>
       <VGE_AccuracyGlobal>0.55</VGE_AccuracyGlobal>
@@ -161,12 +158,10 @@
     <label>canon à plasma du ha'tak</label>
     <description>Un canon à plasma monté sur un vaisseau-mère goa'uld. Il tire de lui-même sur les cibles désignées par l'équipage.\n\nCet appareil appartient à l'ennemi et ne peut être ni décrypté ni déverrouillé. Il peut toutefois être démonté pour récupérer de précieux matériaux, dont du naquadah.</description>
     <graphicData>
-      <texPath>Things/Structures/Artillery/GravshipArtillery_Base_Small</texPath>
+      <texPath>Things/Building/SG_StaffCannon_Base</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(3,3)</drawSize>
-      <color>(0.95, 0.80, 0.45)</color>
     </graphicData>
-    <uiIconPath>Things/Structures/Artillery/GaussGun_MenuIcon</uiIconPath>
     <statBases>
       <MaxHitPoints>450</MaxHitPoints>
       <Flammability>0.3</Flammability>
@@ -213,9 +208,8 @@
     <label>canon à plasma du ha'tak</label>
     <description>Canon à plasma d'un Ha'tak.</description>
     <graphicData>
-      <texPath>Things/Structures/Artillery/GaussGun_TurretTop</texPath>
+      <texPath>Things/Building/SG_StaffCannon_Top</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(0.95, 0.80, 0.45)</color>
     </graphicData>
     <verbs>
       <li>
@@ -248,9 +242,8 @@
     <label>canon à ions asgard</label>
     <description>Arme de vaisseau asgard : un projecteur d'ions à haute énergie qui lâche de longues rafales d'une précision chirurgicale. Ses faisceaux traversent les boucliers d'énergie comme s'ils n'existaient pas et percent les blindages les plus épais.\n\nNécessite un terminal ou une console de ciblage relié(e), avec un opérateur. Consomme énormément d'énergie pendant le tir.</description>
     <thingClass>VanillaGravshipExpanded.Building_AnticraftEmitter</thingClass>
-    <uiIconPath>Things/Structures/Combat/GravshipTurrets/AnticraftEmitter_MenuIcon</uiIconPath>
     <graphicData>
-      <color>(0.75, 0.85, 1.0)</color>
+      <texPath>Things/Building/SG_IonCannon_Base</texPath>
     </graphicData>
     <costList>
       <Plasteel>450</Plasteel>
@@ -296,9 +289,8 @@
     <label>canon à ions asgard</label>
     <description>Projecteur d'ions asgard.</description>
     <graphicData>
-      <texPath>Things/Structures/Combat/GravshipTurrets/AnticraftEmitter_TurretTop</texPath>
+      <texPath>Things/Building/SG_IonCannon_Top</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(0.75, 0.85, 1.0)</color>
     </graphicData>
     <statBases>
       <AccuracyTouch>0.95</AccuracyTouch>

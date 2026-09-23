@@ -29,7 +29,7 @@
     <description>L'arme emblématique des Jaffa : un long bâton qui projette des décharges de plasma surchauffé, capables de transpercer une armure et de tuer d'un coup. Imprécis à distance, mais dévastateur, et redoutable au corps à corps.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/ChargeLance</texPath>
+      <texPath>Things/Item/Equipment/SG_StaffWeapon</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_ChargeLance</soundInteract>
@@ -118,7 +118,7 @@
     <description>Arme de poing goa'uld en forme de serpent. Elle projette une décharge d'énergie qui ne blesse pas : un premier tir fait perdre connaissance, mais un second tir sur une victime encore sous le choc l'achève. Contre les mécanoïdes et les machines, la décharge agit comme une impulsion électromagnétique. L'arme idéale pour capturer… ou exécuter.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/ChargeRifle</texPath>
+      <texPath>Things/Item/Equipment/SG_Zat</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_ChargeRifle</soundInteract>
@@ -205,7 +205,7 @@
       <ComponentSpacer>1</ComponentSpacer>
     </costList>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/ChargeRifle</texPath>
+      <texPath>Things/Item/Equipment/SG_KaraKesh</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_ChargeRifle</soundInteract>

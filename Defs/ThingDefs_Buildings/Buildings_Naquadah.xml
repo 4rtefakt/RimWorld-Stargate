@@ -15,10 +15,9 @@
     <description>Un réacteur compact qui libère l'énergie colossale contenue dans le naquadah. Il fournit une puissance considérable pour sa taille, que ce soit pour une colonie ou à bord d'un gravship, mais consomme régulièrement du naquadah. Le naquadah étant instable sous haute énergie, le générateur explose violemment s'il est détruit.</description>
     <thingClass>Building</thingClass>
     <graphicData>
-      <texPath>Things/Structures/Power/GravcorePowerCoil</texPath>
+      <texPath>Things/Building/SG_NaquadahGenerator</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2,2)</drawSize>
-      <color>(0.55, 0.95, 0.75)</color>
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
@@ -93,9 +92,8 @@
     <description>Le générateur de bouclier d'un Ha'tak, adapté aux gravships. Un cœur de naquadah alimente une bulle d'énergie dorée qui arrête les projectiles, y compris les obus d'artillerie ; ceux qui se trouvent à l'intérieur peuvent toujours tirer vers l'extérieur. Il doit être chargé avant usage. Un bouclier actif génère de la chaleur structurelle qui, faute de dissipateurs, se répand dans le gravship. Un gravship ne peut supporter qu'un seul bouclier goa'uld.</description>
     <graphicData>
       <graphicClass>Graphic_Single</graphicClass>
-      <texPath>Things/Structures/Combat/LargeGravshipShieldGenerator</texPath>
+      <texPath>Things/Building/SG_GoauldShield</texPath>
       <drawSize>(6, 6)</drawSize>
-      <color>(0.95, 0.80, 0.45)</color>
     </graphicData>
     <drawerType>MapMeshAndRealTime</drawerType>
     <drawOffscreen>true</drawOffscreen>
