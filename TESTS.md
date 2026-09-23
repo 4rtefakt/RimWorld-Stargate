@@ -27,8 +27,9 @@ au plus risqué. Pour chaque point, noter ✅ / ❌ et joindre le `Player.log` e
 ## 2. Recherche
 - [ ] Nouvel onglet **Stargate** : technologie stargate → arsenal / technologie goa'uld / énergie
       au naquadah → technologie asgard, tretonine, activation de la porte. Pas de chevauchement.
-- [ ] Onglet **Gravtech** (VGE) : *armement des Ha'tak*, *armement asgard*, *défenses des Ha'tak*
-      (colonnes à droite), liés aux prérequis VGE et Stargate.
+- [ ] Pas de projet Stargate dans l'onglet **Gravtech**. La fiche *Gravship weaponry* (VGE) liste le canon
+      à plasma goa'uld (« débloqué avec technologie goa'uld »), *Advanced gravship weaponry* le canon
+      à ions asgard (avec technologie asgard), *Gravship defenses* le bouclier goa'uld (avec technologie goa'uld).
 
 ## 3. Naquadah
 - [ ] Minerai de naquadah visible sur la carte (veines vertes, rares) ; se mine → naquadah.

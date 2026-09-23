@@ -10,6 +10,15 @@ Merci à Hitomi pour les premiers retours.
   (le tir partait du flanc). Elles pointent maintenant vers la cible.
 - **Canon à plasma** : le nuage de poussière beige autour de la tourelle a été retiré.
 - **Bâton jaffa** : il est tenu dans l'axe du tir au lieu d'être penché de 45°.
+- **Recherche des armes de vaisseau simplifiée** : les trois projets de l'onglet Gravtech sont
+  supprimés, car il fallait trop de gravdata pour les atteindre. Chaque arme demande maintenant une recherche Stargate
+  plus la recherche VGE équivalente, qu'on fait de toute façon :
+  - canon à plasma goa'uld : *technologie goa'uld* + *Gravship weaponry* ;
+  - canon à ions asgard : *technologie asgard* + *Advanced gravship weaponry* ;
+  - bouclier goa'uld : *technologie goa'uld* + *Gravship defenses*.
+
+  Sur une sauvegarde existante, les recherches déjà faites dans ces trois projets sont perdues
+  (message d'avertissement possible au chargement, sans conséquence).
 
 ## 0.2.0-beta — « Au-delà de la Porte » (23 septembre 2026)
 

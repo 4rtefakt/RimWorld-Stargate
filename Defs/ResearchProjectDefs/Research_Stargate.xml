@@ -107,45 +107,8 @@
     <researchViewY>2.50</researchViewY>
   </ResearchProjectDef>
 
-  <!-- ===================== ONGLET GRAVTECH (VGE) ===================== -->
-
-  <ResearchProjectDef ParentName="VGE_GravtechResearchBase">
-    <defName>SG_GoauldShipWeaponry</defName>
-    <label>armement des ha'tak</label>
-    <description>Adapte l'armement des vaisseaux-mères goa'uld aux gravships : canons à plasma alimentés au naquadah.</description>
-    <baseCost>800</baseCost>
-    <prerequisites>
-      <li>VGE_GravshipWeaponry</li>
-      <li>SG_GoauldTech</li>
-    </prerequisites>
-    <researchViewX>4.00</researchViewX>
-    <researchViewY>0.50</researchViewY>
-  </ResearchProjectDef>
-
-  <ResearchProjectDef ParentName="VGE_GravtechResearchBase">
-    <defName>SG_AsgardShipWeaponry</defName>
-    <label>armement asgard</label>
-    <description>Reproduit les armes de vaisseau asgard : canons à ions capables de traverser les boucliers ennemis.</description>
-    <baseCost>2000</baseCost>
-    <prerequisites>
-      <li>VGE_AdvancedGravshipWeaponry</li>
-      <li>SG_AsgardTech</li>
-    </prerequisites>
-    <researchViewX>6.00</researchViewX>
-    <researchViewY>1.50</researchViewY>
-  </ResearchProjectDef>
-
-  <ResearchProjectDef ParentName="VGE_GravtechResearchBase">
-    <defName>SG_GoauldShipDefenses</defName>
-    <label>défenses des ha'tak</label>
-    <description>Adapte aux gravships le générateur de bouclier des vaisseaux-mères goa'uld, alimenté par un cœur de naquadah plutôt que par un gravcore.</description>
-    <baseCost>1200</baseCost>
-    <prerequisites>
-      <li>VGE_GravshipDefenses</li>
-      <li>SG_NaquadahPower</li>
-    </prerequisites>
-    <researchViewX>6.00</researchViewX>
-    <researchViewY>2.50</researchViewY>
-  </ResearchProjectDef>
+  <!-- Pas de projet dans l'onglet Gravtech : les armes et le bouclier de gravship Stargate
+       demandent une recherche Stargate ET la recherche VGE correspondante
+       (voir researchPrerequisites dans Buildings_ShipWeapons.xml et Buildings_Naquadah.xml). -->
 
 </Defs>

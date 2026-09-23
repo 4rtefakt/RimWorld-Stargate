@@ -37,7 +37,8 @@
     </costList>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     <researchPrerequisites Inherit="False">
-      <li>SG_GoauldShipWeaponry</li>
+      <li>VGE_GravshipWeaponry</li>
+      <li>SG_GoauldTech</li>
     </researchPrerequisites>
     <building>
       <turretGunDef>SG_Gun_GoauldStaffCannon</turretGunDef>
@@ -251,7 +252,8 @@
       <ComponentSpacer>8</ComponentSpacer>
     </costList>
     <researchPrerequisites Inherit="False">
-      <li>SG_AsgardShipWeaponry</li>
+      <li>VGE_AdvancedGravshipWeaponry</li>
+      <li>SG_AsgardTech</li>
     </researchPrerequisites>
     <building>
       <turretGunDef>SG_Gun_AsgardIonCannon</turretGunDef>
