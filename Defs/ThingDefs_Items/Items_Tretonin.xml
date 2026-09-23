@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Tretonine : drogue médicale mise au point par les Tok'ra, qui remplace la
+       larve d'un Jaffa. Une dose par jour (à programmer dans la politique de drogues).
+       Texture = placeholder généré (Tools/art/gen_item_textures.py). -->
+  <ThingDef ParentName="DrugPillBase">
+    <defName>SG_Tretonin</defName>
+    <label>tretonine</label>
+    <description>Un traitement mis au point par les Tok'ra à partir de protéines de symbiote. Il se substitue à la larve goa'uld et maintient en vie le système immunitaire d'un Jaffa pendant environ une journée. Les Jaffa libres qui refusent de porter un symbiote en dépendent : programmez une dose quotidienne dans leur politique de drogues.</description>
+    <descriptionHyperlinks>
+      <HediffDef>SG_TretoninHigh</HediffDef>
+    </descriptionHyperlinks>
+    <graphicData>
+      <texPath>Things/Item/SG_Tretonin</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>30</MarketValue>
+      <Mass>0.05</Mass>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <ingestible>
+      <foodType>Processed</foodType>
+      <drugCategory>Medical</drugCategory>
+      <baseIngestTicks>100</baseIngestTicks>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>SG_TretoninHigh</hediffDef>
+          <severity>1.2</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <listOrder>1010</listOrder>
+      </li>
+    </comps>
+    <tradeTags>
+      <li>SG_StargateTech</li>
+    </tradeTags>
+  </ThingDef>
+
+</Defs>

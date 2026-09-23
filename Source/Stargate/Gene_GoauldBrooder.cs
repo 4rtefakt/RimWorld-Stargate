@@ -10,6 +10,7 @@ namespace Stargate
     /// que la reine est vivante, valide et nourrie, et que le plafond sur la carte
     /// n'est pas atteint. La cadence et le produit sont définis en XML via
     /// <see cref="GeneExtension_Brooder"/> (donc trouvables sans dev mode).
+    /// Décompte via TickInterval (échelonnage des ticks de la 1.6).
     /// </summary>
     public class Gene_GoauldBrooder : Gene
     {
@@ -22,16 +23,16 @@ namespace Stargate
 
         private int Interval => Ext?.productionIntervalTicks ?? 300000;
 
-        public override void Tick()
+        public override void TickInterval(int delta)
         {
-            base.Tick();
+            base.TickInterval(delta);
             if (pawn == null || !pawn.Spawned) return;
 
             if (ticksToNextLarva < 0)
             {
                 ticksToNextLarva = Interval;
             }
-            ticksToNextLarva--;
+            ticksToNextLarva -= delta;
             if (ticksToNextLarva <= 0)
             {
                 // Réussite -> on repart pour un cycle complet ; échec -> re-tentative courte.

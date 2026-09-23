@@ -65,3 +65,5 @@ Parent:ThingDef:FurnitureWithQualityBase
 Parent:RecipeDef:SurgeryFlesh
 # Defs vanilla de base notoirement présentes (onglets d'architecte, etc.), non couvertes par un [DefOf].
 DesignationCategoryDef:Power
+ThingDef:Neutroamine
+EffecterDef:Cook

@@ -39,7 +39,7 @@
   <RecipeDef ParentName="SurgeryFlesh">
     <defName>SG_ExtractSymbiote</defName>
     <label>extraire le symbiote goa'uld</label>
-    <description>Extrait le symbiote logé dans le sujet. S'il est arrivé à maturité, on récupère un symbiote adulte prêt à prendre un hôte ; sinon une larve encore immature.</description>
+    <description>Extrait le symbiote logé dans le sujet. S'il est arrivé à maturité, on récupère un symbiote adulte prêt à prendre un hôte ; sinon une larve encore immature. Attention : un Jaffa privé de sa larve mourra en quelques jours sans nouvelle larve ni tretonine.</description>
     <workerClass>Stargate.Recipe_SG_ExtractSymbiote</workerClass>
     <jobString>Extraction du symbiote goa'uld.</jobString>
     <workAmount>2000</workAmount>
@@ -111,6 +111,49 @@
     </fixedIngredientFilter>
     <recipeUsers>
       <li>Human</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <!-- 5) Synthèse de tretonine : une larve donne une douzaine de doses. -->
+  <RecipeDef>
+    <defName>SG_MakeTretonin</defName>
+    <label>synthétiser de la tretonine</label>
+    <description>Synthétise des doses de tretonine à partir des protéines d'une larve goa'uld et de neutroamine.</description>
+    <jobString>Synthèse de tretonine.</jobString>
+    <workAmount>1800</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <effectWorking>Cook</effectWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SG_GoauldLarva</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>SG_GoauldLarva</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <SG_Tretonin>12</SG_Tretonin>
+    </products>
+    <researchPrerequisite>SG_Tretonin</researchPrerequisite>
+    <recipeUsers>
+      <li>DrugLab</li>
     </recipeUsers>
   </RecipeDef>
 

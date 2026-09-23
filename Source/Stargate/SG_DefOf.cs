@@ -7,7 +7,6 @@ namespace Stargate
     public static class SG_DefOf
     {
         // Xénotypes
-        public static XenotypeDef SG_Jaffa;
         public static XenotypeDef SG_Goauld;
         public static XenotypeDef SG_GoauldQueen;
         public static XenotypeDef SG_Tokra;
@@ -21,6 +20,11 @@ namespace Stargate
         public static HediffDef SG_Primta;
         public static HediffDef SG_LifeDrained;
         public static HediffDef SG_ZatShock;
+        public static HediffDef SG_SymbioteWithdrawal;
+        public static HediffDef SG_TretoninHigh;
+
+        // Gènes
+        public static GeneDef SG_JaffaPouch;
 
         // Items (symbiotes)
         public static ThingDef SG_GoauldLarva;

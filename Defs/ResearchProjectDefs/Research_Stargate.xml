@@ -82,6 +82,18 @@
     <researchViewY>3.00</researchViewY>
   </ResearchProjectDef>
 
+  <ResearchProjectDef ParentName="SG_ResearchBase">
+    <defName>SG_Tretonin</defName>
+    <label>tretonine</label>
+    <description>Reproduit le traitement des Tok'ra : synthétiser à partir d'une larve goa'uld de la tretonine, qui permet aux Jaffa de vivre sans symbiote.</description>
+    <baseCost>2500</baseCost>
+    <prerequisites>
+      <li>SG_GoauldTech</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+  </ResearchProjectDef>
+
   <!-- ===================== ONGLET GRAVTECH (VGE) ===================== -->
 
   <ResearchProjectDef ParentName="VGE_GravtechResearchBase">

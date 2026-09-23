@@ -6,4 +6,7 @@
 
   <SG_LifeDrainInvalidTarget>Le drain de vie ne peut cibler qu'un être humanoïde.</SG_LifeDrainInvalidTarget>
 
+  <!-- {0} = nom du Jaffa -->
+  <SG_SymbioteWithdrawalStarted>{0} n'a plus ni larve ni tretonine : sans nouvelle larve implantée ou dose de tretonine, ce Jaffa mourra en quelques jours.</SG_SymbioteWithdrawalStarted>
+
 </LanguageData>

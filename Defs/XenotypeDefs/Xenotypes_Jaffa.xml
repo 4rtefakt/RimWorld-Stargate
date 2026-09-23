@@ -3,8 +3,8 @@
 
   <!-- Jaffa : guerriers humains au service des Goa'uld, porteurs d'un
        symbiote (prim'ta) qui leur donne force et immunité.
-       NOTE: la dépendance au symbiote (hediff prim'ta) sera ajoutée avec
-       le cycle de vie du symbiote (§4.6 du PLAN). Ici = xénotype guerrier de base.
+       Dépendance au symbiote : gène SG_JaffaPouch (prim'ta ou tretonine,
+       sinon manque mortel), lié au cycle de vie du symbiote (§4.6 du PLAN).
        Icône = placeholder vanilla (Hussar). -->
   <XenotypeDef>
     <defName>SG_Jaffa</defName>
@@ -14,6 +14,7 @@
     <combatPowerFactor>1.4</combatPowerFactor>
     <factionlessGenerationWeight>0</factionlessGenerationWeight>
     <genes>
+      <li>SG_JaffaPouch</li>
       <li>Body_Standard</li>
       <li>MeleeDamage_Strong</li>
       <li>AptitudeStrong_Melee</li>
