@@ -75,11 +75,18 @@ namespace Stargate
             };
             Find.Targeter.BeginTargeting(parms, target =>
             {
-                if (target.Thing is Building_TransportRings destination)
+                // L'état a pu changer pendant le ciblage : on revérifie tout.
+                if (target.Thing is Building_TransportRings destination && CanTransportTo(destination))
                 {
                     TransportTo(destination);
                 }
             });
+        }
+
+        private bool CanTransportTo(Building_TransportRings destination)
+        {
+            return Spawned && destination.Spawned && destination != this && destination.Map == Map
+                && (Power == null || Power.PowerOn) && CooldownTicksLeft <= 0;
         }
 
         /// <summary>Envoie le contenu de cette plateforme vers la plateforme de destination.</summary>
@@ -100,15 +107,24 @@ namespace Stargate
                 {
                     if (!target.Standable(map))
                     {
-                        target = destination.Position;
+                        target = CellFinder.StandableCellNear(destination.Position, map, 3f);
+                    }
+                    if (!target.IsValid)
+                    {
+                        continue;
                     }
                     pawn.Position = target;
                     pawn.Notify_Teleported();
                 }
                 else
                 {
+                    IntVec3 origin = thing.Position;
                     thing.DeSpawn();
-                    GenPlace.TryPlaceThing(thing, target, map, ThingPlaceMode.Near);
+                    if (!GenPlace.TryPlaceThing(thing, target, map, ThingPlaceMode.Near))
+                    {
+                        // Pas de place à l'arrivée : l'objet reste sur la plateforme de départ.
+                        GenPlace.TryPlaceThing(thing, origin, map, ThingPlaceMode.Near);
+                    }
                 }
             }
 

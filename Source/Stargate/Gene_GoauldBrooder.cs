@@ -44,7 +44,10 @@ namespace Stargate
         {
             GeneExtension_Brooder ext = Ext;
             if (ext?.product == null) return false;
-            if (pawn.Dead || pawn.Downed) return false;
+            if (!Active || pawn.Dead || pawn.Downed) return false;
+            // Seules les reines de la colonie pondent (y compris prisonnières et esclaves) :
+            // pas de ponte chez l'ennemi, ni de message trompeur au joueur.
+            if (pawn.Faction != Faction.OfPlayer && pawn.HostFaction != Faction.OfPlayer) return false;
             if (pawn.needs?.food != null && pawn.needs.food.CurLevelPercentage < 0.3f) return false;
 
             Map map = pawn.MapHeld;
@@ -52,7 +55,11 @@ namespace Stargate
             if (map.listerThings.ThingsOfDef(ext.product).Count >= ext.maxOnMap) return false;
 
             Thing produced = ThingMaker.MakeThing(ext.product);
-            GenPlace.TryPlaceThing(produced, pawn.PositionHeld, map, ThingPlaceMode.Near);
+            if (!GenPlace.TryPlaceThing(produced, pawn.PositionHeld, map, ThingPlaceMode.Near))
+            {
+                produced.Destroy();
+                return false;
+            }
             Messages.Message("SG_QueenProducedSymbiote".Translate(pawn.LabelShort, produced.LabelNoCount),
                 produced, MessageTypeDefOf.PositiveEvent, false);
             return true;

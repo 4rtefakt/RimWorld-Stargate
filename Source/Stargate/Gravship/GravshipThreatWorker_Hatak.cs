@@ -13,23 +13,20 @@ namespace Stargate
     /// </summary>
     public class GravshipThreatWorker_Hatak : GravshipThreatWorker_EnemyGravship
     {
-        /// <summary>La faction goa'uld de la partie, ou null si elle n'existe pas / plus.</summary>
-        public static Faction GoauldFaction
-        {
-            get
-            {
-                Faction faction = Find.FactionManager?.FirstFactionOfDef(SG_DefOf.SG_SystemLords);
-                return faction != null && !faction.defeated ? faction : null;
-            }
-        }
+        /// <summary>La faction goa'uld de la partie (même vaincue), ou null si elle n'existe pas.</summary>
+        public static Faction GoauldFaction => Find.FactionManager?.FirstFactionOfDef(SG_DefOf.SG_SystemLords);
 
+        /// <summary>
+        /// Stable pendant toute la rencontre (même si les Goa'uld sont vaincus entre-temps) :
+        /// VGE compte l'artillerie restante du Ha'tak par cette faction.
+        /// </summary>
         public override Faction EnemyFaction => GoauldFaction ?? base.EnemyFaction;
 
-        /// <summary>Pas de Ha'tak sans Grands Maîtres hostiles dans la partie.</summary>
+        /// <summary>Pas de nouveau Ha'tak sans Grands Maîtres actifs et hostiles.</summary>
         public override bool CanFire(Building_GravEngine engine)
         {
             Faction goauld = GoauldFaction;
-            return goauld != null && goauld.HostileTo(Faction.OfPlayer) && base.CanFire(engine);
+            return goauld != null && !goauld.defeated && goauld.HostileTo(Faction.OfPlayer) && base.CanFire(engine);
         }
 
         /// <summary>

@@ -33,4 +33,7 @@
   <SG_StargateConnected>Gate connected to a distant world.</SG_StargateConnected>
   <SG_StargateIdle>Gate idle: ready to dial an address.</SG_StargateIdle>
 
+  <SG_StargateStillConnected>Cannot deconstruct: a world is still connected to the gate. Dial a new address first.</SG_StargateStillConnected>
+  <SG_StargateCollapsed>The stargate was destroyed: the wormhole brought the team back, and the distant world is lost.</SG_StargateCollapsed>
+
 </LanguageData>

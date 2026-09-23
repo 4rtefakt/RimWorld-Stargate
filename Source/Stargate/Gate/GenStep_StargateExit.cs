@@ -38,7 +38,7 @@ namespace Stargate
                 }
                 foreach (Thing t in c.GetThingList(map).ToArray())
                 {
-                    if (t.def.destroyable && (t.def.category == ThingCategory.Plant || t.def.category == ThingCategory.Building))
+                    if (!t.Destroyed && t.def.destroyable && (t.def.category == ThingCategory.Plant || t.def.category == ThingCategory.Building))
                     {
                         t.Destroy();
                     }
@@ -46,7 +46,15 @@ namespace Stargate
                 map.roofGrid.SetRoof(c, null);
             }
 
-            GenSpawn.Spawn(ThingMaker.MakeThing(exitDef), spot, map);
+            Thing exit = GenSpawn.Spawn(ThingMaker.MakeThing(exitDef), spot, map);
+            // Lien explicite entrée <-> sortie (sans effet si le jeu l'a déjà établi au spawn).
+            if (exit is PocketMapExit pocketExit)
+            {
+                pocketExit.entrance = portal;
+                portal.exit = pocketExit;
+            }
+            // Zone réservée : les étapes de génération suivantes ne doivent pas y toucher.
+            MapGenerator.UsedRects.Add(GenAdj.OccupiedRect(spot, Rot4.North, exitDef.size).ExpandedBy(ClearRadius));
         }
 
         private static bool IsGoodSpot(IntVec3 c, Map map, ThingDef exitDef)

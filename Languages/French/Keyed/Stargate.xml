@@ -33,4 +33,7 @@
   <SG_StargateConnected>Porte reliée à un monde lointain.</SG_StargateConnected>
   <SG_StargateIdle>Porte au repos : prête à composer une adresse.</SG_StargateIdle>
 
+  <SG_StargateStillConnected>Démontage impossible : un monde est encore relié à la porte. Composez d'abord une nouvelle adresse.</SG_StargateStillConnected>
+  <SG_StargateCollapsed>La porte des étoiles est détruite : le vortex a ramené l'équipe, et le monde lointain est perdu.</SG_StargateCollapsed>
+
 </LanguageData>

@@ -37,10 +37,31 @@ namespace Stargate
             return set.HasHediff(SG_DefOf.SG_Primta) || set.HasHediff(SG_DefOf.SG_TretoninHigh);
         }
 
+        public override void PostRemove()
+        {
+            base.PostRemove();
+            ClearWithdrawal();
+        }
+
+        private void ClearWithdrawal()
+        {
+            Hediff withdrawal = pawn?.health?.hediffSet.GetFirstHediffOfDef(SG_DefOf.SG_SymbioteWithdrawal);
+            if (withdrawal != null)
+            {
+                pawn.health.RemoveHediff(withdrawal);
+            }
+        }
+
         private void CheckSymbiote()
         {
-            if (pawn == null || pawn.Dead || !Active)
+            if (pawn == null || pawn.Dead)
             {
+                return;
+            }
+            if (!Active)
+            {
+                // Gène neutralisé (surpassé par un autre, etc.) : plus de dépendance.
+                ClearWithdrawal();
                 return;
             }
 
@@ -55,15 +76,11 @@ namespace Stargate
                 }
             }
 
-            Hediff withdrawal = pawn.health.hediffSet.GetFirstHediffOfDef(SG_DefOf.SG_SymbioteWithdrawal);
             if (IsSustained(pawn))
             {
-                if (withdrawal != null)
-                {
-                    pawn.health.RemoveHediff(withdrawal);
-                }
+                ClearWithdrawal();
             }
-            else if (withdrawal == null)
+            else if (!pawn.health.hediffSet.HasHediff(SG_DefOf.SG_SymbioteWithdrawal))
             {
                 pawn.health.AddHediff(SG_DefOf.SG_SymbioteWithdrawal);
                 if (pawn.Faction == Faction.OfPlayer)
