@@ -9,4 +9,28 @@
   <!-- {0} = nom du Jaffa -->
   <SG_SymbioteWithdrawalStarted>{0} has neither a larva nor tretonin: without a new larva or a dose of tretonin, this Jaffa will die within days.</SG_SymbioteWithdrawalStarted>
 
+  <!-- Transport rings -->
+  <SG_ActivateRings>Activate rings</SG_ActivateRings>
+  <SG_ActivateRingsDesc>Teleports everything standing on this platform to another ring platform on this map (choose it).</SG_ActivateRingsDesc>
+  <SG_RingsNoPower>The rings are unpowered.</SG_RingsNoPower>
+  <!-- {0} = remaining time -->
+  <SG_RingsCooldown>Rings recharging: {0}</SG_RingsCooldown>
+  <SG_RingsNoDestination>No other ring platform on this map.</SG_RingsNoDestination>
+
+  <!-- Stargate -->
+  <SG_StargateEnter>Go through the gate</SG_StargateEnter>
+  <SG_StargateCancelEnter>Cancel departure</SG_StargateCancelEnter>
+  <SG_StargateEntering>going through the gate</SG_StargateEntering>
+  <SG_StargateReturn>Return through the gate</SG_StargateReturn>
+  <SG_StargateNoDHD>No DHD nearby: cannot dial an address.</SG_StargateNoDHD>
+  <SG_StargateNoPower>The gate is unpowered.</SG_StargateNoPower>
+  <SG_StargateDialNew>Dial a new address</SG_StargateDialNew>
+  <SG_StargateDialNewDesc>Closes the world currently connected to the gate. The next trip will lead to a new world.</SG_StargateDialNewDesc>
+  <SG_StargateNoPlanetYet>No address dialed yet.</SG_StargateNoPlanetYet>
+  <SG_StargatePawnsStillThere>Colony members are still on the other world.</SG_StargatePawnsStillThere>
+  <SG_StargateDialNewConfirm>Dial a new address? The current world will be lost, along with everything left there.</SG_StargateDialNewConfirm>
+  <SG_StargateAddressCleared>The gate is ready to dial a new address.</SG_StargateAddressCleared>
+  <SG_StargateConnected>Gate connected to a distant world.</SG_StargateConnected>
+  <SG_StargateIdle>Gate idle: ready to dial an address.</SG_StargateIdle>
+
 </LanguageData>

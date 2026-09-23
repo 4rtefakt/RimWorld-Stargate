@@ -33,6 +33,7 @@ namespace Stargate
 
         // Bâtiments
         public static ThingDef SG_Sarcophagus;
+        public static ThingDef SG_DHD;
 
         // Factions
         public static FactionDef SG_SystemLords;

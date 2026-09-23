@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       PORTE DES ÉTOILES, DHD et ANNEAUX DE TRANSPORT.
+       Textures = placeholders générés (Tools/art/gen_item_textures.py).
+       ============================================================ -->
+
+  <!-- ===================== PORTE DES ÉTOILES =====================
+       Portail vanilla (MapPortal) vers une planète générée à la première
+       traversée (carte-poche), avec une porte de retour à l'arrivée.
+       Nécessite un DHD à moins de 12 cases et de l'énergie. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>SG_Stargate</defName>
+    <label>porte des étoiles</label>
+    <description>Un anneau de naquadah de plusieurs mètres de diamètre, bâti par les Anciens, qui ouvre un vortex vers une autre porte à travers la galaxie. Composez une adresse avec un DHD voisin, puis envoyez une équipe explorer un monde lointain ; la porte de là-bas permet de revenir.\n\n« Composer une nouvelle adresse » referme le monde actuel (quand plus personne de la colonie ne s'y trouve) : la prochaine traversée mènera ailleurs.\n\nNécessite un DHD à proximité et de l'énergie.</description>
+    <thingClass>Stargate.Building_Stargate</thingClass>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/SG_Stargate</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(5,5)</drawSize>
+      <drawOffset>(0,0,2)</drawOffset>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>0.5</fillPercent>
+    <blockWind>false</blockWind>
+    <canOverlapZones>false</canOverlapZones>
+    <rotatable>false</rotatable>
+    <size>(5,1)</size>
+    <statBases>
+      <MaxHitPoints>5000</MaxHitPoints>
+      <WorkToBuild>60000</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>20</Beauty>
+    </statBases>
+    <costList>
+      <SG_Naquadah>400</SG_Naquadah>
+      <Plasteel>200</Plasteel>
+      <ComponentSpacer>8</ComponentSpacer>
+    </costList>
+    <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2600</uiOrder>
+    <researchPrerequisites>
+      <li>SG_StargateActivation</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>1200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+    </comps>
+    <portal>
+      <pocketMapGenerator>SG_StargatePlanet</pocketMapGenerator>
+      <exitDef>SG_StargateExit</exitDef>
+      <pocketMapSize>150</pocketMapSize>
+      <traverseSound>Psycast_Skip_Entry</traverseSound>
+      <enteredLetterLabel>Monde lointain</enteredLetterLabel>
+      <enteredLetterText>L'équipe franchit le vortex et débouche sur un monde inconnu. La porte des étoiles de cette planète permet de rentrer à tout moment.\n\nExplorez les environs : on trouve parfois sur ces mondes des filons de naquadah.</enteredLetterText>
+      <enteredLetterDef>PositiveEvent</enteredLetterDef>
+    </portal>
+  </ThingDef>
+
+  <!-- Porte de la planète d'arrivée : ramène à la porte d'origine. Indestructible. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>SG_StargateExit</defName>
+    <label>porte des étoiles</label>
+    <description>La porte des étoiles de ce monde. Elle reste connectée à la porte d'origine et permet de rentrer.</description>
+    <thingClass>Stargate.Building_StargateExit</thingClass>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/SG_Stargate</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(5,5)</drawSize>
+      <drawOffset>(0,0,2)</drawOffset>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <fillPercent>0.5</fillPercent>
+    <blockWind>false</blockWind>
+    <rotatable>false</rotatable>
+    <size>(5,1)</size>
+    <destroyable>false</destroyable>
+    <useHitPoints>false</useHitPoints>
+    <statBases>
+      <Flammability>0</Flammability>
+      <Beauty>20</Beauty>
+    </statBases>
+    <building>
+      <deconstructible>false</deconstructible>
+      <claimable>false</claimable>
+    </building>
+    <portal>
+      <traverseSound>Psycast_Skip_Entry</traverseSound>
+    </portal>
+  </ThingDef>
+
+  <!-- ===================== DHD ===================== -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>SG_DHD</defName>
+    <label>DHD</label>
+    <description>Le dispositif de composition (DHD) : un piédestal couvert de glyphes qui compose les adresses de la porte des étoiles et lui fournit la séquence d'activation. Doit se trouver à moins de 12 cases de la porte.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/SG_DHD</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.4,1.4)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>42</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <rotatable>false</rotatable>
+    <size>(1,1)</size>
+    <specialDisplayRadius>12</specialDisplayRadius>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>5</Beauty>
+    </statBases>
+    <costList>
+      <Plasteel>60</Plasteel>
+      <SG_Naquadah>40</SG_Naquadah>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2610</uiOrder>
+    <researchPrerequisites>
+      <li>SG_StargateActivation</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <!-- ===================== ANNEAUX DE TRANSPORT ===================== -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>SG_TransportRings</defName>
+    <label>anneaux de transport</label>
+    <description>Une plateforme goa'uld d'anneaux de transport. Activés, les anneaux s'élèvent autour de la plateforme et téléportent instantanément tout ce qui s'y trouve (colons, animaux, objets) vers une autre plateforme d'anneaux de la même carte. Nécessite de l'énergie ; courte recharge entre deux activations.</description>
+    <thingClass>Stargate.Building_TransportRings</thingClass>
+    <graphicData>
+      <texPath>Things/Building/SG_TransportRings</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>Standable</passability>
+    <rotatable>false</rotatable>
+    <size>(3,3)</size>
+    <building>
+      <isEdifice>false</isEdifice>
+    </building>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>5</Beauty>
+    </statBases>
+    <costList>
+      <Plasteel>80</Plasteel>
+      <SG_Naquadah>40</SG_Naquadah>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2620</uiOrder>
+    <researchPrerequisites>
+      <li>SG_GoauldTech</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>400</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+    </comps>
+  </ThingDef>
+
+</Defs>

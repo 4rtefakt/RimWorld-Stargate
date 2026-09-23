@@ -49,7 +49,7 @@
   <ResearchProjectDef ParentName="SG_ResearchBase">
     <defName>SG_GoauldTech</defName>
     <label>technologie goa'uld</label>
-    <description>Maîtrise des dispositifs goa'uld avancés, dont le sarcophage régénérateur.</description>
+    <description>Maîtrise des dispositifs goa'uld avancés : le sarcophage régénérateur et les anneaux de transport.</description>
     <baseCost>5000</baseCost>
     <prerequisites>
       <li>SG_StargateTech</li>
@@ -92,6 +92,19 @@
     </prerequisites>
     <researchViewX>2.00</researchViewX>
     <researchViewY>2.00</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="SG_ResearchBase">
+    <defName>SG_StargateActivation</defName>
+    <label>activation de la porte des étoiles</label>
+    <description>Comprendre et reproduire la technologie des Anciens : construire une porte des étoiles et son dispositif de composition (DHD), et envoyer des équipes explorer des mondes lointains.</description>
+    <baseCost>6000</baseCost>
+    <prerequisites>
+      <li>SG_NaquadahPower</li>
+      <li>SG_GoauldTech</li>
+    </prerequisites>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>2.50</researchViewY>
   </ResearchProjectDef>
 
   <!-- ===================== ONGLET GRAVTECH (VGE) ===================== -->
