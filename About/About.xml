@@ -10,15 +10,17 @@
 
 CONTENU
 - 8 races jouables (xénotypes) : Tau'ri, Jaffa, Goa'uld, Reine Goa'uld, Tok'ra, Asgard, Unas et Wraith.
-- Cycle de vie du symbiote Goa'uld : larves fragiles, implantation dans les Jaffa, maturation, prise de contrôle d'un hôte, et reine pondeuse.
-- Armes : bâton jaffa, zat'nik'tel, kara kesh.
+- Cycle de vie du symbiote Goa'uld : larves fragiles, implantation dans les Jaffa, maturation, prise de contrôle d'un hôte, reines pondeuses. Les Jaffa dépendent de leur larve, ou de la tretonine.
+- Armes : bâton jaffa, kara kesh, zat'nik'tel (un tir assomme, deux tirs tuent).
 - Équipement : armure et casque de garde serpent, parure goa'uld, uniforme du SGC.
-- Sarcophage régénérateur, naquadah, et un arbre de recherche Stargate qui rend le contenu fabricable.
-- Faction hostile des Grands Maîtres Goa'uld et de leurs armées de Jaffa.
+- Naquadah : minerai, métal et carburant ; générateur au naquadah.
+- Sarcophage régénérateur, anneaux de transport, Porte des étoiles et DHD pour explorer des mondes lointains.
+- Factions : Grands Maîtres Goa'uld (hostiles), Commandement Stargate, Tok'ra, Jaffa libres et Asgard, avec leurs marchands.
+- Gravships (Vanilla Gravship Expanded) : canon à plasma goa'uld, canon à ions asgard, bouclier goa'uld, blindage en naquadah, et les attaques de Ha'tak goa'uld en orbite.
 - Idéologie : culte des Goa'uld.
 
 EN DÉVELOPPEMENT
-- Vaisseaux (gravships) propres à chaque race, armes de vaisseau, et un système de quêtes vers une cité légendaire.
+- Quêtes à travers la Porte des étoiles jusqu'à la cité des Anciens ; art dédié.
 
 Requiert les DLC Biotech, Ideology et Odyssey, ainsi que Harmony, Vanilla Expanded Framework et Vanilla Gravship Expanded (Chapitres 1 et 2).</description>
   <modDependencies>
