@@ -76,12 +76,12 @@
 ### Changements
 - Noms de faction goa'uld corrigés (« d'Apophis » au lieu de « de Apophis ») et nouveaux seigneurs.
 - Les reines ne pondent plus que pour la colonie (colon, prisonnière ou esclave).
-- **Graphismes** : nouvelles textures (générées avec Mistral, détourées) pour le naquadah (3 tailles de pile),
-  la larve, les symbiotes goa'uld et tok'ra, la tretonine, le bâton, le zat, le kara kesh, les icônes au sol
-  des armures jaffa, de la robe goa'uld et de l'uniforme du SGC, la porte, le DHD, les anneaux, le générateur
-  au naquadah, les canons (socle + tourelle), le bouclier goa'uld, les 5 icônes de faction, 5 icônes de gène
-  et les 8 icônes de xénotype. Restent en placeholder : le sarcophage, les textures portées des vêtements,
-  les icônes de commande (porte, anneaux) et le minerai de naquadah.
+- **Graphismes** : toutes les textures du mod sont désormais dédiées (générées avec Mistral, puis
+  détourées) : naquadah (3 tailles de pile), larve, symbiotes, tretonine, bâton, zat, kara kesh et leurs
+  projectiles, icônes au sol des tenues, porte, DHD, anneaux, sarcophage, générateur, canons (socle +
+  tourelle), bouclier goa'uld, icônes de commande, 5 factions, 5 gènes, 9 xénotypes et le mème
+  *culte des Goa'uld*. Restent vanilla : les tenues **portées** par les pions et le minerai de naquadah
+  (roche teintée).
 
 ### Compatibilité des sauvegardes
 - Ajout **sans risque** en cours de partie.

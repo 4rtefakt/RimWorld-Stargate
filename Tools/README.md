@@ -46,7 +46,18 @@ Génère `Defs/PrefabDefs/Prefabs_Hatak.xml` à partir d'une construction par ta
 automatiquement : empreinte des bâtiments, étanchéité de la coque, une pompe à oxygène par pièce,
 accès par portes, cases d'interaction libres. Affiche le plan en ASCII. Ne pas éditer le XML à la main.
 
-## `art/*.py` — textures provisoires
+## `art/mistral/` — textures générées avec Mistral
 
-`gen_faction_icons.py` (icônes de faction) et `gen_item_textures.py` (tretonine, porte, DHD,
-anneaux, icônes de commande et de gène). À remplacer par l'art final : voir `Art/PROMPTS_MISTRAL.md`.
+Génère les textures du mod avec l'API Mistral (agent + outil `image_generation`), puis les détoure
+et les redimensionne directement dans `Textures/`. La clé est lue dans `MISTRAL_API_KEY` (jamais
+commitée) ; les images brutes vont dans `art/mistral/raw/` (ignoré par git).
+
+```bash
+export MISTRAL_API_KEY=...
+python3 Tools/art/mistral/batch.py [id ...]    # 1re série (objets, bâtiments, factions, gènes, xénotypes)
+python3 Tools/art/mistral/batch2.py [id ...]   # 2e série (commandes, sarcophage, projectiles, mème…)
+python3 Tools/art/mistral/process2.py          # détourage + export des deux séries
+```
+
+Une image existante dans `raw/` n'est pas régénérée : la supprimer pour relancer un id. Prompts
+de référence : `Art/PROMPTS_MISTRAL.md`.

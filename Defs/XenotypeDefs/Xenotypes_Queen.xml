@@ -2,7 +2,7 @@
 <Defs>
 
   <!-- Reine Goa'uld : variante goa'uld capable d'engendrer des larves.
-       Source des larves du cycle du symbiote. Icône = placeholder vanilla. -->
+       Source des larves du cycle du symbiote. Icône dédiée. -->
   <XenotypeDef>
     <defName>SG_GoauldQueen</defName>
     <label>reine goa'uld</label>
@@ -27,12 +27,12 @@
   <!-- Reine Tok'ra : matriarche d'une lignée tok'ra, engendre des symbiotes tok'ra
        adultes. Comme les Tok'ra, elle est sage et coopérative, et renonce au sarcophage
        (mortelle, vieillit). Son genre est toujours femelle (forcé par Harmony).
-       Icône = placeholder vanilla. -->
+       Icône dédiée. -->
   <XenotypeDef>
     <defName>SG_TokraQueen</defName>
     <label>reine tok'ra</label>
     <description>Une reine tok'ra : matriarche d'une lignée, capable d'engendrer des symbiotes tok'ra adultes pour la perpétuer. Comme tout tok'ra, elle possède la mémoire génétique de ses ancêtres et partage le contrôle de son hôte. Précieuse alliée : une reine tok'ra vivante, c'est une source de symbiotes bienveillants.</description>
-    <iconPath>UI/Icons/Xenotypes/Highmate</iconPath>
+    <iconPath>UI/Icons/Xenotypes/SG_TokraQueen</iconPath>
     <combatPowerFactor>1.5</combatPowerFactor>
     <factionlessGenerationWeight>0</factionlessGenerationWeight>
     <genes>

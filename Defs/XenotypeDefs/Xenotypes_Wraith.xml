@@ -4,7 +4,7 @@
   <!-- Xénotype Wraith : humanoïdes pâles, grands et puissants, qui se
        nourrissent de la force vitale humaine, régénèrent leurs blessures
        et vivent extrêmement longtemps.
-       Icône = placeholder vanilla (Sanguophage) en attendant l'art dédié. -->
+       Icône dédiée. -->
   <XenotypeDef>
     <defName>SG_Wraith</defName>
     <label>wraith</label>

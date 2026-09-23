@@ -5,7 +5,7 @@
        WRAITH (Stargate Atlantis) — re-skin des mécaniques Biotech.
        Réutilise les classes C# vanilla Gene_Hemogen / Gene_Bloodfeeder
        (mécanique éprouvée) avec des labels/icônes/textes thématiques.
-       Icônes = placeholders vanilla pour l'instant (art dédié plus tard).
+       Icônes dédiées (UI/Icons/Genes).
        ============================================================ -->
 
   <!-- Réserve de "force vitale" = re-skin de la ressource hémogène.

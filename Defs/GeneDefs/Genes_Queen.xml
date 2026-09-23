@@ -4,7 +4,7 @@
   <!-- Gène de la Reine Goa'uld : ponte périodique de larves (Gene_GoauldBrooder).
        Cadence + produit définis par le DefModExtension (GeneExtension_Brooder) :
        ~5 jours, produit = larve goa'uld immature.
-       Icône = placeholder vanilla. -->
+       Icône dédiée. -->
   <GeneDef>
     <defName>SG_QueenBrooder</defName>
     <label>matriarche goa'uld</label>

@@ -5,7 +5,7 @@
        symbiote (prim'ta) qui leur donne force et immunité.
        Dépendance au symbiote : gène SG_JaffaPouch (prim'ta ou tretonine,
        sinon manque mortel), lié au cycle de vie du symbiote (§4.6 du PLAN).
-       Icône = placeholder vanilla (Hussar). -->
+       Icône dédiée. -->
   <XenotypeDef>
     <defName>SG_Jaffa</defName>
     <label>jaffa</label>

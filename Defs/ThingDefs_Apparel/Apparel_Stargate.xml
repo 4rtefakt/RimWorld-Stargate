@@ -2,7 +2,7 @@
 <Defs>
 
   <!-- Équipement Stargate. ParentName ApparelBase (qualité, non craftable pour
-       l'instant). Textures portées = placeholders vanilla, catégorie ApparelMisc
+       l'instant). Textures portées = vanilla (icônes au sol dédiées), catégorie ApparelMisc
        (sûre). Armures avec stats absolues. Art + recettes dédiés plus tard. -->
 
   <!-- ===================== GARDE JAFFA : ARMURE ===================== -->

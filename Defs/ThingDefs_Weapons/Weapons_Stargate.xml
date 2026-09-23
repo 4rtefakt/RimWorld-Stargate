@@ -2,7 +2,7 @@
 <Defs>
 
   <!-- Armes Stargate. Pur XML (verbes/projectiles vanilla réutilisés).
-       Textures = placeholders vanilla (arme à charge), art dédié plus tard.
+       Textures dédiées (Textures/Things/Item/Equipment, Textures/Things/Projectile).
        Non craftables pour l'instant (obtenues via raids/marchands) ;
        recettes + recherche viendront avec l'arbre techno Stargate. -->
 
@@ -82,7 +82,7 @@
     <defName>Bullet_SG_StaffPlasma</defName>
     <label>décharge plasma</label>
     <graphicData>
-      <texPath>Things/Projectile/ChargeLanceShot</texPath>
+      <texPath>Things/Projectile/SG_StaffPlasma</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
       <drawSize>1.6</drawSize>
@@ -170,7 +170,7 @@
     <defName>Bullet_SG_Zat</defName>
     <label>décharge zat</label>
     <graphicData>
-      <texPath>Things/Projectile/Charge_Small</texPath>
+      <texPath>Things/Projectile/SG_ZatBolt</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
       <drawSize>1.0</drawSize>
@@ -257,7 +257,7 @@
     <defName>Bullet_SG_KaraKesh</defName>
     <label>onde de choc</label>
     <graphicData>
-      <texPath>Things/Projectile/ChargeLanceShot</texPath>
+      <texPath>Things/Projectile/SG_KaraKeshWave</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
       <drawSize>1.3</drawSize>

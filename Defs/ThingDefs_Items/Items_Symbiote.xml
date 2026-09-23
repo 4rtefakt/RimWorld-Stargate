@@ -23,7 +23,7 @@
 
   <!-- Larve Goa'uld immature : produite par une Reine, fragile hors d'un hôte.
        Doit être implantée dans un Jaffa avant de périr (comp périssable).
-       Texture = placeholder vanilla (embryon). -->
+       Texture dédiée. -->
   <ThingDef ParentName="SG_SymbioteBase">
     <defName>SG_GoauldLarva</defName>
     <label>larve goa'uld</label>
@@ -71,7 +71,7 @@
 
   <!-- Symbiote Tok'ra adulte : pondu directement mature par une Reine Tok'ra
        (pas de stade larvaire). Implanté dans un hôte consentant, il en fait un Tok'ra.
-       Périssable hors d'un hôte. Texture = placeholder vanilla (ovule). -->
+       Périssable hors d'un hôte. Texture dédiée. -->
   <ThingDef ParentName="SG_SymbioteBase">
     <defName>SG_TokraSymbiote</defName>
     <label>symbiote tok'ra</label>

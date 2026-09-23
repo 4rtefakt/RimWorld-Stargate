@@ -7,7 +7,7 @@
        en dieux.
        NOTE: "devenir Goa'uld" via le cycle du symbiote (§4.6) viendra ensuite ;
        ici = xénotype de base, spawnable et jouable.
-       Icône = placeholder vanilla (Sanguophage). -->
+       Icône dédiée.(Sanguophage). -->
   <XenotypeDef>
     <defName>SG_Goauld</defName>
     <label>goa'uld</label>

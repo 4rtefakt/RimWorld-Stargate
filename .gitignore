@@ -17,3 +17,5 @@ Thumbs.db
 # --- Outils de dev ---
 Tools/**/bin/
 Tools/**/obj/
+Tools/art/mistral/raw/
+__pycache__/

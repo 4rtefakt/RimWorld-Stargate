@@ -7,7 +7,7 @@
        Elles héritent des bases d'artillerie VGE : même chaîne de ciblage
        (terminal/console de ciblage VGE requis, tir orbital et sol-orbite),
        mêmes contraintes (sous-structure de gravship, alimentation).
-       Textures = assets VGE teintés (placeholders), art dédié plus tard.
+       Textures dédiées (Textures/Things/Building).
        ============================================================ -->
 
   <!-- ===================== CANON À PLASMA GOA'ULD =====================
@@ -125,11 +125,10 @@
     <label>décharge de plasma</label>
     <thingClass>VanillaGravshipExpanded.Projectile_Artillery</thingClass>
     <graphicData>
-      <texPath>Things/Projectile/ChargeLanceShot</texPath>
+      <texPath>Things/Projectile/SG_StaffPlasma</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>TransparentPostLight</shaderType>
       <drawSize>3</drawSize>
-      <color>(1, 0.65, 0.25)</color>
     </graphicData>
     <projectile>
       <damageDef>Bomb</damageDef>

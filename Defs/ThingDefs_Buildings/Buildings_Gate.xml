@@ -3,7 +3,7 @@
 
   <!-- ============================================================
        PORTE DES ÉTOILES, DHD et ANNEAUX DE TRANSPORT.
-       Textures = placeholders générés (Tools/art/gen_item_textures.py).
+       Textures dédiées (Textures/Things/Building).
        ============================================================ -->
 
   <!-- ===================== PORTE DES ÉTOILES =====================

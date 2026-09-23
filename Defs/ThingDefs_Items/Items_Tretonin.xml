@@ -3,7 +3,7 @@
 
   <!-- Tretonine : drogue médicale mise au point par les Tok'ra, qui remplace la
        larve d'un Jaffa. Une dose par jour (à programmer dans la politique de drogues).
-       Texture = placeholder généré (Tools/art/gen_item_textures.py). -->
+       Texture dédiée. -->
   <ThingDef ParentName="DrugPillBase">
     <defName>SG_Tretonin</defName>
     <label>tretonine</label>

@@ -6,7 +6,7 @@
        - Carburant : canon à plasma goa'uld, générateur au naquadah.
        - Matériau métallique (stuff) : murs, meubles, armes de mêlée… et surtout
          le blindage de gravship VGE, qui accepte tout matériau métallique.
-       Texture = placeholder vanilla (plasteel teinté) ; art dédié plus tard. -->
+       Texture dédiée (Graphic_StackCount _a/_b/_c). -->
   <ThingDef ParentName="ResourceBase">
     <defName>SG_Naquadah</defName>
     <label>naquadah</label>

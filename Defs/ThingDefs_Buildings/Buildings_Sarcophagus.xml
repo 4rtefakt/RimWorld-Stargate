@@ -5,7 +5,7 @@
        Réutilise les comps Biotech (CompAssignableToPawn_DeathrestCasket,
        CompProperties_DeathrestBindable) pour fournir la mécanique de
        régénération. Utilisable par les porteurs de SG_SarcophagusRegen.
-       Texture = placeholder vanilla (caisson de deathrest) ; art doré dédié plus tard.
+       Texture dédiée (Graphic_Multi : _north/_east/_south).
        Coût en naquadah à ajouter quand le naquadah sera récoltable. -->
   <ThingDef ParentName="FurnitureWithQualityBase">
     <defName>SG_Sarcophagus</defName>
@@ -23,7 +23,7 @@
       <li>BuildingsMisc</li>
     </thingCategories>
     <graphicData>
-      <texPath>Things/Building/Misc/DeathrestCasket/DeathrestCasket</texPath>
+      <texPath>Things/Building/SG_Sarcophagus/SG_Sarcophagus</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(2,2)</drawSize>
     </graphicData>
