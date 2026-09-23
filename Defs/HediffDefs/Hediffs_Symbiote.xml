@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- Symbiote prim'ta logé dans un Jaffa : renforce son immunité et mûrit
-       avec le temps (severity 0 -> 1 via HediffCompProperties_SeverityPerDay).
+  <!-- Symbiote prim'ta logé dans un Jaffa : fait vivre son porteur (gène
+       SG_JaffaPouch), renforce son immunité et mûrit avec le temps
+       (severity 0 -> 1 via HediffCompProperties_SeverityPerDay).
        À maturité (severity 1.0), il peut être extrait en tant que symbiote adulte. -->
   <HediffDef>
     <defName>SG_Primta</defName>
     <label>symbiote prim'ta</label>
-    <description>Un symbiote Goa'uld immature logé dans la poche abdominale du porteur. Il renforce considérablement son système immunitaire et mûrit lentement jusqu'à atteindre l'âge adulte.</description>
+    <description>Un symbiote Goa'uld immature logé dans la poche abdominale du porteur. Il remplace et renforce considérablement son système immunitaire, et mûrit lentement jusqu'à atteindre l'âge adulte. Le retirer condamne le porteur à moins de lui fournir une nouvelle larve ou de la tretonine.</description>
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(0.8, 0.7, 0.2)</defaultLabelColor>
     <maxSeverity>1.0</maxSeverity>
@@ -31,6 +32,94 @@
         <label>mature</label>
         <statOffsets>
           <ImmunityGainSpeed>0.5</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Manque de symbiote : un porteur (gène SG_JaffaPouch) sans prim'ta ni tretonine.
+       Géré par Gene_JaffaPouch (ajouté / retiré) ; mortel en ~3 jours. -->
+  <HediffDef>
+    <defName>SG_SymbioteWithdrawal</defName>
+    <label>manque de symbiote</label>
+    <description>Privé de sa larve et de tretonine, le système immunitaire de ce Jaffa s'effondre. Sans nouvelle larve implantée ou dose de tretonine, il mourra en quelques jours.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.9, 0.35, 0.3)</defaultLabelColor>
+    <initialSeverity>0.01</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <lethalSeverity>1</lethalSeverity>
+    <isBad>true</isBad>
+    <makesSickThought>true</makesSickThought>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>0.34</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>affaibli</label>
+        <statOffsets>
+          <ImmunityGainSpeed>-0.2</ImmunityGainSpeed>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>0.3</minSeverity>
+        <label>malade</label>
+        <painOffset>0.15</painOffset>
+        <statOffsets>
+          <ImmunityGainSpeed>-0.3</ImmunityGainSpeed>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.65</minSeverity>
+        <label>mourant</label>
+        <lifeThreatening>true</lifeThreatening>
+        <painOffset>0.3</painOffset>
+        <statOffsets>
+          <ImmunityGainSpeed>-0.5</ImmunityGainSpeed>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.35</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- Tretonine active : remplace la larve d'un Jaffa pendant ~1 jour par dose.
+       Sans le renfort immunitaire du symbiote (léger malus). -->
+  <HediffDef>
+    <defName>SG_TretoninHigh</defName>
+    <label>tretonine</label>
+    <description>La tretonine se substitue à la larve goa'uld et maintient en vie le système immunitaire d'un Jaffa, sans en avoir la puissance. Une dose par jour est nécessaire.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.9, 0.65, 0.2)</defaultLabelColor>
+    <initialSeverity>1.2</initialSeverity>
+    <maxSeverity>1.2</maxSeverity>
+    <isBad>false</isBad>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ImmunityGainSpeed>-0.1</ImmunityGainSpeed>
         </statOffsets>
       </li>
     </stages>

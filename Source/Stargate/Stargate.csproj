@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <LangVersion>latest</LangVersion>
     <AssemblyName>Stargate</AssemblyName>
     <RootNamespace>Stargate</RootNamespace>
@@ -21,12 +21,38 @@
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
   </PropertyGroup>
 
+  <!-- Dépendances mod (Vanilla Expanded Framework + Vanilla Gravship Expanded Ch.1/Ch.2) :
+       référencées à la compilation seulement (Private=false : JAMAIS copiées dans Assemblies/,
+       le jeu les charge depuis leurs propres mods). Par défaut, dossier Workshop Steam ;
+       surchargeable : dotnet build -p:WorkshopDir=... ou -p:VEFDir=... -p:VGEDir=... -p:VGE2Dir=... -->
+  <PropertyGroup>
+    <WorkshopDir Condition="'$(WorkshopDir)' == ''">C:\Program Files (x86)\Steam\steamapps\workshop\content\294100</WorkshopDir>
+    <VEFDir Condition="'$(VEFDir)' == ''">$(WorkshopDir)\2023507013</VEFDir>
+    <VGEDir Condition="'$(VGEDir)' == ''">$(WorkshopDir)\3609835606</VGEDir>
+    <VGE2Dir Condition="'$(VGE2Dir)' == ''">$(WorkshopDir)\3799737423</VGE2Dir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="VEF">
+      <HintPath>$(VEFDir)\1.6\Assemblies\VEF.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VanillaGravshipExpanded">
+      <HintPath>$(VGEDir)\1.6\Assemblies\VanillaGravshipExpanded.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VanillaGravshipExpanded2">
+      <HintPath>$(VGE2Dir)\1.6\Assemblies\VanillaGravshipExpanded2.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
   <ItemGroup>
     <!-- Assemblies de référence RimWorld 1.6 (Assembly-CSharp, Unity, etc.) — compile-time uniquement. -->
     <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*" />
     <!-- Harmony : compile-time uniquement ; le runtime est fourni par le mod Harmony (brrainz.harmony). -->
     <PackageReference Include="Lib.Harmony" Version="2.3.*" PrivateAssets="all" ExcludeAssets="runtime" />
-    <!-- Permet de compiler net472 avec juste le .NET SDK (sans installer le targeting pack). -->
+    <!-- Permet de compiler net48 avec juste le .NET SDK (sans installer le targeting pack). -->
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
   </ItemGroup>
 

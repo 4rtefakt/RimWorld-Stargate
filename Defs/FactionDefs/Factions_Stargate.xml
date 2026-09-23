@@ -2,8 +2,8 @@
 <Defs>
 
   <!-- Grands Maîtres Goa'uld : empire tyrannique, ennemi permanent.
-       Mire la faction pirate vanilla. Namers / loot / icônes = placeholders
-       vanilla (RulePacks dédiés plus tard). -->
+       Calqué sur la faction pirate vanilla ; noms goa'uld dédiés, icône
+       placeholder générée (Tools/art/gen_faction_icons.py), culte des Goa'uld imposé. -->
   <FactionDef ParentName="FactionBase">
     <defName>SG_SystemLords</defName>
     <label>grands maîtres goa'uld</label>
@@ -16,7 +16,7 @@
     <canSiege>true</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>grand maître</leaderTitle>
-    <factionIconPath>World/WorldObjects/Expanding/PirateOutpost</factionIconPath>
+    <factionIconPath>UI/Factions/SG_Goauld</factionIconPath>
     <factionNameMaker>SG_NamerFactionGoauld</factionNameMaker>
     <settlementNameMaker>SG_NamerSettlementGoauld</settlementNameMaker>
     <colorSpectrum>
@@ -28,6 +28,10 @@
     <allowedCultures>
       <li>Kriminul</li>
     </allowedCultures>
+    <!-- Les Grands Maîtres se font adorer comme des dieux. -->
+    <requiredMemes>
+      <li>SG_GoauldWorship</li>
+    </requiredMemes>
     <backstoryFilters>
       <li>
         <categories>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       Backstories des factions alliées/neutres (Tau'ri, Jaffa libres,
+       Asgard), câblées aux pawnkinds via backstoryFiltersOverride.
+       Les Tok'ra réutilisent SG_TokraChild / SG_TokraAdult.
+       ============================================================ -->
+
+  <!-- ===================== TAU'RI (SGC) ===================== -->
+  <BackstoryDef>
+    <defName>SG_Tauri_Child_MilitaryBrat</defName>
+    <title>enfant de militaire</title>
+    <titleShort>enfant de base</titleShort>
+    <description>[PAWN_nameDef] grandit de base en base, au gré des affectations de ses parents militaires. [PAWN_pronoun] apprit tôt la discipline, le maniement des armes et l'art de se faire de nouveaux amis.</description>
+    <slot>Childhood</slot>
+    <skillGains>
+      <Shooting>2</Shooting>
+      <Social>1</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_TauriChild</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_Tauri_Child_Bookworm</defName>
+    <title>petit génie</title>
+    <titleShort>génie</titleShort>
+    <description>Enfant précoce, [PAWN_nameDef] dévorait les livres d'astronomie et de langues anciennes et démontait tout ce qui lui tombait sous la main pour comprendre comment cela fonctionnait.</description>
+    <slot>Childhood</slot>
+    <skillGains>
+      <Intellectual>3</Intellectual>
+      <Crafting>1</Crafting>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_TauriChild</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_Tauri_Child_Farmkid</defName>
+    <title>enfant de la campagne</title>
+    <titleShort>campagnard</titleShort>
+    <description>[PAWN_nameDef] grandit dans une ferme isolée, entre les travaux des champs, la chasse et les longues soirées à regarder les étoiles en se demandant ce qu'il y avait au-delà.</description>
+    <slot>Childhood</slot>
+    <skillGains>
+      <Plants>2</Plants>
+      <Animals>1</Animals>
+      <Shooting>1</Shooting>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_TauriChild</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_Tauri_Adult_SGTeamMember</defName>
+    <title>membre d'une équipe SG</title>
+    <titleShort>équipe SG</titleShort>
+    <description>[PAWN_nameDef] franchit la Porte des étoiles des centaines de fois au sein d'une équipe SG, explorant des mondes inconnus, négociant avec des peuples étranges et échappant de justesse aux Jaffa.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Shooting>5</Shooting>
+      <Melee>2</Melee>
+      <Medicine>2</Medicine>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_TauriSoldier</li>
+    </spawnCategories>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_Tauri_Adult_SpecialForces</defName>
+    <title>forces spéciales</title>
+    <titleShort>commando</titleShort>
+    <description>Avant d'être recruté par le SGC, [PAWN_nameDef] servit dans les forces spéciales. Opérations clandestines, survie en milieu hostile, combat rapproché : peu de situations le prennent au dépourvu.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Shooting>6</Shooting>
+      <Melee>4</Melee>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_TauriSoldier</li>
+    </spawnCategories>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_Tauri_Adult_Officer</defName>
+    <title>officier du SGC</title>
+    <titleShort>officier</titleShort>
+    <description>[PAWN_nameDef] commanda des équipes SG avant de prendre des responsabilités au sein du commandement. Tacticien pragmatique à l'humour grinçant, [PAWN_pronoun] sait garder ses hommes en vie.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Shooting>5</Shooting>
+      <Social>4</Social>
+      <Intellectual>1</Intellectual>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_TauriSoldier</li>
+      <li>SG_TauriOfficer</li>
+    </spawnCategories>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_Tauri_Adult_Archaeologist</defName>
+    <title>archéologue linguiste</title>
+    <titleShort>archéologue</titleShort>
+    <description>Moqué par ses pairs pour ses théories sur les pyramides, [PAWN_nameDef] fut recruté par le SGC pour déchiffrer les glyphes de la Porte. Polyglotte et diplomate, [PAWN_pronoun] parle une vingtaine de langues, dont le goa'uld.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Intellectual>6</Intellectual>
+      <Social>4</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_TauriScientist</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_Tauri_Adult_Astrophysicist</defName>
+    <title>astrophysicien du SGC</title>
+    <titleFemale>astrophysicienne du SGC</titleFemale>
+    <titleShort>astrophysicien</titleShort>
+    <titleShortFemale>astrophysicienne</titleShortFemale>
+    <description>Spécialiste des trous de ver et de la technologie extraterrestre, [PAWN_nameDef] a passé des années à rétro-concevoir des appareils goa'uld et asgard dans les laboratoires du SGC.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Intellectual>7</Intellectual>
+      <Crafting>3</Crafting>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_TauriScientist</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_Tauri_Adult_Quartermaster</defName>
+    <title>intendant du SGC</title>
+    <titleShort>intendant</titleShort>
+    <description>[PAWN_nameDef] gérait la logistique du SGC : vivres, munitions et marchandises échangées avec les mondes alliés. Rien ne franchit la Porte sans passer entre ses mains.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Social>6</Social>
+      <Intellectual>2</Intellectual>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_TauriTrader</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+  <!-- ===================== JAFFA LIBRES ===================== -->
+  <BackstoryDef>
+    <defName>SG_FreeJaffa_Adult_Rebel</defName>
+    <title>jaffa libre</title>
+    <titleShort>jaffa libre</titleShort>
+    <description>[PAWN_nameDef] a renié les faux dieux et arraché de son front la marque de son ancien maître. Traqué par les Grands Maîtres, [PAWN_pronoun] combat désormais pour la liberté de tous les Jaffa.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Shooting>5</Shooting>
+      <Melee>5</Melee>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_FreeJaffaAdult</li>
+    </spawnCategories>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+    <bodyTypeMale>Hulk</bodyTypeMale>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_FreeJaffa_Adult_Master</defName>
+    <title>maître jaffa</title>
+    <titleShort>maître</titleShort>
+    <description>Vétéran de plus d'un siècle de guerres, [PAWN_nameDef] a formé des générations de guerriers au maniement du bâton et du kel'no'reem. Sa sagesse est aussi redoutée que sa lance.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Melee>7</Melee>
+      <Shooting>4</Shooting>
+      <Social>3</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_FreeJaffaAdult</li>
+      <li>SG_FreeJaffaMaster</li>
+    </spawnCategories>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_FreeJaffa_Adult_Smuggler</defName>
+    <title>contrebandier jaffa</title>
+    <titleShort>contrebandier</titleShort>
+    <description>Pour financer la rébellion, [PAWN_nameDef] fit passer armes, tretonin et naquadah sous le nez des Grands Maîtres. [PAWN_pronoun] connaît tous les marchés clandestins de la galaxie.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Social>5</Social>
+      <Shooting>3</Shooting>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_FreeJaffaTrader</li>
+    </spawnCategories>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </BackstoryDef>
+
+  <!-- ===================== ASGARD ===================== -->
+  <BackstoryDef>
+    <defName>SG_Asgard_Child_Clone</defName>
+    <title>clone asgard</title>
+    <titleShort>clone</titleShort>
+    <description>[PAWN_nameDef] n'a jamais eu d'enfance au sens où l'entendent les humains : son corps fut cloné et sa conscience transférée depuis un corps précédent, avec des siècles de souvenirs.</description>
+    <slot>Childhood</slot>
+    <skillGains>
+      <Intellectual>4</Intellectual>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_AsgardChild</li>
+    </spawnCategories>
+    <workDisables>ManualDumb</workDisables>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_Asgard_Adult_Scientist</defName>
+    <title>scientifique asgard</title>
+    <titleShort>scientifique</titleShort>
+    <description>[PAWN_nameDef] consacra des millénaires à la recherche d'un remède à la dégénérescence génétique de son peuple, tout en perfectionnant une technologie qui dépasse l'entendement humain.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Intellectual>8</Intellectual>
+      <Crafting>4</Crafting>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_AsgardAdult</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>SG_Asgard_Adult_Commander</defName>
+    <title>commandant de la flotte asgard</title>
+    <titleShort>commandant</titleShort>
+    <description>[PAWN_nameDef] commanda un vaisseau de la flotte asgard dans la longue guerre contre les Réplicateurs, et veilla au respect du traité protégeant les mondes placés sous la protection des Asgard.</description>
+    <slot>Adulthood</slot>
+    <skillGains>
+      <Intellectual>5</Intellectual>
+      <Shooting>3</Shooting>
+      <Social>3</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>SG_AsgardAdult</li>
+    </spawnCategories>
+  </BackstoryDef>
+
+</Defs>

@@ -3,6 +3,7 @@
   <packageId>4rtefakt.stargate</packageId>
   <name>Stargate</name>
   <author>4rtefakt</author>
+  <modVersion>0.2.0-beta</modVersion>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
@@ -10,17 +11,19 @@
 
 CONTENU
 - 8 races jouables (xénotypes) : Tau'ri, Jaffa, Goa'uld, Reine Goa'uld, Tok'ra, Asgard, Unas et Wraith.
-- Cycle de vie du symbiote Goa'uld : larves fragiles, implantation dans les Jaffa, maturation, prise de contrôle d'un hôte, et reine pondeuse.
-- Armes : bâton jaffa, zat'nik'tel, kara kesh.
+- Cycle de vie du symbiote Goa'uld : larves fragiles, implantation dans les Jaffa, maturation, prise de contrôle d'un hôte, reines pondeuses. Les Jaffa dépendent de leur larve, ou de la tretonine.
+- Armes : bâton jaffa, kara kesh, zat'nik'tel (un tir assomme, deux tirs tuent).
 - Équipement : armure et casque de garde serpent, parure goa'uld, uniforme du SGC.
-- Sarcophage régénérateur, naquadah, et un arbre de recherche Stargate qui rend le contenu fabricable.
-- Faction hostile des Grands Maîtres Goa'uld et de leurs armées de Jaffa.
+- Naquadah : minerai, métal et carburant ; générateur au naquadah.
+- Sarcophage régénérateur, anneaux de transport, Porte des étoiles et DHD pour explorer des mondes lointains.
+- Factions : Grands Maîtres Goa'uld (hostiles), Commandement Stargate, Tok'ra, Jaffa libres et Asgard, avec leurs marchands.
+- Gravships (Vanilla Gravship Expanded) : canon à plasma goa'uld, canon à ions asgard, bouclier goa'uld, blindage en naquadah, et les attaques de Ha'tak goa'uld en orbite.
 - Idéologie : culte des Goa'uld.
 
 EN DÉVELOPPEMENT
-- Vaisseaux (gravships) propres à chaque race, armes de vaisseau, et un système de quêtes vers une cité légendaire.
+- Quêtes à travers la Porte des étoiles jusqu'à la cité des Anciens ; tenues portées dédiées.
 
-Requiert les DLC Biotech, Ideology et Odyssey.</description>
+Requiert les DLC Biotech, Ideology et Odyssey, ainsi que Harmony, Vanilla Expanded Framework et Vanilla Gravship Expanded (Chapitres 1 et 2).</description>
   <modDependencies>
     <li>
       <packageId>brrainz.harmony</packageId>
@@ -40,6 +43,21 @@ Requiert les DLC Biotech, Ideology et Odyssey.</description>
       <packageId>Ludeon.RimWorld.Odyssey</packageId>
       <displayName>Odyssey</displayName>
     </li>
+    <li>
+      <packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+      <displayName>Vanilla Expanded Framework</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2023507013</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>vanillaexpanded.gravship</packageId>
+      <displayName>Vanilla Gravship Expanded - Chapter 1</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3609835606</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>vanillaexpanded.gravship2</packageId>
+      <displayName>Vanilla Gravship Expanded - Chapter 2</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3799737423</steamWorkshopUrl>
+    </li>
   </modDependencies>
   <loadAfter>
     <li>brrainz.harmony</li>
@@ -47,5 +65,8 @@ Requiert les DLC Biotech, Ideology et Odyssey.</description>
     <li>Ludeon.RimWorld.Ideology</li>
     <li>Ludeon.RimWorld.Biotech</li>
     <li>Ludeon.RimWorld.Odyssey</li>
+    <li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+    <li>vanillaexpanded.gravship</li>
+    <li>vanillaexpanded.gravship2</li>
   </loadAfter>
 </ModMetaData>

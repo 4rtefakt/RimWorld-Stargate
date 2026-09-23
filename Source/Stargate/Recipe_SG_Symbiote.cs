@@ -42,7 +42,7 @@ namespace Stargate
         }
     }
 
-    /// <summary>Implante une larve goa'uld dans un Jaffa : hediff prim'ta.
+    /// <summary>Implante une larve goa'uld dans la poche d'un Jaffa : hediff prim'ta.
     /// Recrute instantanément le sujet, même s'il est de loyauté inébranlable.</summary>
     public class Recipe_SG_ImplantPrimta : Recipe_Surgery
     {
@@ -67,9 +67,10 @@ namespace Stargate
 
         public override bool AvailableOnNow(Thing thing, BodyPartRecord part = null)
         {
+            // Tout porteur d'une poche à symbiote active (Jaffa, ou xénogerme jaffa).
             Pawn p = thing as Pawn;
             return p != null
-                && p.genes?.Xenotype == SG_DefOf.SG_Jaffa
+                && p.genes != null && p.genes.HasActiveGene(SG_DefOf.SG_JaffaPouch)
                 && !p.health.hediffSet.HasHediff(SG_DefOf.SG_Primta);
         }
     }

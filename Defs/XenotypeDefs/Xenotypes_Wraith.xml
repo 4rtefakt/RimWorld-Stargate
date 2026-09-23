@@ -4,12 +4,12 @@
   <!-- Xénotype Wraith : humanoïdes pâles, grands et puissants, qui se
        nourrissent de la force vitale humaine, régénèrent leurs blessures
        et vivent extrêmement longtemps.
-       Icône = placeholder vanilla (Sanguophage) en attendant l'art dédié. -->
+       Icône dédiée. -->
   <XenotypeDef>
     <defName>SG_Wraith</defName>
     <label>wraith</label>
     <description>Race extraterrestre humanoïde d'une galaxie lointaine, les Wraith se nourrissent de la force vitale des êtres humains grâce à un organe situé dans la paume de la main. Grands, pâles et d'une force redoutable, ils régénèrent leurs blessures en se nourrissant et peuvent vivre des milliers d'années. Leur faim est insatiable.</description>
-    <iconPath>UI/Icons/Xenotypes/Sanguophage</iconPath>
+    <iconPath>UI/Icons/Xenotypes/SG_Wraith</iconPath>
     <combatPowerFactor>2.0</combatPowerFactor>
     <factionlessGenerationWeight>0</factionlessGenerationWeight>
     <genes>

@@ -2,6 +2,7 @@
 
 > Document de cadrage / plan. Version initiale du 2026-06-12.
 > Décisions actées : races via **xénotypes Biotech** (core-friendly), **Claude écrit tout le code** (XML + C#/Harmony), **textures placeholder** d'abord puis art final ensuite.
+> **2026-09-22 :** VGE Chapitre 2 est sorti → **Vanilla Gravship Expanded (Ch.1 + Ch.2) devient une dépendance obligatoire** ; les étapes 3‑4 se construisent dessus (voir §2.3).
 
 ---
 
@@ -39,7 +40,12 @@ Le mod cible un joueur qui a **tous les DLC** (cas du commanditaire). Mais pour 
 ### 2.3 Dépendances mod (runtime)
 - **Harmony** (mod communautaire, Workshop id `2009463077`) — déclaré en dépendance pour le patching C#.
 - DLC déclarés en `modDependencies` / `loadAfter` dans `About.xml`.
-- ⚠️ **Vanilla Gravship Expanded** : Chapitre 1 sorti ; **Chapitre 2 en dev, Chapitre 3 inexistant** à ce jour. → On **ne dépend pas** d'un mod non sorti. Les étapes 3 et 5 se construisent sur la mécanique **gravship vanilla d'Odyssey**, avec une *compat optionnelle* VGE si dispo.
+- **Vanilla Expanded Framework** (`OskarPotocki.VanillaFactionsExpanded.Core`, Workshop id `2023507013`) — requis par VGE.
+- **Vanilla Gravship Expanded – Chapitre 1** (`vanillaexpanded.gravship`, Workshop id `3609835606`) — **dépendance obligatoire** : systèmes du gravship (oxygène, carburant, énergie, chaleur, équipage).
+- **Vanilla Gravship Expanded – Chapitre 2 « The Battle »** (`vanillaexpanded.gravship2`, Workshop id `3799737423`, sorti en septembre 2026) — **dépendance obligatoire** : combat orbital (duels d'artillerie vs gravships ennemis, plateformes/satellites, abordages en hellpods), armes de vaisseau, coques blindées, brouilleurs, détection de menace orbitale. Débloqué après *Advanced gravtech*.
+- ⚠️ **Chapitre 3 VGE : toujours inexistant** (ni sorti ni daté au 2026-09-22) → l'étape 5 reste autonome.
+- **Décision (2026-09-22) :** VGE Ch.1 + Ch.2 en **dépendance obligatoire** (pas de compat optionnelle) : on étend leurs systèmes (defs de coques/armes/rencontres) au lieu de recoder le combat vaisseau. Contrepartie assumée : VGE est **incompatible avec tout autre mod qui modifie les gravships**, notre mod hérite de cette restriction.
+- ✅ VEF, `vanillaexpanded.gravship`, `vanillaexpanded.gravship2` déclarés dans `About.xml` (`modDependencies` + `loadAfter`). Reste : références C# (DLL VEF/VGE) au `.csproj` si on les patche.
 
 ---
 
@@ -141,56 +147,56 @@ Mécanique signature qui **lie Jaffa et Goa'uld**. Dirigée par le joueur (chiru
 ### Phase 0 — Squelette & chaîne d'outils ✅ TERMINÉE (2026-06-12)
 - [x] `git init` + `.gitignore` (ignore `Assemblies/*.dll`, `obj/`, `bin/`).
 - [x] `About/About.xml` (1.6, deps DLC). *(Harmony reporté : pas nécessaire en Phase 0.)*
-- [x] `Source/Stargate/` : `.csproj` (net472, `Krafs.Rimworld.Ref` 1.6.4850) + classe `Mod` minimale qui logue.
+- [x] `Source/Stargate/` : `.csproj` (net472 → **net48** depuis la dépendance VGE, `Krafs.Rimworld.Ref`) + classe `Mod` minimale qui logue.
 - [x] Build `dotnet build` → `Assemblies\Stargate.dll` (sortie propre, 0 erreur).
 - [x] Def de test `SG_Naquadah` chargée **en jeu sans erreur** (Player.log vérifié).
 - [x] Jonction du repo dans `RimWorld/Mods/Stargate` pour itérer.
 > **Sortie atteinte :** mod reconnu (auteur 4rtefakt, id `4rtefakt.stargate`, v1.6), chargé après les DLC, C# exécuté (`[Stargate] Assembly chargée`), aucune erreur XML. Toolchain validée de bout en bout.
 
 ### Étape 1 — Races & mécaniques *(xénotypes Biotech — voir §4.5 et §4.6)*
-- [ ] Gènes custom (force Jaffa, intellect Asgard, naquadah, etc.).
-- [x] **Wraith** : xénotype `SG_Wraith` re-skinnant **Hemogenic → « essence vitale »** + **Bloodfeeder → « drain de vie »** (gènes `SG_VitalEssence`, `SG_LifeDrain`). Charge sans erreur. *(reste : tester le comportement du drain en partie + art dédié.)*
-- [~] **Jaffa** (`SG_Jaffa`) : xénotype guerrier de base FAIT (force, immunité, régén — gènes vanilla). *Reste : hediff « prim'ta » comme besoin vital, lié au cycle §4.6.*
-- [~] **Goa'uld** (`SG_Goauld`) : xénotype de base FAIT — gène custom `SG_SarcophagusRegen` (re-skin `Gene_Deathrest` sans prereq Hemogenic) + `Deathless` + `Ageless` + mémoire génétique ; **sarcophage** `SG_Sarcophagus` (re-skin caisson deathrest) construit. *Reste : valider la mécanique deathrest en jeu, re-skin UI « deathrest » (Harmony), conversion via cycle §4.6.*
+- [~] Gènes custom : **poche à symbiote jaffa** `SG_JaffaPouch` FAIT (nuit du 22→23/09). *Reste optionnel : force Jaffa, intellect Asgard, naquadah dans le sang (accès aux appareils goa'uld).*
+- [x] **Wraith** : xénotype `SG_Wraith` re-skinnant **Hemogenic → « essence vitale »** + **Bloodfeeder → « drain de vie »** (gènes `SG_VitalEssence`, `SG_LifeDrain`). Charge sans erreur. *(reste : art dédié.)*
+- [x] **Jaffa** (`SG_Jaffa`) : xénotype guerrier + **dépendance au symbiote** : gène `SG_JaffaPouch` (`Gene_JaffaPouch`) — sans prim'ta ni tretonine → hediff `SG_SymbioteWithdrawal`, mortel en ~3 jours. Tout porteur reçoit une larve à l'acquisition du gène (pions générés, colons existants, xénogerme). **Tretonine** `SG_Tretonin` (drogue médicale, 1 dose/jour ; recette : larve + neutroamine au labo de drogues ; recherche `SG_Tretonin`).
+- [~] **Goa'uld** (`SG_Goauld`) : xénotype de base FAIT — gène custom `SG_SarcophagusRegen` (re-skin `Gene_Deathrest` sans prereq Hemogenic) + `Deathless` + `Ageless` + mémoire génétique ; **sarcophage** `SG_Sarcophagus` (re-skin caisson deathrest) construit. *Reste : re-skin UI « deathrest » (Harmony).*
 - [x] Autres xénotypes : **Tau'ri, Asgard, Unas, Tok'ra** FAITS (gènes vanilla confirmés).
-- [x] **Cycle du symbiote Goa'uld + Reine (§4.6)** IMPLÉMENTÉ (compile OK, à tester en jeu) : larve périssable `SG_GoauldLarva` (comp `CompGoauldLarva`), symbiote adulte `SG_GoauldSymbiote`, hediff `SG_Primta` (maturation), 3 chirurgies (`Recipe_SG_ImplantPrimta` / `ExtractSymbiote` / `ImplantGoauld` → `GoauldUtility.MakeGoauld` via `SetXenotypeDirect`), Reine `SG_GoauldQueen` + gène `SG_QueenBrooder` (`Gene_GoauldBrooder`).
-> **Ordre de construction (tranches verticales, chaque pièce est définitive — pas de placeholder) :**
-> 1. **Wraith** (valide le pipeline xénotype + re-skin Hemogenic, le plus autonome).
-> 2. **Jaffa + Goa'uld** xénotypes qui se chargent et se jouent.
-> 3. **Cycle du symbiote + Reine** branché par-dessus des races déjà fonctionnelles.
+- [x] **Cycle du symbiote Goa'uld + Reine (§4.6)** : larve périssable `SG_GoauldLarva`, symbiote adulte `SG_GoauldSymbiote`, hediff `SG_Primta` (maturation), chirurgies (`Recipe_SG_ImplantPrimta` / `ExtractSymbiote` / `ImplantGoauld` / `ImplantTokra`), Reines goa'uld & tok'ra (`Gene_GoauldBrooder`, décompte via `TickInterval`).
 
-### Étape 2 — Équipement, armes, factions, idéologie *(quasi complète)*
-- [x] Ressource naquadah : `SG_Naquadah` + **recette de raffinage** `SG_RefineNaquadah` (chemfuel→naquadah, gâtée recherche). *Reste optionnel : minerai à miner.*
-- [x] Armes : **bâton `SG_StaffWeapon`**, **zat `SG_Zat`**, **kara kesh `SG_KaraKesh`** — toutes craftables. *Reste : zat « stun→kill » fidèle (C#).*
-- [x] Armures & apparel : **armure + casque jaffa** (craftables), **robe goa'uld, uniforme SGC**.
-- [~] Bâtiments : **sarcophage** `SG_Sarcophagus` (gâté `SG_GoauldTech`). *Reste : générateur à naquadah, bouclier, anneaux.*
-- [~] FactionDefs + PawnKindDefs : **Grands Maîtres Goa'uld `SG_SystemLords`** (ennemi permanent, noms goa'uld, chef OK) + pawnkinds **guerrier jaffa** & **seigneur goa'uld**. *Reste : Tau'ri/SGC, Tok'ra, Asgard, Jaffa libres.*
-- [x] **Arbre de recherche Stargate** : `SG_StargateTech` → `SG_StargateArsenal` / `SG_GoauldTech` + recettes de craft.
-- [~] Idéologie : **meme `SG_GoauldWorship`** (version minimale sûre). *Reste : precepts + rituel prim'ta (passe testée).*
+### Étape 2 — Équipement, armes, factions, idéologie *(complète hors precepts/rituel)*
+- [x] **Naquadah** : `SG_Naquadah` = ressource **et matériau métallique** (murs, meubles, armes de mêlée, blindage de gravship VGE). Sources : raffinage `SG_RefineNaquadah`, **minerai** `SG_MineableNaquadah`, forage profond, marchands.
+- [x] Armes : **bâton `SG_StaffWeapon`**, **kara kesh `SG_KaraKesh`**, **zat `SG_Zat` fidèle** (`DamageWorker_Zat` : 1er tir = inconscience `SG_ZatShock`, tir sur cible choquée = mort, IEM contre mécanoïdes/machines).
+- [x] Armures & apparel : **armure + casque jaffa**, **robe goa'uld**, **uniforme SGC** (tag commercial `SG_StargateTech`).
+- [x] Bâtiments : **sarcophage**, **générateur au naquadah** `SG_NaquadahGenerator` (2500 W, explose si détruit), **anneaux de transport** `SG_TransportRings` (téléportation même carte), bouclier → voir étape 3.
+- [x] Factions : **Grands Maîtres Goa'uld** (culte des Goa'uld imposé) + **Commandement Stargate (Tau'ri)**, **Tok'ra** (avec la reine tok'ra), **Jaffa libres**, **Asgard** — pawnkinds, backstories, noms, icônes placeholder, **marchands dédiés** (`TraderKinds_Stargate.xml`).
+- [x] **Recherche** : onglet dédié **Stargate** (`SG_StargateTab`) : technologie stargate → arsenal / technologie goa'uld / énergie au naquadah → technologie asgard, tretonine, activation de la porte.
+- [~] Idéologie : **meme `SG_GoauldWorship`** (imposé aux Grands Maîtres, refusé par les factions alliées). *Reste : precepts + rituel prim'ta (passe testée).*
 
-### Étape 3 — Vaisseaux (gravships) par race
-- [ ] Construits sur la mécanique **gravship vanilla d'Odyssey** (pas sur VGE non sorti).
-- [ ] Layouts/structures de gravship thématiques par faction (Ha'tak Goa'uld, vaisseau Asgard…).
-- [ ] Rencontres de combat : vaisseaux ennemis que le joueur affronte.
-- [ ] *(Optionnel)* compat VGE Chapitre 1/2 si présent.
+### Étape 3 — Vaisseaux (gravships) par race *(sur VGE Ch.1 + Ch.2, dépendance obligatoire)*
+- [x] VEF + VGE Ch.1 + VGE Ch.2 déclarés dans `About.xml` ; C# compilé contre leurs DLL (références jamais copiées dans `Assemblies/`).
+- [x] Defs/extensions VGE étudiées (sources publiques) ; validateur hors-jeu `Tools/validate.sh` qui vérifie nos defs contre les DLL du jeu + VEF + VGE.
+- [x] Composants thématiques : **générateur au naquadah**, **bouclier goa'uld de gravship** `SG_GoauldShieldGenerator` (grand bouclier VGE, cœur de naquadah au lieu d'un gravcore), **blindage VGE en naquadah** (via le matériau).
+- [x] **Menace orbitale Ha'tak** `SG_Hatak` (GravshipThreatDef VGE Ch.2 ; `GravshipThreatWorker_Hatak`, `GenStep_Hatak`) : faction goa'uld, équipage Jaffa/seigneurs (parfois une reine), noms de Ha'tak, **plan dédié** `SG_Hatak_1` (pyramide d'or, canons à plasma ennemis) généré et vérifié par `Tools/hatak/gen_hatak.py`.
+- [ ] *(Optionnel)* Plans supplémentaires `SG_Hatak_N` (tirés au hasard), vaisseaux Asgard alliés, gravship de départ thématique.
 
-### Étape 4 — Armes de vaisseau spécifiques
-- [ ] Armement embarqué par race (canons plasma Goa'uld, faisceau Asgard…).
-- [ ] Intégration aux vaisseaux de l'étape 3.
-- [ ] Mécanique de combat vaisseau-vs-vaisseau (dépend de ce qu'Odyssey expose ; C# probable).
+### Étape 4 — Armes de vaisseau spécifiques *(extension de l'arsenal VGE Ch.2)*
+- [x] **Canon à plasma goa'uld** `SG_GoauldStaffCannon` (artillerie VGE, munition = naquadah) + version ennemie pour les Ha'tak.
+- [x] **Canon à ions asgard** `SG_AsgardIonCannon` (faisceau lourd VGE, traverse les boucliers, très énergivore).
+- [x] Recherches Gravtech (onglet VGE, gravdata) : **armement des Ha'tak**, **armement asgard**, **défenses des Ha'tak**.
+- [x] ~~Mécanique de combat vaisseau-vs-vaisseau à coder~~ → **fournie par VGE Ch.2**.
 
 ### Étape 5 — Système de quêtes : cité légendaire (Atlantis/cité des Anciens)
-- [ ] Chaîne de quêtes (QuestScriptDefs / C#).
-- [ ] Voyage via Stargate / gravship vers une carte spéciale.
+- [x] **Amorce : Porte des étoiles** `SG_Stargate` (MapPortal vanilla) + **DHD** `SG_DHD` : la traversée génère un **monde lointain** (carte-poche : surface tempérée, filons de naquadah) avec une porte de retour ; « composer une nouvelle adresse » referme le monde (recherche `SG_StargateActivation`).
+- [ ] Chaîne de quêtes (QuestScriptDefs / C#) : adresses spéciales découvertes (ruines, Tok'ra, Jaffa libres…), jusqu'à la cité des Anciens.
+- [ ] Mondes variés (biomes, ruines, présence goa'uld) au lieu d'un monde tempéré unique.
 - [ ] Récompense de fin (tech Ancienne, Ascension).
-- [ ] *(Le « basé sur VGE Chapitre 3 » est reporté : Ch.3 n'existe pas. On fait une version autonome ; on intégrera VGE Ch.3 s'il sort.)*
+- [ ] *(Le « basé sur VGE Chapitre 3 » est reporté : Ch.3 n'existe toujours pas au 2026-09-22. Version autonome, qui peut s'appuyer sur VGE Ch.1/2 déjà en dépendance ; on intégrera VGE Ch.3 s'il sort.)*
 
 ---
 
 ## 6. Risques & dépendances
 1. **DLC manquants côté dev** (bloquant) → acheter Odyssey + Biotech + Ideology.
-2. **VGE Chapitre 2/3 non sortis** → on construit sur le vanilla Odyssey, compat optionnelle.
-3. **API gravship d'Odyssey** : étendue exacte de ce qu'on peut scripter (combat vaisseau) à explorer une fois Odyssey installé — peut limiter les étapes 4‑5.
+2. **Dépendance à VGE Ch.1 + Ch.2** (obligatoire) : incompatibilité avec les autres mods de gravships ; une mise à jour VGE peut casser nos defs/patchs → épingler la version testée et re-tester à chaque update. **VGE Ch.3 non sorti** → étape 5 autonome.
+3. **Extensibilité de VGE** : explorée — armes, boucliers, menaces orbitales et plans de vaisseaux se déclinent en XML ; le C# se limite à des sous-classes (menace Ha'tak, génération). Les références à VGE sont vérifiées par `Tools/validate.sh`.
+7. **Validation hors-jeu** : les Defs vanilla (Data du jeu) ne sont pas publiques ; une référence vanilla absente des `[DefOf]` et des mods de référence ne se prouve qu'en jeu (liste `Tools/DefValidator/vanilla-verified.txt`).
 4. **Morphologie des Asgard** sans HAR → compromis visuel assumé (gènes peau/tête, pas un corps alien complet).
 5. **Charge artistique** (textures) ~50 % du travail final → placeholders d'abord, art en dernier.
 6. **Compat & équilibrage** : à tester en continu, d'où l'approche tranches verticales.
@@ -198,6 +204,5 @@ Mécanique signature qui **lie Jaffa et Goa'uld**. Dirigée par le joueur (chiru
 ---
 
 ## 7. Prochaine action proposée
-1. **Utilisateur :** installer RimWorld + Odyssey + Biotech + Ideology, confirmer le chemin d'install.
-2. **Claude :** lancer **Phase 0** (squelette + build + def de test qui se charge en jeu).
-3. Puis **Étape 1, tranche Jaffa** comme première verticale jouable.
+1. **Utilisateur :** tester en jeu la nuit du 22→23/09 en suivant `TESTS.md` (s'abonner d'abord à VEF + VGE Ch.1 + Ch.2), puis remonter le `Player.log`.
+2. **Claude :** corriger les retours de test, puis enchaîner sur l'étape 5 (quêtes d'adresses → cité des Anciens) et l'art (prompts dans `Art/PROMPTS_MISTRAL.md`).

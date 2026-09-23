@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       Marchands des factions Stargate (caravanes, visiteurs, comptoirs).
+       Tous rachètent l'équipement Stargate (tradeTag SG_StargateTech),
+       les objets de valeur et l'art.
+       ============================================================ -->
+
+  <TraderKindDef Name="SG_TraderBase" Abstract="True">
+    <stockGenerators>
+      <li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>SG_StargateTech</tag></li>
+    </stockGenerators>
+  </TraderKindDef>
+
+  <!-- ===================== TAU'RI (SGC) ===================== -->
+  <TraderKindDef ParentName="SG_TraderBase">
+    <defName>SG_Caravan_Tauri</defName>
+    <label>convoi d'intendance du SGC</label>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef"><thingDef>Silver</thingDef><countRange>400~900</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>MedicineIndustrial</thingDef><countRange>3~8</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>ComponentIndustrial</thingDef><countRange>3~8</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_SGCUniform</thingDef><countRange>1~3</countRange></li>
+      <li Class="StockGenerator_MarketValue">
+        <tradeTag>WeaponRanged</tradeTag>
+        <maxTechLevelGenerate>Industrial</maxTechLevelGenerate>
+        <countRange>1~3</countRange>
+      </li>
+    </stockGenerators>
+  </TraderKindDef>
+
+  <TraderKindDef ParentName="SG_TraderBase">
+    <defName>SG_Visitor_Tauri</defName>
+    <label>équipe SG</label>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef"><thingDef>Silver</thingDef><countRange>100~300</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>MedicineIndustrial</thingDef><countRange>1~3</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_SGCUniform</thingDef><countRange>0~1</countRange></li>
+    </stockGenerators>
+  </TraderKindDef>
+
+  <TraderKindDef ParentName="SG_TraderBase">
+    <defName>SG_Base_Tauri</defName>
+    <label>base du SGC</label>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef"><thingDef>Silver</thingDef><countRange>800~1500</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>MedicineIndustrial</thingDef><countRange>5~12</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>ComponentIndustrial</thingDef><countRange>5~12</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_SGCUniform</thingDef><countRange>2~5</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_Naquadah</thingDef><countRange>0~30</countRange></li>
+      <li Class="StockGenerator_MarketValue">
+        <tradeTag>WeaponRanged</tradeTag>
+        <maxTechLevelGenerate>Industrial</maxTechLevelGenerate>
+        <countRange>3~6</countRange>
+      </li>
+    </stockGenerators>
+  </TraderKindDef>
+
+  <!-- ===================== TOK'RA ===================== -->
+  <TraderKindDef ParentName="SG_TraderBase">
+    <defName>SG_Caravan_Tokra</defName>
+    <label>émissaires tok'ra</label>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef"><thingDef>Silver</thingDef><countRange>300~800</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_Naquadah</thingDef><countRange>30~90</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>ComponentSpacer</thingDef><countRange>1~3</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_Zat</thingDef><countRange>1~2</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_KaraKesh</thingDef><countRange>0~1</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_TokraSymbiote</thingDef><countRange>-2~1</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_Tretonin</thingDef><countRange>5~15</countRange></li>
+    </stockGenerators>
+  </TraderKindDef>
+
+  <TraderKindDef ParentName="SG_TraderBase">
+    <defName>SG_Visitor_Tokra</defName>
+    <label>agent tok'ra</label>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef"><thingDef>Silver</thingDef><countRange>100~300</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_Naquadah</thingDef><countRange>10~30</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_Zat</thingDef><countRange>0~1</countRange></li>
+    </stockGenerators>
+  </TraderKindDef>
+
+  <TraderKindDef ParentName="SG_TraderBase">
+    <defName>SG_Base_Tokra</defName>
+    <label>tunnels tok'ra</label>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef"><thingDef>Silver</thingDef><countRange>800~1500</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_Naquadah</thingDef><countRange>60~150</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>ComponentSpacer</thingDef><countRange>2~5</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_Zat</thingDef><countRange>1~3</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_KaraKesh</thingDef><countRange>0~2</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_TokraSymbiote</thingDef><countRange>0~1</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_Tretonin</thingDef><countRange>10~30</countRange></li>
+    </stockGenerators>
+  </TraderKindDef>
+
+  <!-- ===================== JAFFA LIBRES ===================== -->
+  <TraderKindDef ParentName="SG_TraderBase">
+    <defName>SG_Caravan_FreeJaffa</defName>
+    <label>caravane jaffa</label>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef"><thingDef>Silver</thingDef><countRange>300~700</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_Naquadah</thingDef><countRange>20~60</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_StaffWeapon</thingDef><countRange>1~3</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_JaffaArmor</thingDef><countRange>1~2</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_JaffaHelmet</thingDef><countRange>0~1</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_Tretonin</thingDef><countRange>5~20</countRange></li>
+    </stockGenerators>
+  </TraderKindDef>
+
+  <TraderKindDef ParentName="SG_TraderBase">
+    <defName>SG_Visitor_FreeJaffa</defName>
+    <label>guerriers jaffa</label>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef"><thingDef>Silver</thingDef><countRange>100~300</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_Naquadah</thingDef><countRange>10~20</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_StaffWeapon</thingDef><countRange>0~1</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_Tretonin</thingDef><countRange>2~6</countRange></li>
+    </stockGenerators>
+  </TraderKindDef>
+
+  <TraderKindDef ParentName="SG_TraderBase">
+    <defName>SG_Base_FreeJaffa</defName>
+    <label>camp jaffa</label>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef"><thingDef>Silver</thingDef><countRange>700~1300</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_Naquadah</thingDef><countRange>40~100</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_StaffWeapon</thingDef><countRange>2~4</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_JaffaArmor</thingDef><countRange>1~3</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_JaffaHelmet</thingDef><countRange>1~2</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_Tretonin</thingDef><countRange>10~30</countRange></li>
+    </stockGenerators>
+  </TraderKindDef>
+
+  <!-- ===================== ASGARD ===================== -->
+  <TraderKindDef ParentName="SG_TraderBase">
+    <defName>SG_Caravan_Asgard</defName>
+    <label>émissaires asgard</label>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef"><thingDef>Silver</thingDef><countRange>600~1200</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>ComponentSpacer</thingDef><countRange>3~8</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>Plasteel</thingDef><countRange>50~150</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_Naquadah</thingDef><countRange>20~50</countRange></li>
+      <li Class="StockGenerator_MarketValue">
+        <tradeTag>WeaponRanged</tradeTag>
+        <maxTechLevelGenerate>Spacer</maxTechLevelGenerate>
+        <countRange>0~2</countRange>
+      </li>
+    </stockGenerators>
+  </TraderKindDef>
+
+  <TraderKindDef ParentName="SG_TraderBase">
+    <defName>SG_Visitor_Asgard</defName>
+    <label>émissaire asgard</label>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef"><thingDef>Silver</thingDef><countRange>200~500</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>ComponentSpacer</thingDef><countRange>1~3</countRange></li>
+    </stockGenerators>
+  </TraderKindDef>
+
+  <TraderKindDef ParentName="SG_TraderBase">
+    <defName>SG_Base_Asgard</defName>
+    <label>station asgard</label>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef"><thingDef>Silver</thingDef><countRange>1000~2000</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>ComponentSpacer</thingDef><countRange>5~12</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>Plasteel</thingDef><countRange>100~300</countRange></li>
+      <li Class="StockGenerator_SingleDef"><thingDef>SG_Naquadah</thingDef><countRange>40~100</countRange></li>
+      <li Class="StockGenerator_MarketValue">
+        <tradeTag>WeaponRanged</tradeTag>
+        <maxTechLevelGenerate>Spacer</maxTechLevelGenerate>
+        <countRange>1~3</countRange>
+      </li>
+    </stockGenerators>
+  </TraderKindDef>
+
+</Defs>

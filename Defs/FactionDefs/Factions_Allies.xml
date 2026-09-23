@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ============================================================
+       Factions alliées / neutres de l'univers Stargate.
+       - Commandement Stargate (Tau'ri), Tok'ra, Jaffa libres : ennemis jurés
+         des Goa'uld (ils refusent le culte des Goa'uld), neutres envers le joueur.
+       - Asgard : très avancés, peu nombreux, commerçants.
+       Marchands : stocks Stargate dédiés (TraderKinds_Stargate.xml) + un marchand
+       outlander vanilla pour la variété.
+       Icônes = placeholders générés (Tools/art/gen_faction_icons.py).
+       ============================================================ -->
+
+  <FactionDef Name="SG_AllyFactionBase" ParentName="FactionBase" Abstract="True">
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <canMakeRandomly>true</canMakeRandomly>
+    <canSiege>true</canSiege>
+    <canStageAttacks>true</canStageAttacks>
+    <settlementGenerationWeight>1</settlementGenerationWeight>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>71</configurationListOrderPriority>
+    <listOrderPriority>16</listOrderPriority>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
+    <raidLootMaker>OutlanderRaidLootMaker</raidLootMaker>
+    <disallowedMemes>
+      <li>SG_GoauldWorship</li>
+    </disallowedMemes>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(70, 50)</li>
+        <li>(700, 100)</li>
+        <li>(1300, 150)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+  </FactionDef>
+
+  <!-- ===================== COMMANDEMENT STARGATE (TAU'RI) ===================== -->
+  <FactionDef ParentName="SG_AllyFactionBase">
+    <defName>SG_TauriSGC</defName>
+    <label>commandement stargate</label>
+    <description>Le Commandement Stargate (SGC) : l'organisation militaire et scientifique des Tau'ri, les humains de la Terre, qui explorent la galaxie par la Porte des étoiles. Ingénieux et obstinés, ils cherchent des alliés et des technologies pour résister aux Goa'uld, qu'ils combattent sans relâche.</description>
+    <pawnSingular>tau'ri</pawnSingular>
+    <pawnsPlural>tau'ri</pawnsPlural>
+    <leaderTitle>général</leaderTitle>
+    <techLevel>Industrial</techLevel>
+    <factionIconPath>UI/Factions/SG_Tauri</factionIconPath>
+    <factionNameMaker>SG_NamerFactionTauri</factionNameMaker>
+    <settlementNameMaker>SG_NamerSettlementTauri</settlementNameMaker>
+    <allowedCultures>
+      <li>Rustican</li>
+    </allowedCultures>
+    <colorSpectrum>
+      <li>(0.35, 0.42, 0.25)</li>
+      <li>(0.45, 0.52, 0.32)</li>
+    </colorSpectrum>
+    <caravanTraderKinds>
+      <li>SG_Caravan_Tauri</li>
+      <li>Caravan_Outlander_BulkGoods</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds>
+      <li>SG_Visitor_Tauri</li>
+      <li>Visitor_Outlander_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>SG_Base_Tauri</li>
+    </baseTraderKinds>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <options>
+          <SG_SGCSoldier>10</SG_SGCSoldier>
+          <SG_SGCOfficer>2</SG_SGCOfficer>
+          <SG_SGCScientist>1</SG_SGCScientist>
+        </options>
+      </li>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <SG_SGCSoldier>10</SG_SGCSoldier>
+          <SG_SGCScientist>5</SG_SGCScientist>
+          <SG_SGCOfficer>1</SG_SGCOfficer>
+        </options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <SG_SGCQuartermaster>1</SG_SGCQuartermaster>
+        </traders>
+        <carriers>
+          <Muffalo>1</Muffalo>
+        </carriers>
+        <guards>
+          <SG_SGCSoldier>10</SG_SGCSoldier>
+          <SG_SGCOfficer>1</SG_SGCOfficer>
+        </guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <SG_SGCSoldier>10</SG_SGCSoldier>
+          <SG_SGCOfficer>2</SG_SGCOfficer>
+          <SG_SGCScientist>4</SG_SGCScientist>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+  <!-- ===================== TOK'RA ===================== -->
+  <FactionDef ParentName="SG_AllyFactionBase">
+    <defName>SG_Tokra</defName>
+    <label>tok'ra</label>
+    <description>Les Tok'ra : des symbiotes de la même espèce que les Goa'uld, mais qui partagent leur hôte avec son plein consentement. Cette résistance secrète vit cachée dans des réseaux de tunnels et mène une guerre d'espionnage contre les Grands Maîtres. Méfiants et avares de leurs secrets, ils restent de précieux alliés.</description>
+    <pawnSingular>tok'ra</pawnSingular>
+    <pawnsPlural>tok'ra</pawnsPlural>
+    <leaderTitle>haut conseiller</leaderTitle>
+    <techLevel>Spacer</techLevel>
+    <settlementGenerationWeight>0.6</settlementGenerationWeight>
+    <factionIconPath>UI/Factions/SG_Tokra</factionIconPath>
+    <factionNameMaker>SG_NamerFactionTokra</factionNameMaker>
+    <settlementNameMaker>SG_NamerSettlementTokra</settlementNameMaker>
+    <allowedCultures>
+      <li>Sophian</li>
+    </allowedCultures>
+    <colorSpectrum>
+      <li>(0.27, 0.55, 0.67)</li>
+      <li>(0.35, 0.65, 0.75)</li>
+    </colorSpectrum>
+    <caravanTraderKinds>
+      <li>SG_Caravan_Tokra</li>
+      <li>Caravan_Outlander_Exotic</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds>
+      <li>SG_Visitor_Tokra</li>
+      <li>Visitor_Outlander_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>SG_Base_Tokra</li>
+    </baseTraderKinds>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <options>
+          <SG_TokraOperative>10</SG_TokraOperative>
+          <SG_TokraElder>1</SG_TokraElder>
+        </options>
+      </li>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <SG_TokraOperative>10</SG_TokraOperative>
+          <SG_TokraElder>2</SG_TokraElder>
+        </options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <SG_TokraEnvoy>1</SG_TokraEnvoy>
+        </traders>
+        <carriers>
+          <Muffalo>1</Muffalo>
+        </carriers>
+        <guards>
+          <SG_TokraOperative>10</SG_TokraOperative>
+        </guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <SG_TokraOperative>10</SG_TokraOperative>
+          <SG_TokraElder>3</SG_TokraElder>
+          <SG_TokraQueenKind>1</SG_TokraQueenKind>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+  <!-- ===================== JAFFA LIBRES ===================== -->
+  <FactionDef ParentName="SG_AllyFactionBase">
+    <defName>SG_FreeJaffa</defName>
+    <label>jaffa libres</label>
+    <description>Des Jaffa qui ont renié les faux dieux goa'uld et arraché la marque de leur ancien maître. Guerriers fiers et redoutables, ils luttent pour la liberté de tout leur peuple et accueillent volontiers ceux qui combattent les Grands Maîtres.</description>
+    <pawnSingular>jaffa libre</pawnSingular>
+    <pawnsPlural>jaffa libres</pawnsPlural>
+    <leaderTitle>maître</leaderTitle>
+    <techLevel>Spacer</techLevel>
+    <factionIconPath>UI/Factions/SG_FreeJaffa</factionIconPath>
+    <factionNameMaker>SG_NamerFactionFreeJaffa</factionNameMaker>
+    <settlementNameMaker>SG_NamerSettlementFreeJaffa</settlementNameMaker>
+    <allowedCultures>
+      <li>Rustican</li>
+    </allowedCultures>
+    <colorSpectrum>
+      <li>(0.60, 0.28, 0.20)</li>
+      <li>(0.70, 0.38, 0.25)</li>
+    </colorSpectrum>
+    <caravanTraderKinds>
+      <li>SG_Caravan_FreeJaffa</li>
+      <li>Caravan_Outlander_CombatSupplier</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds>
+      <li>SG_Visitor_FreeJaffa</li>
+      <li>Visitor_Outlander_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>SG_Base_FreeJaffa</li>
+    </baseTraderKinds>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <options>
+          <SG_FreeJaffaWarrior>10</SG_FreeJaffaWarrior>
+          <SG_FreeJaffaMaster>1</SG_FreeJaffaMaster>
+        </options>
+      </li>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <SG_FreeJaffaWarrior>10</SG_FreeJaffaWarrior>
+          <SG_FreeJaffaMaster>1</SG_FreeJaffaMaster>
+        </options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <SG_FreeJaffaTrader>1</SG_FreeJaffaTrader>
+        </traders>
+        <carriers>
+          <Muffalo>1</Muffalo>
+        </carriers>
+        <guards>
+          <SG_FreeJaffaWarrior>10</SG_FreeJaffaWarrior>
+        </guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <SG_FreeJaffaWarrior>10</SG_FreeJaffaWarrior>
+          <SG_FreeJaffaMaster>2</SG_FreeJaffaMaster>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+  <!-- ===================== ASGARD ===================== -->
+  <FactionDef ParentName="SG_AllyFactionBase">
+    <defName>SG_Asgard</defName>
+    <label>asgard</label>
+    <description>Le Haut Conseil asgard : l'une des races les plus avancées de la galaxie, aujourd'hui peu nombreuse et condamnée par la dégénérescence de ses clones. Protecteurs discrets des humains, les Asgard commercent et coopèrent avec ceux qu'ils jugent dignes de confiance.</description>
+    <pawnSingular>asgard</pawnSingular>
+    <pawnsPlural>asgard</pawnsPlural>
+    <leaderTitle>commandant suprême</leaderTitle>
+    <techLevel>Spacer</techLevel>
+    <settlementGenerationWeight>0.3</settlementGenerationWeight>
+    <canSiege>false</canSiege>
+    <factionIconPath>UI/Factions/SG_Asgard</factionIconPath>
+    <factionNameMaker>SG_NamerFactionAsgard</factionNameMaker>
+    <settlementNameMaker>SG_NamerSettlementAsgard</settlementNameMaker>
+    <allowedCultures>
+      <li>Sophian</li>
+    </allowedCultures>
+    <colorSpectrum>
+      <li>(0.62, 0.66, 0.75)</li>
+      <li>(0.72, 0.76, 0.85)</li>
+    </colorSpectrum>
+    <caravanTraderKinds>
+      <li>SG_Caravan_Asgard</li>
+      <li>Caravan_Outlander_Exotic</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds>
+      <li>SG_Visitor_Asgard</li>
+      <li>Visitor_Outlander_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>SG_Base_Asgard</li>
+    </baseTraderKinds>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <options>
+          <SG_AsgardDefender>10</SG_AsgardDefender>
+          <SG_AsgardCommander>1</SG_AsgardCommander>
+        </options>
+      </li>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <SG_AsgardDefender>5</SG_AsgardDefender>
+          <SG_AsgardEmissary>5</SG_AsgardEmissary>
+        </options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <SG_AsgardEmissary>1</SG_AsgardEmissary>
+        </traders>
+        <carriers>
+          <Muffalo>1</Muffalo>
+        </carriers>
+        <guards>
+          <SG_AsgardDefender>10</SG_AsgardDefender>
+        </guards>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <SG_AsgardDefender>10</SG_AsgardDefender>
+          <SG_AsgardCommander>2</SG_AsgardCommander>
+          <SG_AsgardEmissary>3</SG_AsgardEmissary>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+</Defs>

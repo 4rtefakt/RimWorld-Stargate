@@ -2,7 +2,7 @@
 <Defs>
 
   <!-- Équipement Stargate. ParentName ApparelBase (qualité, non craftable pour
-       l'instant). Textures portées = placeholders vanilla, catégorie ApparelMisc
+       l'instant). Textures portées = vanilla (icônes au sol dédiées), catégorie ApparelMisc
        (sûre). Armures avec stats absolues. Art + recettes dédiés plus tard. -->
 
   <!-- ===================== GARDE JAFFA : ARMURE ===================== -->
@@ -31,7 +31,7 @@
       <li>ApparelMisc</li>
     </thingCategories>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</texPath>
+      <texPath>Things/Apparel/SG_JaffaArmor/SG_JaffaArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -66,6 +66,9 @@
         <li>Soldier</li>
       </defaultOutfitTags>
     </apparel>
+    <tradeTags>
+      <li>SG_StargateTech</li>
+    </tradeTags>
   </ThingDef>
 
   <!-- ===================== GARDE JAFFA : CASQUE SERPENT ===================== -->
@@ -94,7 +97,7 @@
       <li>ApparelMisc</li>
     </thingCategories>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/AdvancedHelmet/AdvancedHelmet</texPath>
+      <texPath>Things/Apparel/SG_JaffaHelmet/SG_JaffaHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -123,6 +126,9 @@
         <li>Soldier</li>
       </defaultOutfitTags>
     </apparel>
+    <tradeTags>
+      <li>SG_StargateTech</li>
+    </tradeTags>
   </ThingDef>
 
   <!-- ===================== ROBE GOA'ULD ===================== -->
@@ -136,7 +142,7 @@
       <li>ApparelMisc</li>
     </thingCategories>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/Robe/Robe</texPath>
+      <texPath>Things/Apparel/SG_GoauldRobe/SG_GoauldRobe</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -167,6 +173,9 @@
         <li>SG_GoauldGear</li>
       </tags>
     </apparel>
+    <tradeTags>
+      <li>SG_StargateTech</li>
+    </tradeTags>
   </ThingDef>
 
   <!-- ===================== UNIFORME SGC (TAU'RI) ===================== -->
@@ -180,7 +189,7 @@
       <li>ApparelMisc</li>
     </thingCategories>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/FlakJacket/FlakJacket</texPath>
+      <texPath>Things/Apparel/SG_SGCUniform/SG_SGCUniform</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -209,6 +218,9 @@
         <li>Soldier</li>
       </defaultOutfitTags>
     </apparel>
+    <tradeTags>
+      <li>SG_StargateTech</li>
+    </tradeTags>
   </ThingDef>
 
 </Defs>

@@ -6,4 +6,34 @@
 
   <SG_LifeDrainInvalidTarget>Le drain de vie ne peut cibler qu'un être humanoïde.</SG_LifeDrainInvalidTarget>
 
+  <!-- {0} = nom du Jaffa -->
+  <SG_SymbioteWithdrawalStarted>{0} n'a plus ni larve ni tretonine : sans nouvelle larve implantée ou dose de tretonine, ce Jaffa mourra en quelques jours.</SG_SymbioteWithdrawalStarted>
+
+  <!-- Anneaux de transport -->
+  <SG_ActivateRings>Activer les anneaux</SG_ActivateRings>
+  <SG_ActivateRingsDesc>Téléporte tout ce qui se trouve sur cette plateforme vers une autre plateforme d'anneaux de la carte (à désigner).</SG_ActivateRingsDesc>
+  <SG_RingsNoPower>Les anneaux ne sont pas alimentés.</SG_RingsNoPower>
+  <!-- {0} = durée restante -->
+  <SG_RingsCooldown>Recharge des anneaux : {0}</SG_RingsCooldown>
+  <SG_RingsNoDestination>Aucune autre plateforme d'anneaux sur cette carte.</SG_RingsNoDestination>
+
+  <!-- Porte des étoiles -->
+  <SG_StargateEnter>Franchir la porte</SG_StargateEnter>
+  <SG_StargateCancelEnter>Annuler le départ</SG_StargateCancelEnter>
+  <SG_StargateEntering>franchit la porte</SG_StargateEntering>
+  <SG_StargateReturn>Rentrer par la porte</SG_StargateReturn>
+  <SG_StargateNoDHD>Aucun DHD à proximité : impossible de composer une adresse.</SG_StargateNoDHD>
+  <SG_StargateNoPower>La porte n'est pas alimentée.</SG_StargateNoPower>
+  <SG_StargateDialNew>Composer une nouvelle adresse</SG_StargateDialNew>
+  <SG_StargateDialNewDesc>Referme le monde actuellement relié à la porte. La prochaine traversée mènera vers un nouveau monde.</SG_StargateDialNewDesc>
+  <SG_StargateNoPlanetYet>Aucune adresse composée pour l'instant.</SG_StargateNoPlanetYet>
+  <SG_StargatePawnsStillThere>Des membres de la colonie se trouvent encore sur l'autre monde.</SG_StargatePawnsStillThere>
+  <SG_StargateDialNewConfirm>Composer une nouvelle adresse ? Le monde actuel sera perdu, avec tout ce qui y a été laissé.</SG_StargateDialNewConfirm>
+  <SG_StargateAddressCleared>La porte est prête à composer une nouvelle adresse.</SG_StargateAddressCleared>
+  <SG_StargateConnected>Porte reliée à un monde lointain.</SG_StargateConnected>
+  <SG_StargateIdle>Porte au repos : prête à composer une adresse.</SG_StargateIdle>
+
+  <SG_StargateStillConnected>Démontage impossible : un monde est encore relié à la porte. Composez d'abord une nouvelle adresse.</SG_StargateStillConnected>
+  <SG_StargateCollapsed>La porte des étoiles est détruite : le vortex a ramené l'équipe, et le monde lointain est perdu.</SG_StargateCollapsed>
+
 </LanguageData>

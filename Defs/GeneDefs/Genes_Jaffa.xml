@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Poche à symbiote des Jaffa (Stargate.Gene_JaffaPouch) : le Jaffa adulte
+       dépend de la larve (prim'ta) qu'il porte, ou à défaut de tretonine.
+       Sans l'un ni l'autre : manque de symbiote, mortel en ~3 jours. -->
+  <GeneDef>
+    <defName>SG_JaffaPouch</defName>
+    <label>poche à symbiote</label>
+    <labelShortAdj>porteur de symbiote</labelShortAdj>
+    <description>Une poche abdominale conçue pour accueillir une larve goa'uld. En échange, la larve remplace entièrement le système immunitaire de son porteur : un porteur adulte qui perd sa larve meurt en quelques jours, à moins de recevoir une nouvelle larve ou des doses quotidiennes de tretonine.\n\nLes porteurs de ce gène possèdent déjà une larve lorsqu'ils l'acquièrent.</description>
+    <geneClass>Stargate.Gene_JaffaPouch</geneClass>
+    <iconPath>UI/Icons/Genes/SG_JaffaPouch</iconPath>
+    <displayCategory>Miscellaneous</displayCategory>
+    <biostatCpx>1</biostatCpx>
+    <biostatMet>2</biostatMet>
+    <minAgeActive>13</minAgeActive>
+  </GeneDef>
+
+</Defs>

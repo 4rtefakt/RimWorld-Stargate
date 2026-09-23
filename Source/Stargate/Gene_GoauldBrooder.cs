@@ -10,6 +10,7 @@ namespace Stargate
     /// que la reine est vivante, valide et nourrie, et que le plafond sur la carte
     /// n'est pas atteint. La cadence et le produit sont définis en XML via
     /// <see cref="GeneExtension_Brooder"/> (donc trouvables sans dev mode).
+    /// Décompte via TickInterval (échelonnage des ticks de la 1.6).
     /// </summary>
     public class Gene_GoauldBrooder : Gene
     {
@@ -22,16 +23,16 @@ namespace Stargate
 
         private int Interval => Ext?.productionIntervalTicks ?? 300000;
 
-        public override void Tick()
+        public override void TickInterval(int delta)
         {
-            base.Tick();
+            base.TickInterval(delta);
             if (pawn == null || !pawn.Spawned) return;
 
             if (ticksToNextLarva < 0)
             {
                 ticksToNextLarva = Interval;
             }
-            ticksToNextLarva--;
+            ticksToNextLarva -= delta;
             if (ticksToNextLarva <= 0)
             {
                 // Réussite -> on repart pour un cycle complet ; échec -> re-tentative courte.
@@ -43,7 +44,10 @@ namespace Stargate
         {
             GeneExtension_Brooder ext = Ext;
             if (ext?.product == null) return false;
-            if (pawn.Dead || pawn.Downed) return false;
+            if (!Active || pawn.Dead || pawn.Downed) return false;
+            // Seules les reines de la colonie pondent (y compris prisonnières et esclaves) :
+            // pas de ponte chez l'ennemi, ni de message trompeur au joueur.
+            if (pawn.Faction != Faction.OfPlayer && pawn.HostFaction != Faction.OfPlayer) return false;
             if (pawn.needs?.food != null && pawn.needs.food.CurLevelPercentage < 0.3f) return false;
 
             Map map = pawn.MapHeld;
@@ -51,7 +55,11 @@ namespace Stargate
             if (map.listerThings.ThingsOfDef(ext.product).Count >= ext.maxOnMap) return false;
 
             Thing produced = ThingMaker.MakeThing(ext.product);
-            GenPlace.TryPlaceThing(produced, pawn.PositionHeld, map, ThingPlaceMode.Near);
+            if (!GenPlace.TryPlaceThing(produced, pawn.PositionHeld, map, ThingPlaceMode.Near))
+            {
+                produced.Destroy();
+                return false;
+            }
             Messages.Message("SG_QueenProducedSymbiote".Translate(pawn.LabelShort, produced.LabelNoCount),
                 produced, MessageTypeDefOf.PositiveEvent, false);
             return true;

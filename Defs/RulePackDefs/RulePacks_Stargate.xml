@@ -1,34 +1,54 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- Noms de faction goa'uld : "Empire d'Apophis", "Dominion de Ra", etc.
-       Auto-contenu (aucun rulesFiles externe). -->
+  <!-- Noms des seigneurs goa'uld, partagés par les autres générateurs (via include).
+       [delord] gère l'élision : "de Ra" / "d'Apophis". -->
   <RulePackDef>
-    <defName>SG_NamerFactionGoauld</defName>
+    <defName>SG_GoauldLordNames</defName>
     <rulePack>
       <rulesStrings>
-        <li>r_name->[union] de [lord]</li>
-        <li>r_name->[union] d'[lordVoyelle]</li>
-        <li>r_name->[adjectif] [union] de [lord]</li>
+        <li>lord->[lordC]</li>
+        <li>lord->[lordV]</li>
+        <li>delord->de [lordC]</li>
+        <li>delord->d'[lordV]</li>
+
+        <li>lordC->Ra</li>
+        <li>lordC->Sokar</li>
+        <li>lordC->Cronos</li>
+        <li>lordC->Ba'al</li>
+        <li>lordC->Maître Yu</li>
+        <li>lordC->Hathor</li>
+        <li>lordC->Nirrti</li>
+        <li>lordC->Heru'ur</li>
+        <li>lordC->Camulus</li>
+        <li>lordC->Moloc</li>
+        <li>lordC->Seth</li>
+        <li>lordC->Zipacna</li>
+        <li>lordC->Tanith</li>
+        <li>lordC->Kali</li>
+        <li>lordC->Svarog</li>
+
+        <li>lordV->Apophis</li>
+        <li>lordV->Anubis</li>
+        <li>lordV->Osiris</li>
+        <li>lordV->Imhotep</li>
+        <li>lordV->Amaterasu</li>
+        <li>lordV->Olokun</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Noms de faction goa'uld : "Empire d'Apophis", "Dominion de Ra", etc. -->
+  <RulePackDef>
+    <defName>SG_NamerFactionGoauld</defName>
+    <include>
+      <li>SG_GoauldLordNames</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->[union] [delord]</li>
+        <li>r_name->[adjectif] [union] [delord]</li>
         <li>r_name->[lord] et son [union]</li>
-
-        <li>lord->Ra</li>
-        <li>lord->Apophis</li>
-        <li>lord->Anubis</li>
-        <li>lord->Sokar</li>
-        <li>lord->Cronos</li>
-        <li>lord->Ba'al</li>
-        <li>lord->Maître Yu</li>
-        <li>lord->Hathor</li>
-        <li>lord->Nirrti</li>
-        <li>lord->Heru'ur</li>
-        <li>lord->Camulus</li>
-        <li>lord->Moloc</li>
-
-        <li>lordVoyelle->Apophis</li>
-        <li>lordVoyelle->Anubis</li>
-        <li>lordVoyelle->Osiris</li>
-        <li>lordVoyelle->Imhotep</li>
 
         <li>union->Empire</li>
         <li>union->Dominion</li>
@@ -40,6 +60,33 @@
         <li>adjectif->Éternel</li>
         <li>adjectif->Glorieux</li>
         <li>adjectif->Grand</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <!-- Noms de Ha'tak (vaisseaux-mères goa'uld) : "Glaive d'Apophis", "Ha'tak de Ba'al"… -->
+  <RulePackDef>
+    <defName>SG_NamerHatak</defName>
+    <include>
+      <li>SG_GoauldLordNames</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=2)->[shipNoun] [delord]</li>
+        <li>r_name->Ha'tak [delord]</li>
+        <li>r_name->Vaisseau-mère [delord]</li>
+
+        <li>shipNoun->Colère</li>
+        <li>shipNoun->Glaive</li>
+        <li>shipNoun->Œil</li>
+        <li>shipNoun->Fureur</li>
+        <li>shipNoun->Main</li>
+        <li>shipNoun->Serpent</li>
+        <li>shipNoun->Faucon</li>
+        <li>shipNoun->Aile</li>
+        <li>shipNoun->Voix</li>
+        <li>shipNoun->Flamme</li>
+        <li>shipNoun->Jugement</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>

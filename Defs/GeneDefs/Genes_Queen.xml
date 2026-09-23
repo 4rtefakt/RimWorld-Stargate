@@ -4,13 +4,13 @@
   <!-- Gène de la Reine Goa'uld : ponte périodique de larves (Gene_GoauldBrooder).
        Cadence + produit définis par le DefModExtension (GeneExtension_Brooder) :
        ~5 jours, produit = larve goa'uld immature.
-       Icône = placeholder vanilla. -->
+       Icône dédiée. -->
   <GeneDef>
     <defName>SG_QueenBrooder</defName>
     <label>matriarche goa'uld</label>
     <description>Cette lignée goa'uld est capable d'engendrer de nouvelles larves de symbiote. Une reine produit périodiquement (environ tous les 5 jours) une larve, à condition d'être en vie, valide et bien nourrie.</description>
     <geneClass>Stargate.Gene_GoauldBrooder</geneClass>
-    <iconPath>UI/Icons/Genes/Gene_XenogermReimplanter</iconPath>
+    <iconPath>UI/Icons/Genes/SG_QueenBrooder</iconPath>
     <displayCategory>Archite</displayCategory>
     <biostatCpx>2</biostatCpx>
     <biostatMet>-2</biostatMet>
@@ -31,7 +31,7 @@
     <label>matriarche tok'ra</label>
     <description>Cette lignée tok'ra est capable d'engendrer de nouveaux symbiotes. La gestation est plus longue que chez les Goa'uld (environ tous les 10 jours), mais le symbiote tok'ra naît directement adulte, sans stade larvaire fragile.</description>
     <geneClass>Stargate.Gene_GoauldBrooder</geneClass>
-    <iconPath>UI/Icons/Genes/Gene_XenogermReimplanter</iconPath>
+    <iconPath>UI/Icons/Genes/SG_QueenBrooder</iconPath>
     <displayCategory>Archite</displayCategory>
     <biostatCpx>2</biostatCpx>
     <biostatMet>-2</biostatMet>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Planète lointaine atteinte par la Porte des étoiles (carte-poche du portail).
+       Génération de surface vanilla (MapCommonBase + roches), porte de retour au
+       centre, filons de naquadah. Biome tempéré et température fixe. -->
+  <MapGeneratorDef ParentName="MapCommonBase">
+    <defName>SG_StargatePlanet</defName>
+    <label>monde lointain</label>
+    <genSteps>
+      <li>RocksFromGrid</li>
+      <li>SG_ScatterNaquadah</li>
+      <li>SG_StargateExit</li>
+    </genSteps>
+    <pocketMapProperties>
+      <biome>TemperateForest</biome>
+      <temperature>18</temperature>
+      <destroyOnParentMapAbandoned>true</destroyOnParentMapAbandoned>
+    </pocketMapProperties>
+  </MapGeneratorDef>
+
+  <GenStepDef>
+    <defName>SG_ScatterNaquadah</defName>
+    <order>410</order>
+    <genStep Class="GenStep_ScatterLumpsMineable">
+      <forcedDefToScatter>SG_MineableNaquadah</forcedDefToScatter>
+      <count>5</count>
+      <forcedLumpSize>10</forcedLumpSize>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>SG_StargateExit</defName>
+    <order>700</order>
+    <genStep Class="Stargate.GenStep_StargateExit" />
+  </GenStepDef>
+
+</Defs>

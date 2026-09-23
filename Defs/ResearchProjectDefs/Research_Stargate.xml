@@ -1,48 +1,151 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- Arbre de recherche Stargate (tab principal, tech Spacer). -->
+  <!-- ============================================================
+       Recherche Stargate.
+       - Onglet dédié « Stargate » (évite de chevaucher l'arbre vanilla).
+       - Les technologies de VAISSEAU vivent dans l'onglet Gravtech de VGE
+         (recherchées avec des gravdata, comme les armes VGE) et dépendent
+         à la fois d'une recherche VGE et d'une recherche Stargate.
+       ============================================================ -->
 
-  <ResearchProjectDef>
+  <ResearchTabDef>
+    <defName>SG_StargateTab</defName>
+    <label>stargate</label>
+  </ResearchTabDef>
+
+  <ResearchProjectDef Name="SG_ResearchBase" Abstract="True">
+    <tab>SG_StargateTab</tab>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+  </ResearchProjectDef>
+
+  <!-- ===================== ONGLET STARGATE ===================== -->
+
+  <ResearchProjectDef ParentName="SG_ResearchBase">
     <defName>SG_StargateTech</defName>
     <label>technologie stargate</label>
     <description>Les bases de l'étude de la technologie extraterrestre récupérée : naquadah, énergie plasma et principes des artefacts goa'uld. Débloque les recherches Stargate avancées.</description>
     <baseCost>2000</baseCost>
-    <techLevel>Spacer</techLevel>
     <prerequisites>
       <li>MicroelectronicsBasics</li>
     </prerequisites>
-    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-    <researchViewX>9.0</researchViewX>
-    <researchViewY>5.0</researchViewY>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
   </ResearchProjectDef>
 
-  <ResearchProjectDef>
+  <ResearchProjectDef ParentName="SG_ResearchBase">
     <defName>SG_StargateArsenal</defName>
     <label>arsenal stargate</label>
-    <description>Permet de fabriquer les armes et armures de l'univers Stargate : bâton jaffa, zat'nik'tel, armure et casque de garde serpent.</description>
+    <description>Permet de fabriquer les armes et armures de l'univers Stargate : bâton jaffa, zat'nik'tel, kara kesh, armure et casque de garde serpent.</description>
     <baseCost>4000</baseCost>
-    <techLevel>Spacer</techLevel>
     <prerequisites>
       <li>SG_StargateTech</li>
     </prerequisites>
-    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-    <researchViewX>10.5</researchViewX>
-    <researchViewY>4.2</researchViewY>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>1.00</researchViewY>
   </ResearchProjectDef>
 
-  <ResearchProjectDef>
+  <ResearchProjectDef ParentName="SG_ResearchBase">
     <defName>SG_GoauldTech</defName>
     <label>technologie goa'uld</label>
-    <description>Maîtrise des dispositifs goa'uld avancés, dont le sarcophage régénérateur.</description>
+    <description>Maîtrise des dispositifs goa'uld avancés : le sarcophage régénérateur et les anneaux de transport.</description>
     <baseCost>5000</baseCost>
-    <techLevel>Spacer</techLevel>
     <prerequisites>
       <li>SG_StargateTech</li>
     </prerequisites>
-    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-    <researchViewX>10.5</researchViewX>
-    <researchViewY>5.8</researchViewY>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="SG_ResearchBase">
+    <defName>SG_NaquadahPower</defName>
+    <label>énergie au naquadah</label>
+    <description>Exploite l'extraordinaire densité énergétique du naquadah : générateurs compacts au naquadah, et bases des systèmes d'énergie des vaisseaux goa'uld.</description>
+    <baseCost>3000</baseCost>
+    <prerequisites>
+      <li>SG_StargateTech</li>
+    </prerequisites>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="SG_ResearchBase">
+    <defName>SG_AsgardTech</defName>
+    <label>technologie asgard</label>
+    <description>Étude des principes de la science asgard, des siècles en avance sur tout ce que connaissent les autres peuples : physique des ions, champs de force et conversion d'énergie à très haut rendement.</description>
+    <baseCost>8000</baseCost>
+    <prerequisites>
+      <li>SG_NaquadahPower</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="SG_ResearchBase">
+    <defName>SG_Tretonin</defName>
+    <label>tretonine</label>
+    <description>Reproduit le traitement des Tok'ra : synthétiser à partir d'une larve goa'uld de la tretonine, qui permet aux Jaffa de vivre sans symbiote.</description>
+    <baseCost>2500</baseCost>
+    <prerequisites>
+      <li>SG_GoauldTech</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>2.00</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="SG_ResearchBase">
+    <defName>SG_StargateActivation</defName>
+    <label>activation de la porte des étoiles</label>
+    <description>Comprendre et reproduire la technologie des Anciens : construire une porte des étoiles et son dispositif de composition (DHD), et envoyer des équipes explorer des mondes lointains.</description>
+    <baseCost>6000</baseCost>
+    <prerequisites>
+      <li>SG_NaquadahPower</li>
+      <li>SG_GoauldTech</li>
+    </prerequisites>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>2.50</researchViewY>
+  </ResearchProjectDef>
+
+  <!-- ===================== ONGLET GRAVTECH (VGE) ===================== -->
+
+  <ResearchProjectDef ParentName="VGE_GravtechResearchBase">
+    <defName>SG_GoauldShipWeaponry</defName>
+    <label>armement des ha'tak</label>
+    <description>Adapte l'armement des vaisseaux-mères goa'uld aux gravships : canons à plasma alimentés au naquadah.</description>
+    <baseCost>800</baseCost>
+    <prerequisites>
+      <li>VGE_GravshipWeaponry</li>
+      <li>SG_GoauldTech</li>
+    </prerequisites>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>0.50</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="VGE_GravtechResearchBase">
+    <defName>SG_AsgardShipWeaponry</defName>
+    <label>armement asgard</label>
+    <description>Reproduit les armes de vaisseau asgard : canons à ions capables de traverser les boucliers ennemis.</description>
+    <baseCost>2000</baseCost>
+    <prerequisites>
+      <li>VGE_AdvancedGravshipWeaponry</li>
+      <li>SG_AsgardTech</li>
+    </prerequisites>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>1.50</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="VGE_GravtechResearchBase">
+    <defName>SG_GoauldShipDefenses</defName>
+    <label>défenses des ha'tak</label>
+    <description>Adapte aux gravships le générateur de bouclier des vaisseaux-mères goa'uld, alimenté par un cœur de naquadah plutôt que par un gravcore.</description>
+    <baseCost>1200</baseCost>
+    <prerequisites>
+      <li>VGE_GravshipDefenses</li>
+      <li>SG_NaquadahPower</li>
+    </prerequisites>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>2.50</researchViewY>
   </ResearchProjectDef>
 
 </Defs>
