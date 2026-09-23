@@ -29,6 +29,8 @@ namespace DefValidator
         };
 
         private static readonly Dictionary<string, Type> TypeByFullName = new Dictionary<string, Type>();
+        // Types des DLL du mod lui-même (dossier Assemblies/), pour contrôler ses [DefOf].
+        private static readonly List<Type> ModTypes = new List<Type>();
         private static Type defType;
 
         // defName -> types de Def (noms complets) sous lesquels il est connu, et d'où il vient.
@@ -122,6 +124,7 @@ namespace DefValidator
             }
 
             CheckTranslationKeys(modDir);
+            CheckModDefOfs();
 
             foreach (string w in Warnings) Console.WriteLine("AVERT  " + w);
             foreach (string e in Errors) Console.WriteLine("ERREUR " + e);
@@ -140,6 +143,24 @@ namespace DefValidator
             }
             Console.WriteLine($"Bilan : {modDocs.Count} fichiers, {Errors.Count} erreur(s), {Warnings.Count} avertissement(s).");
             return Errors.Count == 0 ? 0 : 1;
+        }
+
+        // ------------------------------------------------------------------ [DefOf] du mod
+
+        /// <summary>Chaque champ d'une classe [DefOf] du mod doit désigner une Def existante.</summary>
+        private static void CheckModDefOfs()
+        {
+            foreach (Type t in ModTypes)
+            {
+                bool isDefOf;
+                try { isDefOf = t.GetCustomAttributesData().Any(a => a.AttributeType.Name == "DefOf"); }
+                catch { continue; }
+                if (!isDefOf) continue;
+                foreach (FieldInfo f in t.GetFields(BindingFlags.Public | BindingFlags.Static))
+                {
+                    if (IsDef(f.FieldType)) CheckDefRef(f.Name, f.FieldType, $"[DefOf] {t.FullName}.{f.Name}");
+                }
+            }
         }
 
         // ------------------------------------------------------------------ traductions
@@ -207,11 +228,13 @@ namespace DefValidator
             var resolver = new PathAssemblyResolver(unique);
             var mlc = new MetadataLoadContext(resolver, core != null ? Path.GetFileNameWithoutExtension(core) : "mscorlib");
 
+            string modAsmDir = Path.GetFullPath(modAssemblies);
             foreach (string p in unique)
             {
                 Assembly asm;
                 try { asm = mlc.LoadFromAssemblyPath(p); }
                 catch { continue; }
+                bool isModAssembly = Path.GetFullPath(Path.GetDirectoryName(p)) == modAsmDir;
                 Type[] types;
                 try { types = asm.GetTypes(); }
                 catch (ReflectionTypeLoadException ex) { types = ex.Types.Where(t => t != null).ToArray(); }
@@ -221,15 +244,19 @@ namespace DefValidator
                     string name;
                     try { name = t.FullName; } catch { continue; }
                     if (name != null && !TypeByFullName.ContainsKey(name)) TypeByFullName[name] = t;
+                    if (isModAssembly) ModTypes.Add(t);
                 }
             }
 
             TypeByFullName.TryGetValue("Verse.Def", out defType);
             if (defType == null) throw new Exception("Verse.Def introuvable : vérifier --asm (Assembly-CSharp.dll).");
 
-            // Les champs des classes [DefOf] sont autant de defNames vanilla garantis.
+            // Les champs des classes [DefOf] du jeu et des dépendances sont autant de defNames
+            // garantis (ceux du mod lui-même sont vérifiés à part, cf. CheckModDefOfs).
+            var modTypes = new HashSet<Type>(ModTypes);
             foreach (Type t in TypeByFullName.Values)
             {
+                if (modTypes.Contains(t)) continue;
                 bool isDefOf;
                 try { isDefOf = t.GetCustomAttributesData().Any(a => a.AttributeType.Name == "DefOf"); }
                 catch { continue; }
