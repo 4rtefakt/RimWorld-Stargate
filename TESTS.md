@@ -44,7 +44,7 @@ au plus risqué. Pour chaque point, noter ✅ / ❌ et joindre le `Player.log` e
 - [ ] Sur un mécanoïde / une tourelle : **paralysie** (effet IEM), pas de dégâts.
 
 ## 5. Jaffa et tretonine
-- [ ] Un colon Jaffa existant (ou dev : *Spawn pawn* guerrier jaffa) reçoit un **symbiote prim'ta**
+- [ ] Dev : *Spawn pawn* guerrier jaffa → il a **déjà** le gène poche à symbiote et le **symbiote prim'ta** (onglet santé). Un colon Jaffa existant le reçoit
       dans l'heure de jeu qui suit — pas de manque, pas de mort surprise.
 - [ ] Chirurgie *extraire le symbiote goa'uld* → dans l'heure : message + hediff **manque de
       symbiote** (mortel en ~3 jours).
