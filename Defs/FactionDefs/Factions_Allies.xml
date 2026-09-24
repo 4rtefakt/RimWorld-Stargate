@@ -106,6 +106,17 @@
         </options>
       </li>
     </pawnGroupMakers>
+    <!-- Repli pour les pions sans backstoryFiltersOverride (évite la Config error). -->
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>SG_TauriChild</li>
+          <li>SG_TauriSoldier</li>
+          <li>SG_TauriScientist</li>
+          <li>SG_TauriOfficer</li>
+        </categories>
+      </li>
+    </backstoryFilters>
   </FactionDef>
 
   <!-- ===================== TOK'RA ===================== -->
@@ -175,6 +186,15 @@
         </options>
       </li>
     </pawnGroupMakers>
+    <!-- Repli pour les pions sans backstoryFiltersOverride (évite la Config error). -->
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>SG_TokraChild</li>
+          <li>SG_TokraAdult</li>
+        </categories>
+      </li>
+    </backstoryFilters>
   </FactionDef>
 
   <!-- ===================== JAFFA LIBRES ===================== -->
@@ -242,6 +262,15 @@
         </options>
       </li>
     </pawnGroupMakers>
+    <!-- Repli pour les pions sans backstoryFiltersOverride (évite la Config error). -->
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>SG_JaffaChild</li>
+          <li>SG_FreeJaffaAdult</li>
+        </categories>
+      </li>
+    </backstoryFilters>
   </FactionDef>
 
   <!-- ===================== ASGARD ===================== -->
@@ -312,6 +341,15 @@
         </options>
       </li>
     </pawnGroupMakers>
+    <!-- Repli pour les pions sans backstoryFiltersOverride (évite la Config error). -->
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>SG_AsgardChild</li>
+          <li>SG_AsgardAdult</li>
+        </categories>
+      </li>
+    </backstoryFilters>
   </FactionDef>
 
 </Defs>

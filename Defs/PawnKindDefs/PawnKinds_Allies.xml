@@ -173,7 +173,7 @@
     <label>agent tok'ra</label>
     <combatPower>80</combatPower>
     <isFighter>true</isFighter>
-    <weaponMoney>600~1000</weaponMoney>
+    <weaponMoney>750~1100</weaponMoney>
     <weaponTags>
       <li>SG_GoauldWeapon</li>
     </weaponTags>
@@ -190,7 +190,7 @@
     <isFighter>true</isFighter>
     <factionLeader>true</factionLeader>
     <itemQuality>Good</itemQuality>
-    <weaponMoney>600~1000</weaponMoney>
+    <weaponMoney>750~1100</weaponMoney>
     <weaponTags>
       <li>SG_GoauldWeapon</li>
     </weaponTags>
@@ -206,7 +206,7 @@
     <combatPower>50</combatPower>
     <isFighter>false</isFighter>
     <trader>true</trader>
-    <weaponMoney>600~800</weaponMoney>
+    <weaponMoney>750~900</weaponMoney>
     <weaponTags>
       <li>SG_GoauldWeapon</li>
     </weaponTags>
@@ -341,7 +341,7 @@
     <label>défenseur asgard</label>
     <combatPower>85</combatPower>
     <isFighter>true</isFighter>
-    <weaponMoney>900~1400</weaponMoney>
+    <weaponMoney>1100~1500</weaponMoney>
     <weaponTags>
       <li>SpacerGun</li>
     </weaponTags>
@@ -365,7 +365,7 @@
     <combatPower>50</combatPower>
     <isFighter>false</isFighter>
     <trader>true</trader>
-    <weaponMoney>700~1000</weaponMoney>
+    <weaponMoney>1100~1300</weaponMoney>
     <weaponTags>
       <li>SpacerGun</li>
     </weaponTags>

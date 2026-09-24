@@ -12,6 +12,9 @@ Merci à Hitomi pour les premiers retours.
 - **Bâton jaffa** : il est tenu dans l'axe du tir au lieu d'être penché de 45°.
 - **Jaffa** : les Jaffa (raids, visiteurs, marchands, xénogerme) apparaissent directement avec leur
   larve prim'ta. Avant, elle n'arrivait qu'au premier contrôle, jusqu'à une heure de jeu plus tard.
+- **Erreurs au démarrage** : les 11 « Config error » du `Player.log` sont corrigées. Les 4 factions alliées ont maintenant
+  des histoires par défaut, les agents tok'ra et les Asgard ne peuvent plus apparaître sans arme,
+  et la porte des étoiles bloque tirs et vue comme un mur.
 - **Recherche des armes de vaisseau simplifiée** : les trois projets de l'onglet Gravtech sont
   supprimés, car il fallait trop de gravdata pour les atteindre. Chaque arme demande maintenant une recherche Stargate
   plus la recherche VGE équivalente, qu'on fait de toute façon :
