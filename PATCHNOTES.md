@@ -15,6 +15,10 @@ Merci à Hitomi pour les premiers retours.
 - **Erreurs au démarrage** : les 11 « Config error » du `Player.log` sont corrigées. Les 4 factions alliées ont maintenant
   des histoires par défaut, les agents tok'ra et les Asgard ne peuvent plus apparaître sans arme,
   et la porte des étoiles bloque tirs et vue comme un mur.
+- **Comptoirs des factions alliées** (SGC, Tok'ra, Jaffa libres, Asgard) : ils ne vendaient que
+  5 ou 6 objets Stargate. Ils ont maintenant, en plus de ces objets, un stock général comparable aux comptoirs
+  vanilla : ressources, nourriture, médicaments, drogues, textiles, armes, vêtements, armures, techprints,
+  artefacts et animaux. Pas d'esclaves, car ces factions combattent l'esclavage goa'uld.
 - **Recherche des armes de vaisseau simplifiée** : les trois projets de l'onglet Gravtech sont
   supprimés, car il fallait trop de gravdata pour les atteindre. Chaque arme demande maintenant une recherche Stargate
   plus la recherche VGE équivalente, qu'on fait de toute façon :
