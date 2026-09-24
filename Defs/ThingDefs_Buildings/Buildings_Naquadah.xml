@@ -178,8 +178,9 @@
       <li Class="VanillaGravshipExpanded.CompProperties_GravMaintainable" />
       <li Class="CompProperties_Breakdownable" />
     </comps>
-    <researchPrerequisites>
-      <li>SG_GoauldShipDefenses</li>
+    <researchPrerequisites Inherit="False">
+      <li>VGE_GravshipDefenses</li>
+      <li>SG_GoauldTech</li>
     </researchPrerequisites>
     <uiOrder>2660</uiOrder>
     <modExtensions>

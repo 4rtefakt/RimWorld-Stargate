@@ -17,7 +17,8 @@ Un mod qui apporte l'univers de **Stargate** dans RimWorld : races, symbiotes, �
 - **Bâtiments** : sarcophage régénérateur, **anneaux de transport**, **Porte des étoiles + DHD** (exploration de mondes lointains).
 - **Factions** : Grands Maîtres goa'uld (hostiles), **Commandement Stargate**, **Tok'ra**, **Jaffa libres**, **Asgard** — avec leurs marchands.
 - **Gravships (Vanilla Gravship Expanded)** : canon à plasma goa'uld, canon à ions asgard, bouclier goa'uld, blindage en naquadah, et la menace orbitale du **Ha'tak goa'uld**.
-- **Recherche** : onglet Stargate + technologies de vaisseau dans l'onglet Gravtech.
+- **Recherche** : onglet Stargate. Les armes et le bouclier de gravship demandent une recherche
+  Stargate et la recherche VGE correspondante (armement, armement avancé, défenses).
 - **Idéologie** : culte des Goa'uld.
 
 ### En développement

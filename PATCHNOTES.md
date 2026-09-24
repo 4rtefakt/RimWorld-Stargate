@@ -1,5 +1,34 @@
 # Notes de version
 
+## 0.2.1-beta — correctifs (23 septembre 2026)
+
+Merci à Hitomi pour les premiers retours.
+
+- **Bouclier goa'uld** : il affichait « Not connected to grav engine » et ne pouvait pas s'activer.
+  Il se relie maintenant au moteur de gravship (moteur vanilla et moteurs de VGE).
+- **Canons de vaisseau** : les tourelles du canon à plasma et du canon à ions visaient de côté
+  (le tir partait du flanc). Elles pointent maintenant vers la cible.
+- **Canon à plasma** : le nuage de poussière beige autour de la tourelle a été retiré.
+- **Bâton jaffa** : il est tenu dans l'axe du tir au lieu d'être penché de 45°.
+- **Jaffa** : les Jaffa (raids, visiteurs, marchands, xénogerme) apparaissent directement avec leur
+  larve prim'ta. Avant, elle n'arrivait qu'au premier contrôle, jusqu'à une heure de jeu plus tard.
+- **Erreurs au démarrage** : les 11 « Config error » du `Player.log` sont corrigées. Les 4 factions alliées ont maintenant
+  des histoires par défaut, les agents tok'ra et les Asgard ne peuvent plus apparaître sans arme,
+  et la porte des étoiles bloque tirs et vue comme un mur.
+- **Comptoirs des factions alliées** (SGC, Tok'ra, Jaffa libres, Asgard) : ils ne vendaient que
+  5 ou 6 objets Stargate. Ils ont maintenant, en plus de ces objets, un stock général comparable aux comptoirs
+  vanilla : ressources, nourriture, médicaments, drogues, textiles, armes, vêtements, armures, techprints,
+  artefacts et animaux. Pas d'esclaves, car ces factions combattent l'esclavage goa'uld.
+- **Recherche des armes de vaisseau simplifiée** : les trois projets de l'onglet Gravtech sont
+  supprimés, car il fallait trop de gravdata pour les atteindre. Chaque arme demande maintenant une recherche Stargate
+  plus la recherche VGE équivalente, qu'on fait de toute façon :
+  - canon à plasma goa'uld : *technologie goa'uld* + *Gravship weaponry* ;
+  - canon à ions asgard : *technologie asgard* + *Advanced gravship weaponry* ;
+  - bouclier goa'uld : *technologie goa'uld* + *Gravship defenses*.
+
+  Sur une sauvegarde existante, les recherches déjà faites dans ces trois projets sont perdues
+  (message d'avertissement possible au chargement, sans conséquence).
+
 ## 0.2.0-beta — « Au-delà de la Porte » (23 septembre 2026)
 
 > 🧪 **Version bêta** : tout compile et passe le validateur de defs, mais n'a pas encore été

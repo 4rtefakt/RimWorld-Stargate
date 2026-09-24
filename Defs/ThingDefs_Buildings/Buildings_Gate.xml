@@ -24,7 +24,8 @@
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
     <passability>Impassable</passability>
-    <fillPercent>0.5</fillPercent>
+    <!-- Bâtiment infranchissable constructible : le jeu exige qu'il bloque aussi tirs et vue (sinon Config error). -->
+    <fillPercent>1</fillPercent>
     <blockWind>false</blockWind>
     <canOverlapZones>false</canOverlapZones>
     <rotatable>false</rotatable>

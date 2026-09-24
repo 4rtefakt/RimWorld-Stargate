@@ -27,8 +27,9 @@ au plus risqué. Pour chaque point, noter ✅ / ❌ et joindre le `Player.log` e
 ## 2. Recherche
 - [ ] Nouvel onglet **Stargate** : technologie stargate → arsenal / technologie goa'uld / énergie
       au naquadah → technologie asgard, tretonine, activation de la porte. Pas de chevauchement.
-- [ ] Onglet **Gravtech** (VGE) : *armement des Ha'tak*, *armement asgard*, *défenses des Ha'tak*
-      (colonnes à droite), liés aux prérequis VGE et Stargate.
+- [ ] Pas de projet Stargate dans l'onglet **Gravtech**. La fiche *Gravship weaponry* (VGE) liste le canon
+      à plasma goa'uld (« débloqué avec technologie goa'uld »), *Advanced gravship weaponry* le canon
+      à ions asgard (avec technologie asgard), *Gravship defenses* le bouclier goa'uld (avec technologie goa'uld).
 
 ## 3. Naquadah
 - [ ] Minerai de naquadah visible sur la carte (veines vertes, rares) ; se mine → naquadah.
@@ -43,7 +44,7 @@ au plus risqué. Pour chaque point, noter ✅ / ❌ et joindre le `Player.log` e
 - [ ] Sur un mécanoïde / une tourelle : **paralysie** (effet IEM), pas de dégâts.
 
 ## 5. Jaffa et tretonine
-- [ ] Un colon Jaffa existant (ou dev : *Spawn pawn* guerrier jaffa) reçoit un **symbiote prim'ta**
+- [ ] Dev : *Spawn pawn* guerrier jaffa → il a **déjà** le gène poche à symbiote et le **symbiote prim'ta** (onglet santé). Un colon Jaffa existant le reçoit
       dans l'heure de jeu qui suit — pas de manque, pas de mort surprise.
 - [ ] Chirurgie *extraire le symbiote goa'uld* → dans l'heure : message + hediff **manque de
       symbiote** (mortel en ~3 jours).
@@ -70,10 +71,10 @@ au plus risqué. Pour chaque point, noter ✅ / ❌ et joindre le `Player.log` e
       avec une équipe là-bas : l'équipe revient près de la porte, message « monde perdu ».
 
 ## 8. Gravship (VGE)
-- [ ] **Canon à plasma goa'uld** : se construit sur la sous-structure, se recharge en naquadah
+- [ ] **Canon à plasma goa'uld** (et canon à ions) : la tourelle pointe vers la cible, le tir part du bout du canon ; se construit sur la sous-structure, se recharge en naquadah
       (vide à la construction), se relie à un terminal de ciblage VGE, tire (projectiles orange).
 - [ ] **Canon à ions asgard** : faisceau bleu, gros appel de puissance au tir.
-- [ ] **Bouclier goa'uld** : un seul par gravship, bulle dorée, activation/charge comme le grand
+- [ ] **Bouclier goa'uld** : relié au moteur (pas de « Not connected to grav engine »), un seul par gravship, bulle dorée, activation/charge comme le grand
       bouclier VGE.
 - [ ] **Blindage de gravship** VGE : le naquadah est proposé comme matériau.
 

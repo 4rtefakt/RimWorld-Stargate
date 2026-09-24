@@ -180,7 +180,8 @@ Mécanique signature qui **lie Jaffa et Goa'uld**. Dirigée par le joueur (chiru
 ### Étape 4 — Armes de vaisseau spécifiques *(extension de l'arsenal VGE Ch.2)*
 - [x] **Canon à plasma goa'uld** `SG_GoauldStaffCannon` (artillerie VGE, munition = naquadah) + version ennemie pour les Ha'tak.
 - [x] **Canon à ions asgard** `SG_AsgardIonCannon` (faisceau lourd VGE, traverse les boucliers, très énergivore).
-- [x] Recherches Gravtech (onglet VGE, gravdata) : **armement des Ha'tak**, **armement asgard**, **défenses des Ha'tak**.
+- [x] Recherche des armes de vaisseau : recherche Stargate (goa'uld / asgard) + recherche VGE correspondante
+  (armement, armement avancé, défenses). Pas de projet dédié dans l'onglet Gravtech (retour de playtest 0.2.1).
 - [x] ~~Mécanique de combat vaisseau-vs-vaisseau à coder~~ → **fournie par VGE Ch.2**.
 
 ### Étape 5 — Système de quêtes : cité légendaire (Atlantis/cité des Anciens)

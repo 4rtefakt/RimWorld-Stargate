@@ -29,6 +29,10 @@ namespace Stargate
         {
             if (__result?.genes == null) return;
 
+            // Jaffa : la larve prim'ta est présente dès l'apparition du pion (raids, visiteurs,
+            // marchands), pas seulement au premier contrôle horaire du gène.
+            __result.genes.GetFirstGeneOfType<Gene_JaffaPouch>()?.EnsureInitialSymbiote();
+
             Gender? forced = ForcedGenderFor(__result.genes.Xenotype);
             if (forced == null || __result.gender == forced.Value) return;
 

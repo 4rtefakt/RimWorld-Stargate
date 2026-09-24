@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <!-- Un moteur de gravship ne se relie qu'aux installations de sa liste linkableFacilities.
+       Sans ce patch, le bouclier goa'uld affiche « Not connected to grav engine » et ne s'active pas.
+       Moteurs couverts : le moteur vanilla (Odyssey) et les deux moteurs de VGE. -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="GravEngine" or defName="VGE_GravjumperEngine" or defName="VGE_GravhulkEngine"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+    <value>
+      <li>SG_GoauldShieldGenerator</li>
+    </value>
+  </Operation>
+
+</Patch>
